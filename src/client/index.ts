@@ -1,0 +1,60 @@
+/* istanbul ignore file */
+/* tslint:disable */
+/* eslint-disable */
+export { ApiError } from './core/ApiError';
+export { CancelablePromise, CancelError } from './core/CancelablePromise';
+export { OpenAPI } from './core/OpenAPI';
+export type { OpenAPIConfig } from './core/OpenAPI';
+
+export type { AnimalCreateSchema } from './models/AnimalCreateSchema';
+export type { AnimalSchema } from './models/AnimalSchema';
+export type { AnimalUpdateSchema } from './models/AnimalUpdateSchema';
+export type { CargoCreateSchema } from './models/CargoCreateSchema';
+export type { CargoSchema } from './models/CargoSchema';
+export type { CargoUpdateSchema } from './models/CargoUpdateSchema';
+export type { DietaCreateSchema } from './models/DietaCreateSchema';
+export type { DietaSchema } from './models/DietaSchema';
+export type { DietaUpdateSchema } from './models/DietaUpdateSchema';
+export type { FazendaCreateSchema } from './models/FazendaCreateSchema';
+export type { FazendaSchema } from './models/FazendaSchema';
+export type { FazendaUpdateSchema } from './models/FazendaUpdateSchema';
+export type { FazendeiroCreateSchema } from './models/FazendeiroCreateSchema';
+export type { FazendeiroSchema } from './models/FazendeiroSchema';
+export type { FazendeiroUpdateSchema } from './models/FazendeiroUpdateSchema';
+export type { HTTPValidationError } from './models/HTTPValidationError';
+export type { LoteCreateSchema } from './models/LoteCreateSchema';
+export type { LoteLogCreateSchema } from './models/LoteLogCreateSchema';
+export type { LoteLogSchema } from './models/LoteLogSchema';
+export type { LoteLogUpdateSchema } from './models/LoteLogUpdateSchema';
+export type { LoteSchema } from './models/LoteSchema';
+export type { LoteUpdateSchema } from './models/LoteUpdateSchema';
+export type { PesoLogCreateSchema } from './models/PesoLogCreateSchema';
+export type { PesoLogSchema } from './models/PesoLogSchema';
+export type { PesoLogUpdateSchema } from './models/PesoLogUpdateSchema';
+export type { PessoaCreateSchema } from './models/PessoaCreateSchema';
+export type { PessoaSchema } from './models/PessoaSchema';
+export type { PessoaUpdateSchema } from './models/PessoaUpdateSchema';
+export type { PropriedadeCreateSchema } from './models/PropriedadeCreateSchema';
+export type { PropriedadeSchema } from './models/PropriedadeSchema';
+export type { PropriedadeUpdateSchema } from './models/PropriedadeUpdateSchema';
+export type { RacaCreateSchema } from './models/RacaCreateSchema';
+export type { RacaSchema } from './models/RacaSchema';
+export type { RacaUpdateSchema } from './models/RacaUpdateSchema';
+export { Sexo } from './models/Sexo';
+export type { UsuarioCreateSchema } from './models/UsuarioCreateSchema';
+export type { UsuarioSchema } from './models/UsuarioSchema';
+export type { UsuarioUpdateSchema } from './models/UsuarioUpdateSchema';
+export type { ValidationError } from './models/ValidationError';
+
+export { AnimalService } from './services/AnimalService';
+export { CargoService } from './services/CargoService';
+export { DietaService } from './services/DietaService';
+export { FazendaService } from './services/FazendaService';
+export { FazendeiroService } from './services/FazendeiroService';
+export { LoteService } from './services/LoteService';
+export { LoteLogService } from './services/LoteLogService';
+export { PesoLogService } from './services/PesoLogService';
+export { PessoaService } from './services/PessoaService';
+export { PropriedadeService } from './services/PropriedadeService';
+export { RacaService } from './services/RacaService';
+export { UsuRioService } from './services/UsuRioService';
