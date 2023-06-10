@@ -21,18 +21,17 @@
     let tableSimple: TableSource = {
         head: ['ID', 'Nome'],
         body: [],
-        meta: [],
-        foot: ['Total', '<code class="code">5</code>']
+        foot: ['Total', '']
     };
 
     $: {
         tableSimple.body = tableMapperValues(sourceData, ['id', 'nome']);
-        tableSimple.meta = tableMapperValues(sourceData, ['nome', 'id']);
+        tableSimple["foot"][1] = `<code class="code">${sourceData.length}</code>`;
     }
 
     onMount(() => {
         tableSimple.body = tableMapperValues(sourceData, ['id', 'nome']);
-        tableSimple.meta = tableMapperValues(sourceData, ['nome', 'id']);
+        tableSimple["foot"][1] = `<code class="code">${sourceData.length}</code>`;
     });
 </script>
 
