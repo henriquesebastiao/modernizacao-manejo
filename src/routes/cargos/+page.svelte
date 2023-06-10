@@ -35,10 +35,8 @@
     });
 </script>
 
-<main class=".table-container">
-    {#if sourceData.length > 0}
-        <Table source={tableSimple}/>
-    {:else}
-        <p>Aguardando dados...</p>
-    {/if}
-</main>
+{#if sourceData.length > 0}
+    <Table source={tableSimple}/>
+{:else}
+    <p>Aguardando dados...</p>
+{/if}
