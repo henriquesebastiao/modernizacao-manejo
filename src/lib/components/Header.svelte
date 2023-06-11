@@ -57,13 +57,14 @@
 	<svelte:fragment slot="trail">
 		<span>
 			<a class="btn btn-sm" href="/">INÍCIO</a>
+			<a class="btn btn-sm" href="/sobre">SOBRE</a>
 			<a class="btn btn-sm" href="">BLOG</a>
 			<a class="btn btn-sm" href="">PLANOS</a>
 			<a class="btn btn-sm" href="">SUPORTE</a>
 			<a class="btn btn-sm" href=""><strong>ENTRAR</strong></a>
 		</span>
 
-		<button type="button" class="btn variant-filled uppercase">Cadastre-se</button>
+		<button type="button" class="btn variant-ghost uppercase">Cadastre-se</button>
 		<LightSwitch />
 	</svelte:fragment>
 </AppBar>
