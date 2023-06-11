@@ -1,11 +1,10 @@
 <script lang="ts">
 
-    const cBase = 'bg-surface-50 dark:bg-surface-900 border-t border-surface-500/10 text-xs md:text-base';
-    const cRow = 'flex flex-col md:flex-row justify-between items-center md:items-start space-y-2 md:space-y-0';
+    const cRow = 'flex flex-col md:flex-row justify-center items-center md:items-center space-y-2 md:space-y-0';
 
 </script>
 
-<div class="page-footer {cBase}">
+<div class="page-footer">
     <div class="w-full max-w-7xl mx-auto p-4 py-16 md:py-24 space-y-10">
         <section class={cRow}>
             <div class="flex space-x-4">
