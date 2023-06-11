@@ -3,7 +3,7 @@
 </script>
 
 <body class="flex items-center justify-center">
-	<div class="w-[50%] bg-secondary-600 rounded">
+	<div class="w-[50%] rounded card text-token">
 		<Accordion>
 			<AccordionItem>
 				<svelte:fragment slot="lead">

@@ -48,8 +48,8 @@
     </div>
     <svelte:fragment slot="trail">
         <div class="btn-group variant-filled">
-            <button class="btn-sm">Entrar</button>
-            <button class="btn-sm">Cadastrar</button>
+            <a href="" class="btn-sm">Entrar</a>
+            <a href="/register" class="btn-sm"><strong>Cadastrar</strong></a>
         </div>
         <LightSwitch/>
 
