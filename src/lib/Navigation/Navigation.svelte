@@ -8,10 +8,10 @@
 
 <nav>
 	<span>
-		<a class="btn btn-sm" href="/">INÍCIO</a>
-		<a class="btn btn-sm" href="/sobre">SOBRE</a>
-		<a class="btn btn-sm" href="/">BLOG</a>
-		<a class="btn btn-sm" href="/">PLANOS</a>
-		<a class="btn btn-sm" href="/">SUPORTE</a>
+		<a class="btn btn-sm" href="/" on:click={drawerClose}>INÍCIO</a>
+		<a class="btn btn-sm" href="/sobre" on:click={drawerClose}>SOBRE</a>
+		<a class="btn btn-sm" href="/" on:click={drawerClose}>BLOG</a>
+		<a class="btn btn-sm" href="/" on:click={drawerClose}>PLANOS</a>
+		<a class="btn btn-sm" href="/" on:click={drawerClose}>SUPORTE</a>
 	</span>
 </nav>
