@@ -5,9 +5,12 @@
     import {AppShell, Toast} from "@skeletonlabs/skeleton";
     import Header from "$lib/components/Header/Header.svelte";
     import Footer from "$lib/components/Footer/Footer.svelte";
+    import { autoModeWatcher } from '@skeletonlabs/skeleton';
 </script>
 
 <Toast position="tr"/>
+
+<svelte:head>{@html `<script>${autoModeWatcher.toString()} autoModeWatcher();</script>`}</svelte:head>
 
 <AppShell>
     <svelte:fragment slot="header">
