@@ -2,11 +2,12 @@
     import '../theme.postcss';
 	import '@skeletonlabs/skeleton/styles/skeleton.css';
 	import '../app.postcss';
-    import {AppShell} from "@skeletonlabs/skeleton";
+    import {AppShell, Toast} from "@skeletonlabs/skeleton";
     import Header from "$lib/components/Header/Header.svelte";
     import Footer from "$lib/components/Footer/Footer.svelte";
 </script>
 
+<Toast position="tr"/>
 
 <AppShell>
     <svelte:fragment slot="header">

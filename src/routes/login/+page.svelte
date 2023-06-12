@@ -1,6 +1,6 @@
 <script lang="ts">
-    import {focusTrap} from "@skeletonlabs/skeleton";
-
+    import type {ToastSettings} from '@skeletonlabs/skeleton';
+    import {focusTrap, toastStore} from "@skeletonlabs/skeleton";
     import type {UsuarioLoginSchema} from "../../client";
     import {OpenAPI, UsuRioService} from "../../client";
     import {goto} from "$app/navigation";
@@ -9,20 +9,28 @@
 
     let isFocused = true;
 
-    let email = '';
-    let password = '';
+    let userLogin: UsuarioLoginSchema = {
+        email: '',
+        password: ''
+    }
+
+    const t: ToastSettings = {
+        message: 'Login efetuado com sucesso!',
+    };
+    const e: ToastSettings = {
+        message: 'Erro ao efetuar login!',
+        background: 'bg-error-500',
+    };
 
     function handleSubmit(event: Event) {
         event.preventDefault();
 
-        const usuarioLogin: UsuarioLoginSchema = {
-            email,
-            password
-        }
-        UsuRioService.loginUsuarioLoginPost(usuarioLogin).then(() => {
+        UsuRioService.loginUsuarioLoginPost(userLogin).then(() => {
+            toastStore.trigger(t);
             goto('/');
         }).catch((err) => {
             console.log(err);
+            toastStore.trigger(e);
         })
     }
 
@@ -36,7 +44,7 @@
                     <i class="pr-0.5 fa-regular fa-envelope"></i>
                     <span>Email:</span>
                 </label>
-                <input type="email" bind:value={email} id="email" name="email"
+                <input type="email" bind:value={userLogin.email} id="email" name="email"
                        class="input w-full px-4 py-2 border rounded">
             </div>
             <div class="mb-4">
@@ -44,7 +52,7 @@
                     <i class="pr-0.5 fa-solid fa-lock"></i>
                     <span>Senha:</span>
                 </label>
-                <input type="password" bind:value={password} id="password" name="password"
+                <input type="password" bind:value={userLogin.password} id="password" name="password"
                        class="input w-full px-4 py-2 border rounded">
             </div>
             <div class="flex items-center justify-center">
