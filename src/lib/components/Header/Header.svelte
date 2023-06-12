@@ -51,7 +51,9 @@
             <a href="/login" class="btn-sm">Entrar</a>
             <a href="/register" class="btn-sm"><strong>Cadastrar</strong></a>
         </div>
-        <LightSwitch/>
+        <span>
+            <LightSwitch/>
+        </span>
 
     </svelte:fragment>
 </AppBar>

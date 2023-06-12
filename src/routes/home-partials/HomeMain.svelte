@@ -1,3 +1,7 @@
+<script>
+	import HomeMainComponents from './HomeMainComponents.svelte';
+</script>
+
 <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-10 items-center">
 	<!-- Info -->
 	<div class="flex flex-col items-center xl:items-start text-center xl:text-left space-y-4">
@@ -7,7 +11,7 @@
 			mensure, supere!
 		</p>
 		<div class="flex gap-4">
-			<a href="/" class="btn variant-filled-primary">
+			<a href="/register" class="btn variant-filled-primary">
 				<span>Começar</span>
 				<i class="fa-solid fa-arrow-right-long"></i>
 			</a>
@@ -16,5 +20,7 @@
 	</div>
 
 	<!-- Components -->
-	<div class="hidden md:inline-block w-full max-w-[650px] mx-auto mt-20"></div>
+	<div class="hidden md:inline-block w-full max-w-[650px] mx-auto mt-20">
+		<HomeMainComponents />
+	</div>
 </div>

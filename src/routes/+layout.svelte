@@ -18,7 +18,7 @@
     <svelte:fragment slot="pageHeader"><!--Page Header--></svelte:fragment>
     <!-- Router Slot -->
     <slot />
-    <!-- ---- / ---- -->
-    <svelte:fragment slot="pageFooter"><!--Page Footer--></svelte:fragment>
-    <svelte:fragment slot="footer"><Footer /></svelte:fragment>
+    <!-- Footer -->
+    <!--<svelte:fragment slot="pageFooter"></svelte:fragment>
+    <svelte:fragment slot="footer"><Footer /></svelte:fragment>-->
 </AppShell>
