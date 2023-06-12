@@ -19,7 +19,7 @@
     };
     const e: ToastSettings = {
         message: 'Erro ao efetuar login!',
-        background: 'bg-error-500',
+        background: 'bg-warning-600',
     };
 
     function handleSubmit(event: Event) {
