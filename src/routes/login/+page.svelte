@@ -4,7 +4,7 @@
     let isFocused = true;
 </script>
 
-<main class="flex items-center justify-center h-screen">
+<main class="container h-full mx-auto flex justify-center items-center">
     <div class="card rounded-lg p-8">
         <form use:focusTrap={isFocused}>
             <div class="mb-4">
