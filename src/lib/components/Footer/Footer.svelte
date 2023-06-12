@@ -10,12 +10,12 @@
             <div class="flex space-x-4">
                 <a class="btn variant-soft" href="#=/" target="_blank"
                    rel="noreferrer">
-                    <i class="fa-brands fa-github"></i>
-                    <span class="hidden md:inline-block ml-2">Github</span>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <span class="hidden md:inline-block ml-2">Linkedin</span>
                 </a>
                 <a class="btn variant-soft" href="/" target="_blank" rel="noreferrer">
-                    <i class="fa-brands fa-discord"></i>
-                    <span class="hidden md:inline-block ml-2">Discord</span>
+                    <i class="fa-brands fa-instagram"></i>
+                    <span class="hidden md:inline-block ml-2">Instagram</span>
                 </a>
                 <a class="btn variant-soft" href="/" target="_blank" rel="noreferrer">
                     <i class="fa-brands fa-twitter"></i>
