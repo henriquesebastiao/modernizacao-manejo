@@ -2,7 +2,7 @@
     import type {ToastSettings} from '@skeletonlabs/skeleton';
     import {focusTrap, toastStore} from "@skeletonlabs/skeleton";
     import type {UsuarioLoginSchema} from "../../client";
-    import {OpenAPI, UsuRioService} from "../../client";
+    import {OpenAPI, UserService} from "../../client";
     import {goto} from "$app/navigation";
 
     OpenAPI.BASE = 'http://localhost:8000';
@@ -25,7 +25,7 @@
     function handleSubmit(event: Event) {
         event.preventDefault();
 
-        UsuRioService.loginUsuarioLoginPost(userLogin).then(() => {
+        UserService.loginUserLoginPost(userLogin).then(() => {
             toastStore.trigger(t);
             goto('/');
         }).catch((err) => {
