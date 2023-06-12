@@ -2,6 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { UsuarioCreateSchema } from '../models/UsuarioCreateSchema';
+import type { UsuarioLoginSchema } from '../models/UsuarioLoginSchema';
 import type { UsuarioSchema } from '../models/UsuarioSchema';
 import type { UsuarioUpdateSchema } from '../models/UsuarioUpdateSchema';
 
@@ -61,6 +62,27 @@ export class UsuRioService {
             path: {
                 'usuario_id': usuarioId,
             },
+            errors: {
+                422: `Validation Error`,
+            },
+        });
+    }
+
+    /**
+     * Login
+     * Retorna um usuário com base no seu ID.
+     * @param requestBody
+     * @returns any Successful Response
+     * @throws ApiError
+     */
+    public static loginUsuarioLoginPost(
+        requestBody: UsuarioLoginSchema,
+    ): CancelablePromise<any> {
+        return __request(OpenAPI, {
+            method: 'POST',
+            url: '/usuario/login',
+            body: requestBody,
+            mediaType: 'application/json',
             errors: {
                 422: `Validation Error`,
             },

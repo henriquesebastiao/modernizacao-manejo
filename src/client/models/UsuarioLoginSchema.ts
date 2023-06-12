@@ -3,9 +3,9 @@
 /* eslint-disable */
 
 /**
- * Classe para validação de dados de atualização de Usuário.
+ * Classe base para validação de dados de Usuário.
  */
-export type UsuarioUpdateSchema = {
+export type UsuarioLoginSchema = {
     email: string;
     password: string;
 };

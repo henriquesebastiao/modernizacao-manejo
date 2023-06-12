@@ -8,6 +8,5 @@
 export type UsuarioCreateSchema = {
     email: string;
     password: string;
-    pessoa_id: number;
 };
 
