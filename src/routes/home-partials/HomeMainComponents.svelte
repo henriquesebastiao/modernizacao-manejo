@@ -107,9 +107,6 @@
 	.anim-float-avatar {
 		animation: float-up 13s ease-in-out infinite;
 	}
-	.anim-float-progress {
-		animation: float-down 15s ease-in-out infinite;
-	}
 	.anim-float-search {
 		animation: float-up 14s ease-in-out infinite;
 		animation-delay: 3s;
