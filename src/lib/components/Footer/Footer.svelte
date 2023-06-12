@@ -5,7 +5,7 @@
 </script>
 
 <div class="page-footer">
-    <div class="w-full max-w-7xl mx-auto p-4 py-16 md:py-5 space-y-10">
+    <div class="w-full max-w-7xl mx-auto p-4 py-5 md:py-5 space-y-10">
         <section class={cRow}>
             <div class="flex space-x-4">
                 <a class="btn variant-soft" href="#=/" target="_blank"

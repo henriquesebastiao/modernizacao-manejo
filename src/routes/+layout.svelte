@@ -1,11 +1,10 @@
 <script lang='ts'>
     import '../theme.postcss';
-	import '@skeletonlabs/skeleton/styles/skeleton.css';
-	import '../app.postcss';
-    import {AppShell, Toast} from "@skeletonlabs/skeleton";
+    import '@skeletonlabs/skeleton/styles/skeleton.css';
+    import '../app.postcss';
+    import {AppShell, autoModeWatcher, Toast} from "@skeletonlabs/skeleton";
     import Header from "$lib/components/Header/Header.svelte";
     import Footer from "$lib/components/Footer/Footer.svelte";
-    import { autoModeWatcher } from '@skeletonlabs/skeleton';
 </script>
 
 <Toast position="tr"/>
@@ -14,14 +13,16 @@
 
 <AppShell>
     <svelte:fragment slot="header">
-        <Header />
+        <Header/>
     </svelte:fragment>
     <svelte:fragment slot="sidebarLeft"><!--Sidebar Left--></svelte:fragment>
     <svelte:fragment slot="sidebarRight"><!--Sidebar Right--></svelte:fragment>
     <svelte:fragment slot="pageHeader"><!--Page Header--></svelte:fragment>
     <!-- Router Slot -->
-    <slot />
+    <slot/>
     <!-- Footer -->
-    <!--<svelte:fragment slot="pageFooter"></svelte:fragment>-->
-    <svelte:fragment slot="footer"><Footer /></svelte:fragment>
+    <svelte:fragment slot="pageFooter">
+        <Footer/>
+    </svelte:fragment>
+    <!--    <svelte:fragment slot="footer"></svelte:fragment>-->
 </AppShell>
