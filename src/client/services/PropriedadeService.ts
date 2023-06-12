@@ -12,12 +12,11 @@ import { request as __request } from '../core/request';
 export class PropriedadeService {
 
     /**
-     * Get All Propriedades
-     * Retorna todos os animais.
+     * Get All
      * @returns PropriedadeSchema Successful Response
      * @throws ApiError
      */
-    public static getAllPropriedadesPropriedadeGet(): CancelablePromise<Array<PropriedadeSchema>> {
+    public static getAllPropriedadeGet(): CancelablePromise<Array<PropriedadeSchema>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/propriedade/',
@@ -25,13 +24,12 @@ export class PropriedadeService {
     }
 
     /**
-     * Create Propriedade
-     * Cria um propriedade.
+     * Create
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static createPropriedadePropriedadePost(
+    public static createPropriedadePost(
         requestBody: PropriedadeCreateSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
@@ -46,13 +44,12 @@ export class PropriedadeService {
     }
 
     /**
-     * Get Propriedade
-     * Retorna um propriedade com base no seu ID.
+     * Get
      * @param propriedadeId
      * @returns PropriedadeSchema Successful Response
      * @throws ApiError
      */
-    public static getPropriedadePropriedadePropriedadeIdGet(
+    public static getPropriedadePropriedadeIdGet(
         propriedadeId: number,
     ): CancelablePromise<PropriedadeSchema> {
         return __request(OpenAPI, {
@@ -68,18 +65,17 @@ export class PropriedadeService {
     }
 
     /**
-     * Delete Propriedade
-     * Deleta um propriedade.
+     * Delete
      * @param propriedadeId
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static deletePropriedadePropriedadePropriedadePropriedadeIdDelete(
+    public static deletePropriedadePropriedadeIdDelete(
         propriedadeId: number,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/propriedade/propriedade/{propriedade_id}',
+            url: '/propriedade/{propriedade_id}',
             path: {
                 'propriedade_id': propriedadeId,
             },
@@ -90,20 +86,19 @@ export class PropriedadeService {
     }
 
     /**
-     * Update Propriedade
-     * Atualiza um propriedade.
+     * Update
      * @param propriedadeId
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static updatePropriedadePropriedadePropriedadePropriedadeIdPatch(
+    public static updatePropriedadePropriedadeIdPatch(
         propriedadeId: number,
         requestBody: PropriedadeUpdateSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/propriedade/propriedade/{propriedade_id}',
+            url: '/propriedade/{propriedade_id}',
             path: {
                 'propriedade_id': propriedadeId,
             },

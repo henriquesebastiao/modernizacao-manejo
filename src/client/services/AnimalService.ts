@@ -12,12 +12,11 @@ import { request as __request } from '../core/request';
 export class AnimalService {
 
     /**
-     * Get All Animals
-     * Retorna todos os animais.
+     * Get All
      * @returns AnimalSchema Successful Response
      * @throws ApiError
      */
-    public static getAllAnimalsAnimalGet(): CancelablePromise<Array<AnimalSchema>> {
+    public static getAllAnimalGet(): CancelablePromise<Array<AnimalSchema>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/animal/',
@@ -25,13 +24,12 @@ export class AnimalService {
     }
 
     /**
-     * Create Animal
-     * Cria um animal.
+     * Create
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static createAnimalAnimalPost(
+    public static createAnimalPost(
         requestBody: AnimalCreateSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
@@ -46,13 +44,12 @@ export class AnimalService {
     }
 
     /**
-     * Get Animal By Id
-     * Retorna um animal com base no seu ID.
+     * Get By Id
      * @param animalId
      * @returns AnimalSchema Successful Response
      * @throws ApiError
      */
-    public static getAnimalByIdAnimalAnimalIdGet(
+    public static getByIdAnimalAnimalIdGet(
         animalId: number,
     ): CancelablePromise<AnimalSchema> {
         return __request(OpenAPI, {
@@ -68,13 +65,58 @@ export class AnimalService {
     }
 
     /**
-     * Get Animal By Brinco
-     * Retorna um animal com base no seu ID.
+     * Delete
+     * @param animalId
+     * @returns any Successful Response
+     * @throws ApiError
+     */
+    public static deleteAnimalAnimalIdDelete(
+        animalId: number,
+    ): CancelablePromise<Record<string, any>> {
+        return __request(OpenAPI, {
+            method: 'DELETE',
+            url: '/animal/{animal_id}',
+            path: {
+                'animal_id': animalId,
+            },
+            errors: {
+                422: `Validation Error`,
+            },
+        });
+    }
+
+    /**
+     * Update
+     * @param animalId
+     * @param requestBody
+     * @returns any Successful Response
+     * @throws ApiError
+     */
+    public static updateAnimalAnimalIdPatch(
+        animalId: number,
+        requestBody: AnimalUpdateSchema,
+    ): CancelablePromise<any> {
+        return __request(OpenAPI, {
+            method: 'PATCH',
+            url: '/animal/{animal_id}',
+            path: {
+                'animal_id': animalId,
+            },
+            body: requestBody,
+            mediaType: 'application/json',
+            errors: {
+                422: `Validation Error`,
+            },
+        });
+    }
+
+    /**
+     * Get By Brinco
      * @param brinco
      * @returns AnimalSchema Successful Response
      * @throws ApiError
      */
-    public static getAnimalByBrincoAnimalBrincoGet(
+    public static getByBrincoAnimalBrincoGet(
         brinco: string,
     ): CancelablePromise<AnimalSchema> {
         return __request(OpenAPI, {
@@ -90,13 +132,12 @@ export class AnimalService {
     }
 
     /**
-     * Get Animal By Chip
-     * Retorna um animal com base no seu ID.
+     * Get By Chip
      * @param chip
      * @returns AnimalSchema Successful Response
      * @throws ApiError
      */
-    public static getAnimalByChipAnimalChipGet(
+    public static getByChipAnimalChipGet(
         chip: string,
     ): CancelablePromise<AnimalSchema> {
         return __request(OpenAPI, {
@@ -105,54 +146,6 @@ export class AnimalService {
             path: {
                 'chip': chip,
             },
-            errors: {
-                422: `Validation Error`,
-            },
-        });
-    }
-
-    /**
-     * Delete Animal
-     * Deleta um animal.
-     * @param animalId
-     * @returns any Successful Response
-     * @throws ApiError
-     */
-    public static deleteAnimalAnimalAnimalAnimalIdDelete(
-        animalId: number,
-    ): CancelablePromise<Record<string, any>> {
-        return __request(OpenAPI, {
-            method: 'DELETE',
-            url: '/animal/animal/{animal_id}',
-            path: {
-                'animal_id': animalId,
-            },
-            errors: {
-                422: `Validation Error`,
-            },
-        });
-    }
-
-    /**
-     * Update Animal
-     * Atualiza um animal.
-     * @param animalId
-     * @param requestBody
-     * @returns any Successful Response
-     * @throws ApiError
-     */
-    public static updateAnimalAnimalAnimalAnimalIdPatch(
-        animalId: number,
-        requestBody: AnimalUpdateSchema,
-    ): CancelablePromise<any> {
-        return __request(OpenAPI, {
-            method: 'PATCH',
-            url: '/animal/animal/{animal_id}',
-            path: {
-                'animal_id': animalId,
-            },
-            body: requestBody,
-            mediaType: 'application/json',
             errors: {
                 422: `Validation Error`,
             },

@@ -10,34 +10,32 @@ import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 
-export class UsuRioService {
+export class UserService {
 
     /**
-     * Get All Usuarios
-     * Retorna todos os animais.
+     * Get All
      * @returns UsuarioSchema Successful Response
      * @throws ApiError
      */
-    public static getAllUsuariosUsuarioGet(): CancelablePromise<Array<UsuarioSchema>> {
+    public static getAllUserGet(): CancelablePromise<Array<UsuarioSchema>> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/usuario/',
+            url: '/user/',
         });
     }
 
     /**
-     * Create Usuario
-     * Cria um usuário.
+     * Create
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static createUsuarioUsuarioPost(
+    public static createUserPost(
         requestBody: UsuarioCreateSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/usuario/',
+            url: '/user/',
             body: requestBody,
             mediaType: 'application/json',
             errors: {
@@ -47,21 +45,66 @@ export class UsuRioService {
     }
 
     /**
-     * Get Usuario
-     * Retorna um usuário com base no seu ID.
-     * @param usuarioId
+     * Get
+     * @param userId
      * @returns UsuarioSchema Successful Response
      * @throws ApiError
      */
-    public static getUsuarioUsuarioUsuarioIdGet(
-        usuarioId: number,
+    public static getUserIdGet(
+        userId: number,
     ): CancelablePromise<UsuarioSchema> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/usuario/{usuario_id}',
-            path: {
-                'usuario_id': usuarioId,
+            url: '/user/{id}',
+            query: {
+                'user_id': userId,
             },
+            errors: {
+                422: `Validation Error`,
+            },
+        });
+    }
+
+    /**
+     * Delete
+     * @param userId
+     * @returns any Successful Response
+     * @throws ApiError
+     */
+    public static deleteUserIdDelete(
+        userId: number,
+    ): CancelablePromise<any> {
+        return __request(OpenAPI, {
+            method: 'DELETE',
+            url: '/user/{id}',
+            query: {
+                'user_id': userId,
+            },
+            errors: {
+                422: `Validation Error`,
+            },
+        });
+    }
+
+    /**
+     * Update
+     * @param userId
+     * @param requestBody
+     * @returns any Successful Response
+     * @throws ApiError
+     */
+    public static updateUserIdPatch(
+        userId: number,
+        requestBody: UsuarioUpdateSchema,
+    ): CancelablePromise<any> {
+        return __request(OpenAPI, {
+            method: 'PATCH',
+            url: '/user/{id}',
+            query: {
+                'user_id': userId,
+            },
+            body: requestBody,
+            mediaType: 'application/json',
             errors: {
                 422: `Validation Error`,
             },
@@ -70,65 +113,16 @@ export class UsuRioService {
 
     /**
      * Login
-     * Retorna um usuário com base no seu ID.
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static loginUsuarioLoginPost(
+    public static loginUserLoginPost(
         requestBody: UsuarioLoginSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/usuario/login',
-            body: requestBody,
-            mediaType: 'application/json',
-            errors: {
-                422: `Validation Error`,
-            },
-        });
-    }
-
-    /**
-     * Delete Usuario
-     * Deleta um usuário.
-     * @param usuarioId
-     * @returns any Successful Response
-     * @throws ApiError
-     */
-    public static deleteUsuarioUsuarioUsuarioUsuarioIdDelete(
-        usuarioId: number,
-    ): CancelablePromise<any> {
-        return __request(OpenAPI, {
-            method: 'DELETE',
-            url: '/usuario/usuario/{usuario_id}',
-            path: {
-                'usuario_id': usuarioId,
-            },
-            errors: {
-                422: `Validation Error`,
-            },
-        });
-    }
-
-    /**
-     * Update Usuario
-     * Atualiza um usuário.
-     * @param usuarioId
-     * @param requestBody
-     * @returns any Successful Response
-     * @throws ApiError
-     */
-    public static updateUsuarioUsuarioUsuarioUsuarioIdPatch(
-        usuarioId: number,
-        requestBody: UsuarioUpdateSchema,
-    ): CancelablePromise<any> {
-        return __request(OpenAPI, {
-            method: 'PATCH',
-            url: '/usuario/usuario/{usuario_id}',
-            path: {
-                'usuario_id': usuarioId,
-            },
+            url: '/user/login',
             body: requestBody,
             mediaType: 'application/json',
             errors: {

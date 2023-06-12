@@ -12,12 +12,11 @@ import { request as __request } from '../core/request';
 export class LoteLogService {
 
     /**
-     * Get All Lote Logs
-     * Retorna todos os animais.
+     * Get All
      * @returns LoteLogSchema Successful Response
      * @throws ApiError
      */
-    public static getAllLoteLogsLoteLogGet(): CancelablePromise<Array<LoteLogSchema>> {
+    public static getAllLoteLogGet(): CancelablePromise<Array<LoteLogSchema>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/lote_log/',
@@ -25,13 +24,12 @@ export class LoteLogService {
     }
 
     /**
-     * Create Lote Log
-     * Cria um lote_log.
+     * Create
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static createLoteLogLoteLogPost(
+    public static createLoteLogPost(
         requestBody: LoteLogCreateSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
@@ -46,13 +44,12 @@ export class LoteLogService {
     }
 
     /**
-     * Get Lote Log
-     * Retorna um lote_log com base no seu ID.
+     * Get
      * @param loteLogId
      * @returns LoteLogSchema Successful Response
      * @throws ApiError
      */
-    public static getLoteLogLoteLogLoteLogIdGet(
+    public static getLoteLogLoteLogIdGet(
         loteLogId: number,
     ): CancelablePromise<LoteLogSchema> {
         return __request(OpenAPI, {
@@ -68,18 +65,17 @@ export class LoteLogService {
     }
 
     /**
-     * Delete Lote Log
-     * Deleta um lote_log.
+     * Delete
      * @param loteLogId
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static deleteLoteLogLoteLogLoteLogLoteLogIdDelete(
+    public static deleteLoteLogLoteLogIdDelete(
         loteLogId: number,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/lote_log/lote_log/{lote_log_id}',
+            url: '/lote_log/{lote_log_id}',
             path: {
                 'lote_log_id': loteLogId,
             },
@@ -90,20 +86,19 @@ export class LoteLogService {
     }
 
     /**
-     * Update Lote Log
-     * Atualiza um lote_log.
+     * Update
      * @param loteLogId
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static updateLoteLogLoteLogLoteLogLoteLogIdPatch(
+    public static updateLoteLogLoteLogIdPatch(
         loteLogId: number,
         requestBody: LoteLogUpdateSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/lote_log/lote_log/{lote_log_id}',
+            url: '/lote_log/{lote_log_id}',
             path: {
                 'lote_log_id': loteLogId,
             },

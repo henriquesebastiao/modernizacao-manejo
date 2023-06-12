@@ -12,12 +12,11 @@ import { request as __request } from '../core/request';
 export class FazendaService {
 
     /**
-     * Get All Fazendas
-     * Retorna todos os animais.
+     * Get All
      * @returns FazendaSchema Successful Response
      * @throws ApiError
      */
-    public static getAllFazendasFazendaGet(): CancelablePromise<Array<FazendaSchema>> {
+    public static getAllFazendaGet(): CancelablePromise<Array<FazendaSchema>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/fazenda/',
@@ -25,13 +24,12 @@ export class FazendaService {
     }
 
     /**
-     * Create Fazenda
-     * Cria um fazenda.
+     * Create
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static createFazendaFazendaPost(
+    public static createFazendaPost(
         requestBody: FazendaCreateSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
@@ -46,13 +44,12 @@ export class FazendaService {
     }
 
     /**
-     * Get Fazenda
-     * Retorna um fazenda com base no seu ID.
+     * Get
      * @param fazendaId
      * @returns FazendaSchema Successful Response
      * @throws ApiError
      */
-    public static getFazendaFazendaFazendaIdGet(
+    public static getFazendaFazendaIdGet(
         fazendaId: number,
     ): CancelablePromise<FazendaSchema> {
         return __request(OpenAPI, {
@@ -68,18 +65,17 @@ export class FazendaService {
     }
 
     /**
-     * Delete Fazenda
-     * Deleta um fazenda.
+     * Delete
      * @param fazendaId
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static deleteFazendaFazendaFazendaFazendaIdDelete(
+    public static deleteFazendaFazendaIdDelete(
         fazendaId: number,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/fazenda/fazenda/{fazenda_id}',
+            url: '/fazenda/{fazenda_id}',
             path: {
                 'fazenda_id': fazendaId,
             },
@@ -90,20 +86,19 @@ export class FazendaService {
     }
 
     /**
-     * Update Fazenda
-     * Atualiza um fazenda.
+     * Update
      * @param fazendaId
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static updateFazendaFazendaFazendaFazendaIdPatch(
+    public static updateFazendaFazendaIdPatch(
         fazendaId: number,
         requestBody: FazendaUpdateSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/fazenda/fazenda/{fazenda_id}',
+            url: '/fazenda/{fazenda_id}',
             path: {
                 'fazenda_id': fazendaId,
             },

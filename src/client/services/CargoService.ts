@@ -12,12 +12,11 @@ import { request as __request } from '../core/request';
 export class CargoService {
 
     /**
-     * Get All Cargos
-     * Retorna todos os animais.
+     * Get All
      * @returns CargoSchema Successful Response
      * @throws ApiError
      */
-    public static getAllCargosCargoGet(): CancelablePromise<Array<CargoSchema>> {
+    public static getAllCargoGet(): CancelablePromise<Array<CargoSchema>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/cargo/',
@@ -25,13 +24,12 @@ export class CargoService {
     }
 
     /**
-     * Create Cargo
-     * Cria um cargo.
+     * Create
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static createCargoCargoPost(
+    public static createCargoPost(
         requestBody: CargoCreateSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
@@ -46,13 +44,12 @@ export class CargoService {
     }
 
     /**
-     * Get Cargo
-     * Retorna um cargo com base no seu ID.
+     * Get
      * @param cargoId
      * @returns CargoSchema Successful Response
      * @throws ApiError
      */
-    public static getCargoCargoCargoIdGet(
+    public static getCargoCargoIdGet(
         cargoId: number,
     ): CancelablePromise<CargoSchema> {
         return __request(OpenAPI, {
@@ -68,18 +65,17 @@ export class CargoService {
     }
 
     /**
-     * Delete Cargo
-     * Deleta um cargo.
+     * Delete
      * @param cargoId
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static deleteCargoCargoCargoCargoIdDelete(
+    public static deleteCargoCargoIdDelete(
         cargoId: number,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/cargo/cargo/{cargo_id}',
+            url: '/cargo/{cargo_id}',
             path: {
                 'cargo_id': cargoId,
             },
@@ -90,20 +86,19 @@ export class CargoService {
     }
 
     /**
-     * Update Cargo
-     * Atualiza um cargo.
+     * Update
      * @param cargoId
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static updateCargoCargoCargoCargoIdPatch(
+    public static updateCargoCargoIdPatch(
         cargoId: number,
         requestBody: CargoUpdateSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/cargo/cargo/{cargo_id}',
+            url: '/cargo/{cargo_id}',
             path: {
                 'cargo_id': cargoId,
             },

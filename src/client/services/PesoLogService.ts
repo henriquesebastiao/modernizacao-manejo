@@ -12,12 +12,11 @@ import { request as __request } from '../core/request';
 export class PesoLogService {
 
     /**
-     * Get All Peso Logs
-     * Retorna todos os animais.
+     * Get All
      * @returns PesoLogSchema Successful Response
      * @throws ApiError
      */
-    public static getAllPesoLogsPesoLogGet(): CancelablePromise<Array<PesoLogSchema>> {
+    public static getAllPesoLogGet(): CancelablePromise<Array<PesoLogSchema>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/peso_log/',
@@ -25,13 +24,12 @@ export class PesoLogService {
     }
 
     /**
-     * Create Peso Log
-     * Cria um peso_log.
+     * Create
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static createPesoLogPesoLogPost(
+    public static createPesoLogPost(
         requestBody: PesoLogCreateSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
@@ -46,13 +44,12 @@ export class PesoLogService {
     }
 
     /**
-     * Get Peso Log
-     * Retorna um peso_log com base no seu ID.
+     * Get
      * @param pesoLogId
      * @returns PesoLogSchema Successful Response
      * @throws ApiError
      */
-    public static getPesoLogPesoLogPesoLogIdGet(
+    public static getPesoLogPesoLogIdGet(
         pesoLogId: number,
     ): CancelablePromise<PesoLogSchema> {
         return __request(OpenAPI, {
@@ -68,18 +65,17 @@ export class PesoLogService {
     }
 
     /**
-     * Delete Peso Log
-     * Deleta um peso_log.
+     * Delete
      * @param pesoLogId
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static deletePesoLogPesoLogPesoLogPesoLogIdDelete(
+    public static deletePesoLogPesoLogIdDelete(
         pesoLogId: number,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/peso_log/peso_log/{peso_log_id}',
+            url: '/peso_log/{peso_log_id}',
             path: {
                 'peso_log_id': pesoLogId,
             },
@@ -90,20 +86,19 @@ export class PesoLogService {
     }
 
     /**
-     * Update Peso Log
-     * Atualiza um peso_log.
+     * Update
      * @param pesoLogId
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static updatePesoLogPesoLogPesoLogPesoLogIdPatch(
+    public static updatePesoLogPesoLogIdPatch(
         pesoLogId: number,
         requestBody: PesoLogUpdateSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/peso_log/peso_log/{peso_log_id}',
+            url: '/peso_log/{peso_log_id}',
             path: {
                 'peso_log_id': pesoLogId,
             },

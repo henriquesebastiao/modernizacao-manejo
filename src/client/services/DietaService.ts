@@ -12,12 +12,11 @@ import { request as __request } from '../core/request';
 export class DietaService {
 
     /**
-     * Get All Dietas
-     * Retorna todos os dietas.
+     * Get All
      * @returns DietaSchema Successful Response
      * @throws ApiError
      */
-    public static getAllDietasDietaGet(): CancelablePromise<Array<DietaSchema>> {
+    public static getAllDietaGet(): CancelablePromise<Array<DietaSchema>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/dieta/',
@@ -25,13 +24,12 @@ export class DietaService {
     }
 
     /**
-     * Create Dieta
-     * Cria uma dieta.
+     * Create
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static createDietaDietaPost(
+    public static createDietaPost(
         requestBody: DietaCreateSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
@@ -46,13 +44,12 @@ export class DietaService {
     }
 
     /**
-     * Get Dieta
-     * Retorna uma dieta com base no seu ID.
+     * Get
      * @param dietaId
      * @returns DietaSchema Successful Response
      * @throws ApiError
      */
-    public static getDietaDietaDietaIdGet(
+    public static getDietaDietaIdGet(
         dietaId: number,
     ): CancelablePromise<DietaSchema> {
         return __request(OpenAPI, {
@@ -68,13 +65,12 @@ export class DietaService {
     }
 
     /**
-     * Delete Dieta
-     * Deleta uma dieta.
+     * Delete
      * @param dietaId
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static deleteDietaDietaDietaIdDelete(
+    public static deleteDietaDietaIdDelete(
         dietaId: number,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
@@ -90,14 +86,13 @@ export class DietaService {
     }
 
     /**
-     * Update Dieta
-     * Atualiza uma dieta.
+     * Update
      * @param dietaId
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static updateDietaDietaDietaIdPatch(
+    public static updateDietaDietaIdPatch(
         dietaId: number,
         requestBody: DietaUpdateSchema,
     ): CancelablePromise<any> {

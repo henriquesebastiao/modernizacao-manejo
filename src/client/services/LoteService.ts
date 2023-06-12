@@ -12,12 +12,11 @@ import { request as __request } from '../core/request';
 export class LoteService {
 
     /**
-     * Get All Lotes
-     * Retorna todos os animais.
+     * Get All
      * @returns LoteSchema Successful Response
      * @throws ApiError
      */
-    public static getAllLotesLoteGet(): CancelablePromise<Array<LoteSchema>> {
+    public static getAllLoteGet(): CancelablePromise<Array<LoteSchema>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/lote/',
@@ -25,13 +24,12 @@ export class LoteService {
     }
 
     /**
-     * Create Lote
-     * Cria um lote.
+     * Create
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static createLoteLotePost(
+    public static createLotePost(
         requestBody: LoteCreateSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
@@ -46,13 +44,12 @@ export class LoteService {
     }
 
     /**
-     * Get Lote
-     * Retorna um lote com base no seu ID.
+     * Get
      * @param loteId
      * @returns LoteSchema Successful Response
      * @throws ApiError
      */
-    public static getLoteLoteLoteIdGet(
+    public static getLoteLoteIdGet(
         loteId: number,
     ): CancelablePromise<LoteSchema> {
         return __request(OpenAPI, {
@@ -68,18 +65,17 @@ export class LoteService {
     }
 
     /**
-     * Delete Lote
-     * Deleta um lote.
+     * Delete
      * @param loteId
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static deleteLoteLoteLoteLoteIdDelete(
+    public static deleteLoteLoteIdDelete(
         loteId: number,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/lote/lote/{lote_id}',
+            url: '/lote/{lote_id}',
             path: {
                 'lote_id': loteId,
             },
@@ -90,20 +86,19 @@ export class LoteService {
     }
 
     /**
-     * Update Lote
-     * Atualiza um lote.
+     * Update
      * @param loteId
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static updateLoteLoteLoteLoteIdPatch(
+    public static updateLoteLoteIdPatch(
         loteId: number,
         requestBody: LoteUpdateSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/lote/lote/{lote_id}',
+            url: '/lote/{lote_id}',
             path: {
                 'lote_id': loteId,
             },

@@ -12,12 +12,11 @@ import { request as __request } from '../core/request';
 export class FazendeiroService {
 
     /**
-     * Get All Cargos
-     * Retorna todos os animais.
+     * Get All
      * @returns FazendeiroSchema Successful Response
      * @throws ApiError
      */
-    public static getAllCargosFazendeiroGet(): CancelablePromise<Array<FazendeiroSchema>> {
+    public static getAllFazendeiroGet(): CancelablePromise<Array<FazendeiroSchema>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/fazendeiro/',
@@ -25,13 +24,12 @@ export class FazendeiroService {
     }
 
     /**
-     * Create Cargo
-     * Cria um cargo.
+     * Create
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static createCargoFazendeiroPost(
+    public static createFazendeiroPost(
         requestBody: FazendeiroCreateSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
@@ -46,13 +44,12 @@ export class FazendeiroService {
     }
 
     /**
-     * Get Cargo
-     * Retorna um cargo com base no seu ID.
+     * Get
      * @param cargoId
      * @returns FazendeiroSchema Successful Response
      * @throws ApiError
      */
-    public static getCargoFazendeiroCargoIdGet(
+    public static getFazendeiroCargoIdGet(
         cargoId: number,
     ): CancelablePromise<FazendeiroSchema> {
         return __request(OpenAPI, {
@@ -68,18 +65,17 @@ export class FazendeiroService {
     }
 
     /**
-     * Delete Cargo
-     * Deleta um cargo.
+     * Delete
      * @param cargoId
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static deleteCargoFazendeiroCargoCargoIdDelete(
+    public static deleteFazendeiroCargoIdDelete(
         cargoId: number,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/fazendeiro/cargo/{cargo_id}',
+            url: '/fazendeiro/{cargo_id}',
             path: {
                 'cargo_id': cargoId,
             },
@@ -90,20 +86,19 @@ export class FazendeiroService {
     }
 
     /**
-     * Update Cargo
-     * Atualiza um cargo.
+     * Update
      * @param cargoId
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static updateCargoFazendeiroCargoCargoIdPatch(
+    public static updateFazendeiroCargoIdPatch(
         cargoId: number,
         requestBody: FazendeiroUpdateSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/fazendeiro/cargo/{cargo_id}',
+            url: '/fazendeiro/{cargo_id}',
             path: {
                 'cargo_id': cargoId,
             },

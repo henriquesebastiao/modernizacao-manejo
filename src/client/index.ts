@@ -58,4 +58,4 @@ export { PesoLogService } from './services/PesoLogService';
 export { PessoaService } from './services/PessoaService';
 export { PropriedadeService } from './services/PropriedadeService';
 export { RacaService } from './services/RacaService';
-export { UsuRioService } from './services/UsuRioService';
+export { UserService } from './services/UserService';

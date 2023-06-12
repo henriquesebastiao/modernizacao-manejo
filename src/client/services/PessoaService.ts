@@ -12,12 +12,11 @@ import { request as __request } from '../core/request';
 export class PessoaService {
 
     /**
-     * Get All Pessoas
-     * Retorna todos os animais.
+     * Get All
      * @returns PessoaSchema Successful Response
      * @throws ApiError
      */
-    public static getAllPessoasPessoaGet(): CancelablePromise<Array<PessoaSchema>> {
+    public static getAllPessoaGet(): CancelablePromise<Array<PessoaSchema>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/pessoa/',
@@ -25,13 +24,12 @@ export class PessoaService {
     }
 
     /**
-     * Create Pessoa
-     * Cria um pessoa.
+     * Create
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static createPessoaPessoaPost(
+    public static createPessoaPost(
         requestBody: PessoaCreateSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
@@ -46,13 +44,12 @@ export class PessoaService {
     }
 
     /**
-     * Get Pessoa
-     * Retorna um pessoa com base no seu ID.
+     * Get
      * @param pessoaId
      * @returns PessoaSchema Successful Response
      * @throws ApiError
      */
-    public static getPessoaPessoaPessoaIdGet(
+    public static getPessoaPessoaIdGet(
         pessoaId: number,
     ): CancelablePromise<PessoaSchema> {
         return __request(OpenAPI, {
@@ -68,18 +65,17 @@ export class PessoaService {
     }
 
     /**
-     * Delete Pessoa
-     * Deleta um pessoa.
+     * Delete
      * @param pessoaId
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static deletePessoaPessoaPessoaPessoaIdDelete(
+    public static deletePessoaPessoaIdDelete(
         pessoaId: number,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/pessoa/pessoa/{pessoa_id}',
+            url: '/pessoa/{pessoa_id}',
             path: {
                 'pessoa_id': pessoaId,
             },
@@ -90,20 +86,19 @@ export class PessoaService {
     }
 
     /**
-     * Update Pessoa
-     * Atualiza um pessoa.
+     * Update
      * @param pessoaId
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static updatePessoaPessoaPessoaPessoaIdPatch(
+    public static updatePessoaPessoaIdPatch(
         pessoaId: number,
         requestBody: PessoaUpdateSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/pessoa/pessoa/{pessoa_id}',
+            url: '/pessoa/{pessoa_id}',
             path: {
                 'pessoa_id': pessoaId,
             },
