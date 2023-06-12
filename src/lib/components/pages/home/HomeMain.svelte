@@ -15,7 +15,7 @@
 				<span>Começar</span>
 				<i class="fa-solid fa-arrow-right-long"></i>
 			</a>
-			<a href="/" class="btn variant-soft-primary">Saiba Mais</a>
+			<a href="/static" class="btn variant-soft-primary">Saiba Mais</a>
 		</div>
 	</div>
 

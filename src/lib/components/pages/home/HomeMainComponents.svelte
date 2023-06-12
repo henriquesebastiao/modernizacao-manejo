@@ -54,7 +54,7 @@
 	<div class="anim-float-card absolute z-[1] top-[60%] left-[65%]">
 		<a
 			class="block card card-hover p-4 space-y-2"
-			href="/"
+			href="/static"
 			target="_blank"
 			rel="noreferrer"
 		>
