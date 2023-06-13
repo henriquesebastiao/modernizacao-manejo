@@ -1,6 +1,8 @@
 <script lang="ts">
   import type { PesoLogCreateSchema } from "../../../client";
-  import {focusTrap, toastStore} from "@skeletonlabs/skeleton";
+  import { focusTrap, ToastSettings, toastStore } from "@skeletonlabs/skeleton";
+  import { PesoLogService } from "../../../client";
+  import {goto} from "$app/navigation";
 
   let isFocused = true;
 
@@ -14,14 +16,31 @@
   }
 
   let weightAttributes: PesoLogCreateSchema = {
-    animal_id: 0,
-    peso: 0,
     data: getDate(),
+    peso: 0,
+    animal_id: 0,
+  };
+
+  const t: ToastSettings = {
+    message: 'Peso registrado com sucesso!',
+  };
+  const e: ToastSettings = {
+    message: 'Erro ao registrar peso!',
+    background: 'bg-warning-600',
   };
 
   function handleSubmit(event: Event) {
     event.preventDefault();
-    console.log(getDate());
+
+    PesoLogService.createPesoLogPost(weightAttributes)
+      .then(() => {
+        toastStore.trigger(t);
+        goto("/peso");
+      })
+      .catch((err) => {
+        console.log(err);
+        toastStore.trigger(e);
+      });
   }
 </script>
 

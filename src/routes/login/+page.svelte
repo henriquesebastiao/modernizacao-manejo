@@ -1,6 +1,5 @@
 <script lang="ts">
-    import type {ToastSettings} from '@skeletonlabs/skeleton';
-    import {focusTrap, toastStore} from "@skeletonlabs/skeleton";
+    import {focusTrap, ToastSettings, toastStore} from "@skeletonlabs/skeleton";
     import type {UsuarioLoginSchema} from "../../client";
     import {OpenAPI, UserService} from "../../client";
     import {goto} from "$app/navigation";
