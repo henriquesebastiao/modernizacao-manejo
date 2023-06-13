@@ -14,6 +14,6 @@
 		<a class="btn btn-sm" href="/about" on:click={drawerClose}>SOBRE</a>
 		<a class="btn btn-sm" href="/" on:click={drawerClose}>BLOG</a>
 		<a class="btn btn-sm" href="/pricing" on:click={drawerClose}>PLANOS</a>
-		<a class="btn btn-sm" href="/" on:click={drawerClose}>SUPORTE</a>
+		<a class="btn btn-sm" href="/support" on:click={drawerClose}>SUPORTE</a>
 	</span>
 </nav>

@@ -23,7 +23,7 @@
 	<svelte:fragment slot="lead">
 		<div class="flex items-center space-x-4">
 			<button on:click={drawerOpen} class="btn-icon btn-icon-sm lg:!hidden">
-				<i class="fa-solid fa-bars text-xl" />
+				<i class="fa-solid fa-bars text-xl"></i>
 			</button>
 			<a class="flex items-center space-x-4" href="/" title="Início">
 				<svg
@@ -53,10 +53,11 @@
 		<Navigation />
 	</div>
 	<svelte:fragment slot="trail">
-		<div class="btn-group variant-filled">
-			<a href="/login" class="btn-sm">Entrar</a>
-			<a href="/register" class="btn-sm"><strong>Cadastrar</strong></a>
-		</div>
+		<a href="/login">
+			<button type="button" class="btn variant-filled">
+				<span>Entrar</span>
+			</button>
+		</a>
 		<span>
 			<LightSwitch />
 		</span>
