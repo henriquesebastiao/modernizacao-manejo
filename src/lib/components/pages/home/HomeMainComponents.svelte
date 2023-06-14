@@ -3,12 +3,10 @@
     Avatar,
     RadioGroup,
     RadioItem,
-    SlideToggle,
   } from "@skeletonlabs/skeleton";
 
 	// Local
 	let value = 0;
-	let demoSlideToggle = true;
 </script>
 
 <div class="aspect-video relative">
@@ -40,7 +38,7 @@
 		</label>
 	</div>
 	<!-- Radio Group -->
-	<div class="anim-float-radio absolute z-[1] top-[20%] left-[70%]">
+	<div class="anim-float-radio absolute z-[1] top-[20%] left-[65%]">
 		<RadioGroup active="variant-filled-secondary">
 			<RadioItem bind:group={value} name="justify" value={0}>Nelore</RadioItem>
 			<RadioItem bind:group={value} name="justify" value={1}>Guzerá</RadioItem>
@@ -48,10 +46,10 @@
 		</RadioGroup>
 	</div>
 	<!-- Card -->
-	<div class="anim-float-card absolute z-[1] top-[60%] left-[65%]">
+	<div class="anim-float-card absolute z-[1] top-[78%] left-[40%]">
 		<a
 			class="block card card-hover p-4 space-y-2"
-			href="/static"
+			href=" "
 			target="_blank"
 			rel="noreferrer"
 		>
@@ -80,12 +78,15 @@
 		</button>
 	</div>
 	<!-- Slide Toggle -->
-	<div class="anim-float-toggle anim-delay-200 absolute z-[1] top-[55%] left-[5%]">
-		<SlideToggle name="demo-toggle" bind:checked={demoSlideToggle} active="bg-primary-500" />
+	<div class="anim-float-button absolute z-[1] top-[18%] left-[5%]">
+		<button class="btn variant-glass-secondary">
+			<span>Pesar</span>
+			<i class="fa-solid fa-weight-scale"></i>
+		</button>
 	</div>
 	<!-- Icon Badge -->
 	<div class="anim-float-badge absolute z-[1] top-[45%] left-[25%]">
-		<span class="badge-icon variant-filled">
+		<span class="badge-icon variant-glass-secondary">
 			<i class="fa-solid fa-tag"></i>
 		</span>
 	</div>
@@ -116,10 +117,6 @@
 	}
 	.anim-float-button {
 		animation: float-up 15s ease-in-out infinite;
-	}
-	.anim-float-toggle {
-		animation: float-down 13s ease-in-out infinite;
-		animation-delay: 5s;
 	}
 	.anim-float-badge {
 		animation: float-up 15s ease-in-out infinite;
