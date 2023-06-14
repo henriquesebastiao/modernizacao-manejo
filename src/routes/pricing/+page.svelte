@@ -1,5 +1,8 @@
 <script>
   import PricingMain from "$lib/components/pages/pricing/PricingMain.svelte";
+  import { fade } from 'svelte/transition';
 </script>
 
-<PricingMain />
+<div in:fade>
+  <PricingMain />
+</div>

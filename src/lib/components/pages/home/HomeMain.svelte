@@ -1,8 +1,9 @@
 <script>
 	import HomeMainComponents from './HomeMainComponents.svelte';
+	import { fade } from 'svelte/transition';
 </script>
 
-<div class="grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-10 items-center">
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-10 items-center" in:fade>
 	<!-- Info -->
 	<div class="flex flex-col items-center xl:items-start text-center xl:text-left space-y-4">
 		<h1 class="!text-5xl md:!text-6xl max-w-[600px]">A tecnologia aliada a pecuária.</h1>

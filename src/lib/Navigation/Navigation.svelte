@@ -42,11 +42,11 @@
 				><a class="btn btn-sm" href="/pricing" on:click={drawerClose}>PLANOS</a></button
 			>
 			<button
-				class:variant-filled={$page.route.id === '/support'}
-				class:rounded-xl={$page.route.id === '/support'}
-				class:font-bold={$page.route.id === '/support'}
+				class:variant-filled={$page.route.id === '/suporte'}
+				class:rounded-xl={$page.route.id === '/suporte'}
+				class:font-bold={$page.route.id === '/suporte'}
 				class="hover:variant-filled hover:font-bold hover:rounded-xl w-[90px]"
-				><a class="btn btn-sm" href="/support" on:click={drawerClose}>SUPORTE</a></button
+				><a class="btn btn-sm" href="/suporte" on:click={drawerClose}>SUPORTE</a></button
 			>
 		{/if}
 	</div>

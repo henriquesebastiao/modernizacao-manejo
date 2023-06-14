@@ -1,8 +1,9 @@
 <script>
 	import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
+	import { fade } from 'svelte/transition';
 </script>
 
-<body class="flex items-center justify-center">
+<body class="flex items-center justify-center" in:fade>
 	<div class="w-[60%] rounded card text-token">
 		<Accordion>
 			<AccordionItem open>

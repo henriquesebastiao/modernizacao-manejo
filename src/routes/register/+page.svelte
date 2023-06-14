@@ -1,11 +1,12 @@
 <script>
 	import { focusTrap, RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
+	import { fade } from 'svelte/transition';
 
 	let isFocused = true;
 	let justify = 0;
 </script>
 
-<main class="container h-full mx-auto flex justify-center items-center">
+<main class="container h-full mx-auto flex justify-center items-center" in:fade>
 	<div>
 		<form use:focusTrap={isFocused}>
 			<div class="flex flex-col justify-center items-center mb-10">

@@ -12,7 +12,7 @@
 	const appMenu = [
 		{
 			icon: FaDatabase,
-			path: '/app/reports'
+			path: '/app/relatorios'
 		},
 		{
 			icon: FaClipboard,
@@ -20,11 +20,11 @@
 		},
 		{
 			icon: GoSettings,
-			path: '/app/reports'
+			path: '/app/planejamento'
 		},
 		{
 			icon: MdSettings,
-			path: '/app/reports'
+			path: '/app/configuracoes'
 		}
 	];
 

@@ -4,6 +4,7 @@
 	import type { UserLoginSchema } from '../../client';
 	import { UserService } from '../../client';
 	import { goto } from '$app/navigation';
+	import { fade } from 'svelte/transition';
 
 	let isFocused = true;
 
@@ -35,7 +36,7 @@
 	}
 </script>
 
-<main class="container h-full mx-auto flex justify-center items-center">
+<main class="container h-full mx-auto flex justify-center items-center" in:fade>
 	<div class="card rounded-lg p-8">
 		<form on:submit={handleSubmit} use:focusTrap={isFocused}>
 			<div class="mb-4">

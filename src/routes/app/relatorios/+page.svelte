@@ -2,4 +2,4 @@
 	import { fade } from 'svelte/transition';
 </script>
 
-<div in:fade>manejo!</div>
+<div in:fade>relatórios</div>
