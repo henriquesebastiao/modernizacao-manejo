@@ -2,10 +2,8 @@
 	import { focusTrap, toastStore } from '@skeletonlabs/skeleton';
 	import type { ToastSettings } from '@skeletonlabs/skeleton';
 	import type { UsuarioLoginSchema } from '../../client';
-	import { OpenAPI, UserService } from '../../client';
+	import { UserService } from '../../client';
 	import { goto } from '$app/navigation';
-
-	OpenAPI.BASE = 'https://api.henriquesebastiao.com';
 
 	let isFocused = true;
 

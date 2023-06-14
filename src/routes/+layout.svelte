@@ -3,11 +3,23 @@
 	import '@skeletonlabs/skeleton/styles/skeleton.css';
 	import '../app.postcss';
 	import { AppShell, autoModeWatcher, Toast } from '@skeletonlabs/skeleton';
+	import { OpenAPI } from '../client';
 	import Header from '$lib/components/Header/Header.svelte';
 	import Footer from '$lib/components/Footer/Footer.svelte';
 	import { page } from '$app/stores';
-	import { blur } from 'svelte/transition';
-	import { quintOut } from "svelte/easing";
+	import { fade } from 'svelte/transition';
+	import { user } from '../store';
+	import { onMount } from 'svelte';
+
+	OpenAPI.BASE = 'http://localhost:8000';
+
+	onMount(() => {
+		const logStore: any = localStorage.getItem('isLoggedIn');
+
+		if (logStore) {
+			$user.isLoggedIn = true;
+		}
+	});
 </script>
 
 <div class="parent-toast">
@@ -19,7 +31,7 @@
 >
 
 {#key $page.url}
-	<div class="w-full h-full" in:blur={{ duration: 1000, easing: quintOut }}>
+	<div class="w-full h-full" in:fade|local={{ duration: 400 }}>
 		<AppShell>
 			<svelte:fragment slot="header">
 				<Header />
