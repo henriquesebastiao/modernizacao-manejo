@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { focusTrap, toastStore } from '@skeletonlabs/skeleton';
 	import type { ToastSettings } from '@skeletonlabs/skeleton';
-	import type { UsuarioLoginSchema } from '../../client';
+	import type { UserLoginSchema } from '../../client';
 	import { UserService } from '../../client';
 	import { goto } from '$app/navigation';
 
 	let isFocused = true;
 
-	let userLogin: UsuarioLoginSchema = {
+	let userLogin: UserLoginSchema = {
 		email: '',
 		password: ''
 	};

@@ -2,8 +2,10 @@
 /* tslint:disable */
 /* eslint-disable */
 
+/**
+ * Classe para validação de dados do fazendeiro.
+ */
 export type FazendeiroSchema = {
-    user_id: number;
     id: number;
 };
 
