@@ -6,6 +6,6 @@
  * Classe para validação de dados de criação do fazendeiro.
  */
 export type FazendeiroCreateSchema = {
-    usuario_id: number;
+    user_id: number;
 };
 

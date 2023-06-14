@@ -5,7 +5,7 @@
 /**
  * Classe para validação de dados de criação de Usuário.
  */
-export type UsuarioCreateSchema = {
+export type UserCreateSchema = {
     email: string;
     password: string;
 };

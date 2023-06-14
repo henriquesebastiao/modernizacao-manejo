@@ -1,10 +1,10 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { UsuarioCreateSchema } from '../models/UsuarioCreateSchema';
-import type { UsuarioLoginSchema } from '../models/UsuarioLoginSchema';
-import type { UsuarioSchema } from '../models/UsuarioSchema';
-import type { UsuarioUpdateSchema } from '../models/UsuarioUpdateSchema';
+import type { UserCreateSchema } from '../models/UserCreateSchema';
+import type { UserLoginSchema } from '../models/UserLoginSchema';
+import type { UserSchema } from '../models/UserSchema';
+import type { UserUpdateSchema } from '../models/UserUpdateSchema';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
@@ -14,10 +14,10 @@ export class UserService {
 
     /**
      * Get All
-     * @returns UsuarioSchema Successful Response
+     * @returns UserSchema Successful Response
      * @throws ApiError
      */
-    public static getAllUserGet(): CancelablePromise<Array<UsuarioSchema>> {
+    public static getAllUserGet(): CancelablePromise<Array<UserSchema>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/user/',
@@ -31,7 +31,7 @@ export class UserService {
      * @throws ApiError
      */
     public static createUserPost(
-        requestBody: UsuarioCreateSchema,
+        requestBody: UserCreateSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
@@ -47,12 +47,12 @@ export class UserService {
     /**
      * Get
      * @param userId
-     * @returns UsuarioSchema Successful Response
+     * @returns UserSchema Successful Response
      * @throws ApiError
      */
     public static getUserIdGet(
         userId: number,
-    ): CancelablePromise<UsuarioSchema> {
+    ): CancelablePromise<UserSchema> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/user/{id}',
@@ -95,7 +95,7 @@ export class UserService {
      */
     public static updateUserIdPatch(
         userId: number,
-        requestBody: UsuarioUpdateSchema,
+        requestBody: UserUpdateSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',
@@ -118,7 +118,7 @@ export class UserService {
      * @throws ApiError
      */
     public static loginUserLoginPost(
-        requestBody: UsuarioLoginSchema,
+        requestBody: UserLoginSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',

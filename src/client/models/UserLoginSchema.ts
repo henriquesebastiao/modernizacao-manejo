@@ -5,7 +5,7 @@
 /**
  * Classe base para validação de dados de Usuário.
  */
-export type UsuarioLoginSchema = {
+export type UserLoginSchema = {
     email: string;
     password: string;
 };

@@ -3,7 +3,7 @@
 /* eslint-disable */
 
 export type FazendeiroSchema = {
-    usuario_id: number;
+    user_id: number;
     id: number;
 };
 

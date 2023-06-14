@@ -5,7 +5,7 @@
 /**
  * Classe para validação de dados de atualização de Usuário.
  */
-export type UsuarioUpdateSchema = {
+export type UserUpdateSchema = {
     email: string;
     password: string;
 };
