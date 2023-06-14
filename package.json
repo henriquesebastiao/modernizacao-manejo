@@ -12,7 +12,7 @@
 		"test:unit": "vitest",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
-		"generate-client": "openapi --input http://localhost:8000/openapi.json --output ./src/client --client axios"
+		"generate-client": "rm -rf src/client && openapi --input http://api.henriquesebastiao.com/openapi.json --output ./src/client --client axios"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
