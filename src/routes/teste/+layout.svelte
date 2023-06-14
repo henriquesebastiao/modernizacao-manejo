@@ -1,38 +1,31 @@
-<script>
-    import {AppRail, AppRailAnchor, AppRailTile} from "@skeletonlabs/skeleton";
+<script lang="ts">
+    // Menus Components
+    import MenusSideBar from "$lib/components/MenusSideBar/MenusSideBar.svelte";
+    import MenusDrawer from "$lib/components/MenusDrawer/MenusDrawer.svelte";
+    import {AppShell} from "@skeletonlabs/skeleton";
+    import {page} from "$app/stores";
 
-    let currentTile = 0;
+    function matchPathWhitelist(pageUrlPath: string): boolean {
+        // If homepage route
+        if (pageUrlPath === '/') return true;
+        // If any blog route
+        return pageUrlPath.includes('/blog');
+
+    }
+
+    // Disable left sidebar on homepage
+    $: slotSidebarLeft = matchPathWhitelist($page.url.pathname) ? 'w-0' : 'bg-surface-50-900-token lg:w-auto';
 </script>
 
-<div>
-    <AppRail width="w-[8%]">
-        <AppRailTile bind:group={currentTile} name="tile-1" value={0} title="tile-1">
-            <svelte:fragment slot="lead">
-                <i class="fa-solid fa-gauge"></i>
-            </svelte:fragment>
-            <span>Relatório</span>
-        </AppRailTile>
+<!-- Overlays -->
+<MenusDrawer />
 
-        <AppRailTile bind:group={currentTile} name="tile-2" value={1} title="tile-2">
-            <svelte:fragment slot="lead">
-                <i class="fa-solid fa-syringe"></i>
-            </svelte:fragment>
-            <span>Manejo</span>
-        </AppRailTile>
+<AppShell {slotSidebarLeft} regionPage="overflow-y-scroll" slotFooter="bg-black p-4">
+    <!-- Sidebar (Left) -->
+    <svelte:fragment slot="sidebarLeft">
+        <MenusSideBar class="hidden lg:grid w-[360px] overflow-hidden" />
+    </svelte:fragment>
 
-        <AppRailTile bind:group={currentTile} name="tile-3" value={2} title="tile-3">
-            <svelte:fragment slot="lead">
-                <i class="fa-solid fa-sliders"></i>
-            </svelte:fragment>
-            <span>Planos</span>
-        </AppRailTile>
-
-        <AppRailTile bind:group={currentTile} name="tile-4" value={3} title="tile-4">
-            <svelte:fragment slot="lead">
-                <i class="fa-solid fa-gear"></i>
-            </svelte:fragment>
-            <span>Configurações</span>
-        </AppRailTile>
-    </AppRail>
-
-</div>
+    <!-- Page Content -->
+    <slot />
+</AppShell>
