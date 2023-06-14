@@ -2,8 +2,8 @@
 	import HomeMain from '$lib/components/pages/home/HomeMain.svelte';
 </script>
 
-<div>
-	<div id="main" class="bg-surface-100-800-token main-gradient">
+<div class="w-full h-full">
+	<div id="main" class="bg-surface-100-800-token main-gradient max-md:h-[100%] max-md:flex max-md:items-center max-md:justify-center">
 		<div class="section-container"><HomeMain /></div>
 	</div>
 </div>

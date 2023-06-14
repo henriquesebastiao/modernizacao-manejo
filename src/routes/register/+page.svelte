@@ -1,5 +1,5 @@
 <body class="flex items-center">
-	<div class="card p-10 w-[30%] mx-auto flex flex-col space-y-10">
+	<div class="card p-10 mx-auto flex flex-col space-y-10">
 		<div class="flex flex-col space-y-6">
 			<div class="flex flex-col space-y-2">
 				<div class="flex space-x-2 items-center">

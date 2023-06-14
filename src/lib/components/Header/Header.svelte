@@ -30,9 +30,11 @@
 >
 	<svelte:fragment slot="lead">
 		<div class="flex items-center space-x-4">
-			<button on:click={drawerOpen} class="btn-icon btn-icon-sm lg:!hidden">
-				<i class="fa-solid fa-bars text-xl" />
-			</button>
+			{#if !$user.isLoggedIn}
+				<button on:click={drawerOpen} class="btn-icon btn-icon-sm lg:!hidden">
+					<i class="fa-solid fa-bars text-xl" />
+				</button>
+			{/if}
 			<a class="flex items-center space-x-4" href="/" title="Início">
 				<svg
 					class="fill-token w-10 h-10"
@@ -74,8 +76,8 @@
 				</button>
 			</a>
 		{/if}
-		<span>
+		<button on:click={() => ($user.isDarkMode = !$user.isDarkMode)}>
 			<LightSwitch />
-		</span>
+		</button>
 	</svelte:fragment>
 </AppBar>

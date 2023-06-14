@@ -9,7 +9,7 @@
 	let value = 0;
 </script>
 
-<div class="aspect-video relative">
+<div class="aspect-video relative max-xl:my-12">
 	<!-- Avatar -->
 	<div class="anim-float-avatar absolute z-[1] top-[32%] left-[40%]">
 		<svg
