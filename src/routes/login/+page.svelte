@@ -5,7 +5,7 @@
 	import { OpenAPI, UserService } from '../../client';
 	import { goto } from '$app/navigation';
 
-	OpenAPI.BASE = 'http://localhost:8000';
+	OpenAPI.BASE = 'https://api.henriquesebastiao.com';
 
 	let isFocused = true;
 
@@ -42,7 +42,7 @@
 		<form on:submit={handleSubmit} use:focusTrap={isFocused}>
 			<div class="mb-4">
 				<label for="email" class="label block mb-2">
-					<i class="pr-0.5 fa-regular fa-envelope" />
+					<i class="pr-0.5 fa-regular fa-envelope"></i>
 					<span>Email:</span>
 				</label>
 				<input
@@ -55,7 +55,7 @@
 			</div>
 			<div class="mb-4">
 				<label for="password" class="label block mb-2">
-					<i class="pr-0.5 fa-solid fa-lock" />
+					<i class="pr-0.5 fa-solid fa-lock"></i>
 					<span>Senha:</span>
 				</label>
 				<input
