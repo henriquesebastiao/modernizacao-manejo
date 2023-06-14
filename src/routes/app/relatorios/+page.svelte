@@ -1,5 +1,3 @@
-<script lang="ts">
-	import { fade } from 'svelte/transition';
-</script>
-
-<div in:fade>relatórios</div>
+<div>
+    Página de relatórios
+</div>
