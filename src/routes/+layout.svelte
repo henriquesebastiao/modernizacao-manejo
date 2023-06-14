@@ -11,7 +11,7 @@
 	import { user } from '../store';
 	import { onMount } from 'svelte';
 
-	OpenAPI.BASE = 'http://api.henriquesebastiao.com';
+	OpenAPI.BASE = 'https://api.henriquesebastiao.com';
 
 	onMount(() => {
 		const logStore: any = localStorage.getItem('isLoggedIn');
