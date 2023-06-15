@@ -14,7 +14,7 @@
 				<label class="label">
 					<span>Farmaco</span>
 					<input
-						class="input rounded-none"
+						class="input rounded"
 						type="text"
 						placeholder="Ex: farmaco"
 						bind:value={farmaco}
@@ -22,12 +22,12 @@
 				</label>
 				<label class="label">
 					<span>Data</span>
-					<input class="input rounded-none" type="date" bind:value={vaccinDate} />
+					<input class="input rounded" type="date" bind:value={vaccinDate} />
 				</label>
 				<label class="label">
 					<span>Período de carência em dias</span>
 					<input
-						class="input rounded-none"
+						class="input rounded"
 						type="text"
 						placeholder="Ex: 23 dias"
 						bind:value={carencia}
@@ -35,16 +35,15 @@
 				</label>
 				<label class="label">
 					<span>Data da próxima dose</span>
-					<input class="input rounded-none" type="date" bind:value={nextDoseDate} />
+					<input class="input rounded" type="date" bind:value={nextDoseDate} />
 				</label>
 				<label class="label">
 					<span>Observação</span>
 					<textarea
-						class="textarea rounded-none min-h-[100px] max-h-[150px]"
+						class="textarea rounded min-h-[100px] max-h-[150px]"
 						rows="4"
 						placeholder="..."
-						bind:value={observation}
-					/>
+						bind:value={observation}></textarea>
 				</label>
 			</div>
 		</div>

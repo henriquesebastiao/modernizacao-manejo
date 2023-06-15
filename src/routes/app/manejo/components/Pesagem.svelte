@@ -12,7 +12,7 @@
 				<label class="label">
 					<span>Brinco</span>
 					<input
-						class="input rounded-none"
+						class="input rounded"
 						type="text"
 						placeholder="Ex: farmaco"
 						bind:value={brinco}
@@ -20,11 +20,11 @@
 				</label>
 				<label class="label">
 					<span>Peso (KG)</span>
-					<input class="input rounded-none" type="number" placeholder="Ex: 10" bind:value={peso} />
+					<input class="input rounded" type="number" placeholder="Ex: 10" bind:value={peso} />
 				</label>
 				<label class="label">
 					<span>Data de pesagem</span>
-					<input class="input rounded-none" type="date" bind:value={weightDate} />
+					<input class="input rounded" type="date" bind:value={weightDate} />
 				</label>
 			</div>
 		</div>
