@@ -3,6 +3,7 @@
 	import { ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
 	import { Drawer, drawerStore } from '@skeletonlabs/skeleton';
 	import type { DrawerSettings } from '@skeletonlabs/skeleton';
+	import IoIosArrowDropleftCircle from 'svelte-icons/io/IoIosArrowDropleftCircle.svelte'
 
 	let valueSingle: string = 'vacinacao';
 
@@ -64,9 +65,9 @@
 				{/each}
 			</ListBox>
 		</Drawer>
-		<div class="mb-3 md:hidden">
-			<button on:click={() => drawerStore.open(drawerSettings)}>
-				<i class={`fa-solid fa-bars text-2xl`} />
+		<div class="md:hidden absolute bottom-0 right-0 mr-[4.7em] mb-2">
+			<button class="w-[54px]" on:click={() => drawerStore.open(drawerSettings)}>
+				<IoIosArrowDropleftCircle />
 			</button>
 		</div>
 		{#if valueSingle === 'vacinacao'}
