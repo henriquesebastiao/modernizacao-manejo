@@ -5,6 +5,7 @@
 	import type { DrawerSettings } from '@skeletonlabs/skeleton';
 	import IoIosArrowDropleftCircle from 'svelte-icons/io/IoIosArrowDropleftCircle.svelte';
 	import AdicionarAnimal from './components/AdicionarAnimal.svelte';
+	import RemoverAnimal from './components/RemoverAnimal.svelte';
 	import Vacinacao from './components/Vacinacao.svelte';
 	import Pesagem from './components/Pesagem.svelte';
 
@@ -21,6 +22,12 @@
 			icon: 'fa-cow',
 			name: 'geral',
 			value: 'adicionar_animal'
+		},
+		{
+			title: 'Saída de Animal',
+			icon: 'fa-arrow-right-from-bracket',
+			name: 'geral',
+			value: 'remover_animal'
 		},
 		{
 			title: 'Vacinação',
@@ -83,6 +90,10 @@
 		{#if valueSingle === 'adicionar_animal'}
 			<div class="w-full h-full" in:fade>
 				<AdicionarAnimal />
+			</div>
+		{:else if valueSingle === 'remover_animal'}
+			<div class="w-full h-full" in:fade>
+				<RemoverAnimal />
 			</div>
 		{:else if valueSingle === 'vacinacao'}
 			<div class="w-full h-full" in:fade>
