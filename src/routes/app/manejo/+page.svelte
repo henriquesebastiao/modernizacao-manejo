@@ -3,8 +3,10 @@
 	import { ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
 	import { Drawer, drawerStore } from '@skeletonlabs/skeleton';
 	import type { DrawerSettings } from '@skeletonlabs/skeleton';
-	import IoIosArrowDropleftCircle from 'svelte-icons/io/IoIosArrowDropleftCircle.svelte'
-	import AdicionarAnimal from "./adicionar_animal/AdicionarAnimal.svelte";
+	import IoIosArrowDropleftCircle from 'svelte-icons/io/IoIosArrowDropleftCircle.svelte';
+	import AdicionarAnimal from './components/AdicionarAnimal.svelte';
+	import Vacinacao from './components/Vacinacao.svelte';
+	import Pesagem from './components/Pesagem.svelte';
 
 	let valueSingle: string = 'adicionar_animal';
 
@@ -36,7 +38,8 @@
 </script>
 
 <div in:fade class="w-full h-full flex">
-	<div class="w-[250px] h-full shadow-2xl px-4 pt-4 flex justify-start max-md:hidden">
+	<div class="w-[250px] h-full shadow-2xl px-4 pt-4 flex flex-col justify-start max-md:hidden">
+		<h1 class="font-bold text-2xl mb-3">Manejo</h1>
 		<ListBox class="w-full">
 			{#each subMenuItems as item}
 				<ListBoxItem bind:group={valueSingle} name={item.name} value={item.value} rounded="none">
@@ -78,16 +81,16 @@
 			</button>
 		</div>
 		{#if valueSingle === 'adicionar_animal'}
-			<div in:fade>
+			<div class="w-full h-full" in:fade>
 				<AdicionarAnimal />
 			</div>
 		{:else if valueSingle === 'vacinacao'}
-			<div in:fade>
-				<h1 class="text-2xl">Vacinação</h1>
+			<div class="w-full h-full" in:fade>
+				<Vacinacao />
 			</div>
 		{:else if valueSingle === 'pesagem'}
-			<div in:fade>
-				<h1 class="text-2xl">Pesagem</h1>
+			<div class="w-full h-full" in:fade>
+				<Pesagem />
 			</div>
 		{/if}
 	</div>

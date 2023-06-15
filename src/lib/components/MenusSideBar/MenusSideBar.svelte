@@ -1,6 +1,11 @@
 <script lang="ts">
 	import { AppRail, AppRailTile } from '@skeletonlabs/skeleton';
 	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
+	import { user } from '../../../store';
+
+	$: currentPage = $page.route.id;
+	$: currentTile = $user.currentTitle;
 
 	let appRailMenuItems = [
 		{
@@ -28,8 +33,6 @@
 			value: 4
 		}
 	];
-
-	let currentTile: number = 0;
 </script>
 
 <AppRail class="max-lg:hidden">
@@ -39,6 +42,7 @@
 			name="tile-2"
 			value={item.value}
 			title="tile-2"
+			class={`${item.href === currentPage ? 'bg-primary-active-token' : ''}`}
 			on:click={() => goto(item.href)}
 		>
 			<svelte:fragment slot="lead"><i class={`fa-solid ${item.icon} text-2xl`} /></svelte:fragment>
@@ -50,6 +54,7 @@
 		bind:group={currentTile}
 		name="utilities"
 		value={5}
+		class={`${currentPage === 'app/settings' ? 'bg-primary-active-token' : ''}`}
 		on:click={() => goto('/app/settings')}
 	>
 		<svelte:fragment slot="lead"><i class="fa-solid fa-gear text-2xl" /></svelte:fragment>
