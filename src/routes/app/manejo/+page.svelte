@@ -4,8 +4,9 @@
 	import { Drawer, drawerStore } from '@skeletonlabs/skeleton';
 	import type { DrawerSettings } from '@skeletonlabs/skeleton';
 	import IoIosArrowDropleftCircle from 'svelte-icons/io/IoIosArrowDropleftCircle.svelte'
+	import AdicionarAnimal from "./adicionar_animal/AdicionarAnimal.svelte";
 
-	let valueSingle: string = 'vacinacao';
+	let valueSingle: string = 'adicionar_animal';
 
 	const drawerSettings: DrawerSettings = {
 		width: 'w-[280px] md:w-[480px]',
@@ -13,6 +14,12 @@
 	};
 
 	let subMenuItems = [
+		{
+			title: 'Adicionar Animal',
+			icon: 'fa-cow',
+			name: 'geral',
+			value: 'adicionar_animal'
+		},
 		{
 			title: 'Vacinação',
 			icon: 'fa-syringe',
@@ -70,7 +77,11 @@
 				<IoIosArrowDropleftCircle />
 			</button>
 		</div>
-		{#if valueSingle === 'vacinacao'}
+		{#if valueSingle === 'adicionar_animal'}
+			<div in:fade>
+				<AdicionarAnimal />
+			</div>
+		{:else if valueSingle === 'vacinacao'}
 			<div in:fade>
 				<h1 class="text-2xl">Vacinação</h1>
 			</div>
