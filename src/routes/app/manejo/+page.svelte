@@ -39,9 +39,9 @@
 	<div class="w-[250px] h-full shadow-2xl px-4 pt-4 flex justify-start max-md:hidden">
 		<ListBox class="w-full">
 			{#each subMenuItems as item}
-				<ListBoxItem bind:group={valueSingle} name={item.name} value={item.value} rounded="none">
+				<ListBoxItem bind:group={valueSingle} name={item.name} value={item.value}>
 					<div class="flex items-center space-x-2">
-						<i class={`fa-solid ${item.icon} text-xl`} />
+						<i class={`fa-solid ${item.icon} text-xl`}></i>
 						<span>{item.title}</span>
 					</div>
 				</ListBoxItem>
@@ -52,7 +52,7 @@
 		<Drawer>
 			<div class="w-full flex justify-end items-end pr-3 my-2">
 				<button on:click={() => drawerStore.close()}>
-					<i class={`fa-solid fa-times text-2xl`} />
+					<i class={`fa-solid fa-times text-2xl`}></i>
 				</button>
 			</div>
 			<ListBox class="w-full">
@@ -65,7 +65,7 @@
 						on:click={() => drawerStore.close()}
 					>
 						<div class="flex items-center space-x-2">
-							<i class={`fa-solid ${item.icon} text-xl`} />
+							<i class={`fa-solid ${item.icon} text-xl`}></i>
 							<span>{item.title}</span>
 						</div>
 					</ListBoxItem>
