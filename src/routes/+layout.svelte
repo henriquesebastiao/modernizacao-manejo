@@ -8,6 +8,9 @@
 	import { user } from '../store';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
+	import { pwaInfo } from 'virtual:pwa-info';
+
+	$: webManifestLink = pwaInfo ? pwaInfo.webManifest.linkTag : '';
 
 	OpenAPI.BASE = 'https://api.henriquesebastiao.com';
 
@@ -26,6 +29,8 @@
 
 <svelte:head
 	>{@html `<script>${autoModeWatcher.toString()} autoModeWatcher();</script>`}
+	{@html webManifestLink}
+	<link rel="manifest" href="/manifest.json" />
 	<title>Modernização manejo</title></svelte:head
 >
 
