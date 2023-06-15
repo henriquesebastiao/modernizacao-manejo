@@ -4,7 +4,7 @@
 	let peso: string | null = null;
 </script>
 
-<div class="w-full h-full flex items-center justify-center">
+<div class="w-full h-full flex items-center justify-center max-lg:items-start">
 	<div class="card w-[600px] h-[450px] shadow-2xl p-4 flex flex-col justify-between">
 		<div>
 			<h1 class="font-bold text-3xl">Registrar pesagem</h1>
