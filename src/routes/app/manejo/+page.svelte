@@ -8,6 +8,7 @@
 	import RemoverAnimal from './components/RemoverAnimal.svelte';
 	import Vacinacao from './components/Vacinacao.svelte';
 	import Pesagem from './components/Pesagem.svelte';
+	import Desmama from "./components/Desmama.svelte";
 
 	let valueSingle: string = 'adicionar_animal';
 
@@ -40,6 +41,12 @@
 			icon: 'fa-weight-scale',
 			name: 'geral',
 			value: 'pesagem'
+		},
+		{
+			title: 'Desmama',
+			icon: 'fa-circle-xmark',
+			name: 'geral',
+			value: 'desmama'
 		}
 	];
 </script>
@@ -51,7 +58,7 @@
 			{#each subMenuItems as item}
 				<ListBoxItem bind:group={valueSingle} name={item.name} value={item.value} rounded="none">
 					<div class="flex items-center space-x-2">
-						<i class={`fa-solid ${item.icon} text-xl`} />
+						<i class={`fa-solid ${item.icon} text-xl`}></i>
 						<span>{item.title}</span>
 					</div>
 				</ListBoxItem>
@@ -62,7 +69,7 @@
 		<Drawer>
 			<div class="w-full flex justify-end items-end pr-3 my-2">
 				<button on:click={() => drawerStore.close()}>
-					<i class={`fa-solid fa-times text-2xl`} />
+					<i class={`fa-solid fa-times text-2xl`}></i>
 				</button>
 			</div>
 			<ListBox class="w-full">
@@ -75,7 +82,7 @@
 						on:click={() => drawerStore.close()}
 					>
 						<div class="flex items-center space-x-2">
-							<i class={`fa-solid ${item.icon} text-xl`} />
+							<i class={`fa-solid ${item.icon} text-xl`}></i>
 							<span>{item.title}</span>
 						</div>
 					</ListBoxItem>
@@ -102,6 +109,10 @@
 		{:else if valueSingle === 'pesagem'}
 			<div class="w-full h-full" in:fade>
 				<Pesagem />
+			</div>
+		{:else if valueSingle === 'desmama'}
+			<div class="w-full h-full" in:fade>
+				<Desmama />
 			</div>
 		{/if}
 	</div>
