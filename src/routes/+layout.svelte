@@ -5,7 +5,6 @@
 	import { AppShell, autoModeWatcher, Toast } from '@skeletonlabs/skeleton';
 	import { OpenAPI } from '../client';
 	import Header from '$lib/components/Header/Header.svelte';
-	import Footer from '$lib/components/Footer/Footer.svelte';
 	import { user } from '../store';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
@@ -35,15 +34,13 @@
 		<svelte:fragment slot="header">
 			<Header />
 		</svelte:fragment>
-		<svelte:fragment slot="sidebarLeft"><!--Sidebar Left--></svelte:fragment>
-		<svelte:fragment slot="sidebarRight"><!--Sidebar Right--></svelte:fragment>
-		<svelte:fragment slot="pageHeader"><!--Page Header--></svelte:fragment>
+
 		<!-- Router Slot -->
 		<slot />
+
 		<!-- Footer -->
-		<svelte:fragment slot="pageFooter">
+		<!-- <svelte:fragment slot="pageFooter">
 			<Footer />
-		</svelte:fragment>
-		<!--    <svelte:fragment slot="footer"></svelte:fragment>-->
+		</svelte:fragment> -->
 	</AppShell>
 </div>

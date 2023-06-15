@@ -13,8 +13,9 @@ export const menuNavLinks: Record<string, Array<{ title: string; list: List }>> 
         {
             title: 'Manejo',
             list: [
-                { href: '/manejo', label: 'Vacinação', keywords: 'vacinacao' },
-                { href: '/manejo/pesagem', label: 'Pesagem', keywords: 'pesagem' },
+                { href: 'app/manejo/adicionar_animal', label: 'Adicionar animal', keywords: 'adicionar_animal' },
+                { href: 'app/manejo/vacinacao', label: 'Vacinação', keywords: 'vacinacao' },
+                { href: 'app/manejo/pesagem', label: 'Pesagem', keywords: 'pesagem' },
             ]
         }
     ],
