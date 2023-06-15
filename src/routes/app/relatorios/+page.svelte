@@ -29,7 +29,8 @@
 </script>
 
 <div in:fade class="w-full h-full flex">
-	<div class="w-[250px] h-full shadow-2xl px-4 pt-4 flex justify-start max-md:hidden">
+	<div class="w-[250px] h-full shadow-2xl px-4 pt-4 flex justify-start flex-col max-md:hidden">
+		<h1 class="font-bold text-2xl mb-3">Relatórios</h1>
 		<ListBox class="w-full">
 			{#each subMenuItems as item}
 				<ListBoxItem bind:group={valueSingle} name={item.name} value={item.value}>

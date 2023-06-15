@@ -2,9 +2,10 @@ import { writable } from 'svelte/store';
 
 interface User {
 	isLoggedIn: boolean;
-	isDarkMode: boolean;
+	currentTitle?: number;
 }
 
 export const user = writable(<User>{
-	isLoggedIn: false
+	isLoggedIn: false,
+	currentTitle: 0,
 });
