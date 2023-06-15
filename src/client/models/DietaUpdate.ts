@@ -2,7 +2,8 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type FazendeiroSchema = {
-    id: number;
+export type DietaUpdate = {
+    nome?: string;
+    desc?: string;
 };
 

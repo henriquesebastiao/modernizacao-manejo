@@ -2,11 +2,9 @@
 /* tslint:disable */
 /* eslint-disable */
 
-/**
- * Classe para validação de dados de atualização de Peso Log.
- */
-export type PesoLogUpdateSchema = {
+export type PesoLogCreate = {
     data: string;
     peso: number;
+    animal_id: number;
 };
 

@@ -1,9 +1,9 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { LoteCreateSchema } from '../models/LoteCreateSchema';
+import type { LoteCreate } from '../models/LoteCreate';
 import type { LoteSchema } from '../models/LoteSchema';
-import type { LoteUpdateSchema } from '../models/LoteUpdateSchema';
+import type { LoteUpdate } from '../models/LoteUpdate';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
@@ -26,12 +26,12 @@ export class LoteService {
     /**
      * Create
      * @param requestBody
-     * @returns any Successful Response
+     * @returns LoteSchema Successful Response
      * @throws ApiError
      */
     public static createLotePost(
-        requestBody: LoteCreateSchema,
-    ): CancelablePromise<any> {
+        requestBody: LoteCreate,
+    ): CancelablePromise<LoteSchema> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/lote/',
@@ -44,12 +44,12 @@ export class LoteService {
     }
 
     /**
-     * Get
+     * Get By Id
      * @param loteId
      * @returns LoteSchema Successful Response
      * @throws ApiError
      */
-    public static getLoteLoteIdGet(
+    public static getByIdLoteLoteIdGet(
         loteId: number,
     ): CancelablePromise<LoteSchema> {
         return __request(OpenAPI, {
@@ -72,7 +72,7 @@ export class LoteService {
      */
     public static deleteLoteLoteIdDelete(
         loteId: number,
-    ): CancelablePromise<any> {
+    ): CancelablePromise<Record<string, any>> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/lote/{lote_id}',
@@ -94,7 +94,7 @@ export class LoteService {
      */
     public static updateLoteLoteIdPatch(
         loteId: number,
-        requestBody: LoteUpdateSchema,
+        requestBody: LoteUpdate,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',

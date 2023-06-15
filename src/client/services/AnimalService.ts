@@ -1,9 +1,9 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { AnimalCreateSchema } from '../models/AnimalCreateSchema';
+import type { AnimalCreate } from '../models/AnimalCreate';
 import type { AnimalSchema } from '../models/AnimalSchema';
-import type { AnimalUpdateSchema } from '../models/AnimalUpdateSchema';
+import type { AnimalUpdate } from '../models/AnimalUpdate';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
@@ -26,12 +26,12 @@ export class AnimalService {
     /**
      * Create
      * @param requestBody
-     * @returns any Successful Response
+     * @returns AnimalSchema Successful Response
      * @throws ApiError
      */
     public static createAnimalPost(
-        requestBody: AnimalCreateSchema,
-    ): CancelablePromise<any> {
+        requestBody: AnimalCreate,
+    ): CancelablePromise<AnimalSchema> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/animal/',
@@ -94,7 +94,7 @@ export class AnimalService {
      */
     public static updateAnimalAnimalIdPatch(
         animalId: number,
-        requestBody: AnimalUpdateSchema,
+        requestBody: AnimalUpdate,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',

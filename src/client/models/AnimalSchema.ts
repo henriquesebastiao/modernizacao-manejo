@@ -8,9 +8,6 @@ import type { PesoLogSchema } from './PesoLogSchema';
 import type { RacaSchema } from './RacaSchema';
 import type { Sexo } from './Sexo';
 
-/**
- * Classe para validação de dados de atualização de Animal.
- */
 export type AnimalSchema = {
     chip?: string;
     brinco?: string;

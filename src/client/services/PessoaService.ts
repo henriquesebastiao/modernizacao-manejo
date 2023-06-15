@@ -1,9 +1,9 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { PessoaCreateSchema } from '../models/PessoaCreateSchema';
+import type { PessoaCreate } from '../models/PessoaCreate';
 import type { PessoaSchema } from '../models/PessoaSchema';
-import type { PessoaUpdateSchema } from '../models/PessoaUpdateSchema';
+import type { PessoaUpdate } from '../models/PessoaUpdate';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
@@ -26,12 +26,12 @@ export class PessoaService {
     /**
      * Create
      * @param requestBody
-     * @returns any Successful Response
+     * @returns PessoaSchema Successful Response
      * @throws ApiError
      */
     public static createPessoaPost(
-        requestBody: PessoaCreateSchema,
-    ): CancelablePromise<any> {
+        requestBody: PessoaCreate,
+    ): CancelablePromise<PessoaSchema> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/pessoa/',
@@ -44,12 +44,12 @@ export class PessoaService {
     }
 
     /**
-     * Get
+     * Get By Id
      * @param pessoaId
      * @returns PessoaSchema Successful Response
      * @throws ApiError
      */
-    public static getPessoaPessoaIdGet(
+    public static getByIdPessoaPessoaIdGet(
         pessoaId: number,
     ): CancelablePromise<PessoaSchema> {
         return __request(OpenAPI, {
@@ -72,7 +72,7 @@ export class PessoaService {
      */
     public static deletePessoaPessoaIdDelete(
         pessoaId: number,
-    ): CancelablePromise<any> {
+    ): CancelablePromise<Record<string, any>> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/pessoa/{pessoa_id}',
@@ -94,7 +94,7 @@ export class PessoaService {
      */
     public static updatePessoaPessoaIdPatch(
         pessoaId: number,
-        requestBody: PessoaUpdateSchema,
+        requestBody: PessoaUpdate,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',

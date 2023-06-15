@@ -2,10 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 
-/**
- * Classe para validação de dados de atualização de Propriedade.
- */
-export type PropriedadeUpdateSchema = {
+export type PropriedadeCreate = {
     nome: string;
     fazendeiro_id: number;
 };

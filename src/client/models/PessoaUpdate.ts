@@ -2,10 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 
-/**
- * Classe para validação de dados de criação de Pessoa.
- */
-export type PessoaCreateSchema = {
+export type PessoaUpdate = {
     nome: string;
     sobre_nome: string;
     cargo_id: number;

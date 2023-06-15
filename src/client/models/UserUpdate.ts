@@ -2,10 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 
-/**
- * Classe base para validação de dados de Usuário.
- */
-export type UserLoginSchema = {
+export type UserUpdate = {
     email: string;
     password: string;
 };

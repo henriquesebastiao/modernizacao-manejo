@@ -4,10 +4,7 @@
 
 import type { Sexo } from './Sexo';
 
-/**
- * Classe para validação de dados de criação de Animal.
- */
-export type AnimalCreateSchema = {
+export type AnimalUpdate = {
     chip?: string;
     brinco?: string;
     origem?: string;

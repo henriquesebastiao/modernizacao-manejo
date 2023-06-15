@@ -1,9 +1,9 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { FazendeiroCreateSchema } from '../models/FazendeiroCreateSchema';
+import type { FazendeiroCreate } from '../models/FazendeiroCreate';
 import type { FazendeiroSchema } from '../models/FazendeiroSchema';
-import type { FazendeiroUpdateSchema } from '../models/FazendeiroUpdateSchema';
+import type { FazendeiroUpdate } from '../models/FazendeiroUpdate';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
@@ -26,12 +26,12 @@ export class FazendeiroService {
     /**
      * Create
      * @param requestBody
-     * @returns any Successful Response
+     * @returns FazendeiroSchema Successful Response
      * @throws ApiError
      */
     public static createFazendeiroPost(
-        requestBody: FazendeiroCreateSchema,
-    ): CancelablePromise<any> {
+        requestBody: FazendeiroCreate,
+    ): CancelablePromise<FazendeiroSchema> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/fazendeiro/',
@@ -44,19 +44,19 @@ export class FazendeiroService {
     }
 
     /**
-     * Get
-     * @param cargoId
+     * Get By Id
+     * @param fazendeiroId
      * @returns FazendeiroSchema Successful Response
      * @throws ApiError
      */
-    public static getFazendeiroCargoIdGet(
-        cargoId: number,
+    public static getByIdFazendeiroFazendeiroIdGet(
+        fazendeiroId: number,
     ): CancelablePromise<FazendeiroSchema> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/fazendeiro/{cargo_id}',
+            url: '/fazendeiro/{fazendeiro_id}',
             path: {
-                'cargo_id': cargoId,
+                'fazendeiro_id': fazendeiroId,
             },
             errors: {
                 422: `Validation Error`,
@@ -66,18 +66,18 @@ export class FazendeiroService {
 
     /**
      * Delete
-     * @param cargoId
+     * @param fazendeiroId
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static deleteFazendeiroCargoIdDelete(
-        cargoId: number,
-    ): CancelablePromise<any> {
+    public static deleteFazendeiroFazendeiroIdDelete(
+        fazendeiroId: number,
+    ): CancelablePromise<Record<string, any>> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/fazendeiro/{cargo_id}',
+            url: '/fazendeiro/{fazendeiro_id}',
             path: {
-                'cargo_id': cargoId,
+                'fazendeiro_id': fazendeiroId,
             },
             errors: {
                 422: `Validation Error`,
@@ -87,20 +87,20 @@ export class FazendeiroService {
 
     /**
      * Update
-     * @param cargoId
+     * @param fazendeiroId
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static updateFazendeiroCargoIdPatch(
-        cargoId: number,
-        requestBody: FazendeiroUpdateSchema,
+    public static updateFazendeiroFazendeiroIdPatch(
+        fazendeiroId: number,
+        requestBody: FazendeiroUpdate,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/fazendeiro/{cargo_id}',
+            url: '/fazendeiro/{fazendeiro_id}',
             path: {
-                'cargo_id': cargoId,
+                'fazendeiro_id': fazendeiroId,
             },
             body: requestBody,
             mediaType: 'application/json',

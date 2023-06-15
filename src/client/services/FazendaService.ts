@@ -1,9 +1,9 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { FazendaCreateSchema } from '../models/FazendaCreateSchema';
+import type { FazendaCreate } from '../models/FazendaCreate';
 import type { FazendaSchema } from '../models/FazendaSchema';
-import type { FazendaUpdateSchema } from '../models/FazendaUpdateSchema';
+import type { FazendaUpdate } from '../models/FazendaUpdate';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
@@ -26,12 +26,12 @@ export class FazendaService {
     /**
      * Create
      * @param requestBody
-     * @returns any Successful Response
+     * @returns FazendaSchema Successful Response
      * @throws ApiError
      */
     public static createFazendaPost(
-        requestBody: FazendaCreateSchema,
-    ): CancelablePromise<any> {
+        requestBody: FazendaCreate,
+    ): CancelablePromise<FazendaSchema> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/fazenda/',
@@ -44,12 +44,12 @@ export class FazendaService {
     }
 
     /**
-     * Get
+     * Get By Id
      * @param fazendaId
      * @returns FazendaSchema Successful Response
      * @throws ApiError
      */
-    public static getFazendaFazendaIdGet(
+    public static getByIdFazendaFazendaIdGet(
         fazendaId: number,
     ): CancelablePromise<FazendaSchema> {
         return __request(OpenAPI, {
@@ -72,7 +72,7 @@ export class FazendaService {
      */
     public static deleteFazendaFazendaIdDelete(
         fazendaId: number,
-    ): CancelablePromise<any> {
+    ): CancelablePromise<Record<string, any>> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/fazenda/{fazenda_id}',
@@ -94,7 +94,7 @@ export class FazendaService {
      */
     public static updateFazendaFazendaIdPatch(
         fazendaId: number,
-        requestBody: FazendaUpdateSchema,
+        requestBody: FazendaUpdate,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',

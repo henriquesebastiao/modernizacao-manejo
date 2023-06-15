@@ -1,9 +1,9 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { LoteLogCreateSchema } from '../models/LoteLogCreateSchema';
+import type { LoteLogCreate } from '../models/LoteLogCreate';
 import type { LoteLogSchema } from '../models/LoteLogSchema';
-import type { LoteLogUpdateSchema } from '../models/LoteLogUpdateSchema';
+import type { LoteLogUpdate } from '../models/LoteLogUpdate';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
@@ -26,12 +26,12 @@ export class LoteLogService {
     /**
      * Create
      * @param requestBody
-     * @returns any Successful Response
+     * @returns LoteLogSchema Successful Response
      * @throws ApiError
      */
     public static createLoteLogPost(
-        requestBody: LoteLogCreateSchema,
-    ): CancelablePromise<any> {
+        requestBody: LoteLogCreate,
+    ): CancelablePromise<LoteLogSchema> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/lote_log/',
@@ -44,12 +44,12 @@ export class LoteLogService {
     }
 
     /**
-     * Get
+     * Get By Id
      * @param loteLogId
      * @returns LoteLogSchema Successful Response
      * @throws ApiError
      */
-    public static getLoteLogLoteLogIdGet(
+    public static getByIdLoteLogLoteLogIdGet(
         loteLogId: number,
     ): CancelablePromise<LoteLogSchema> {
         return __request(OpenAPI, {
@@ -72,7 +72,7 @@ export class LoteLogService {
      */
     public static deleteLoteLogLoteLogIdDelete(
         loteLogId: number,
-    ): CancelablePromise<any> {
+    ): CancelablePromise<Record<string, any>> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/lote_log/{lote_log_id}',
@@ -94,7 +94,7 @@ export class LoteLogService {
      */
     public static updateLoteLogLoteLogIdPatch(
         loteLogId: number,
-        requestBody: LoteLogUpdateSchema,
+        requestBody: LoteLogUpdate,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',

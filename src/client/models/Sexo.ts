@@ -3,7 +3,7 @@
 /* eslint-disable */
 
 /**
- * Lista de sexos dos quais o animal pode ser.
+ * An enumeration.
  */
 export enum Sexo {
     MACHO = 'Macho',

@@ -1,9 +1,9 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { CargoCreateSchema } from '../models/CargoCreateSchema';
+import type { CargoCreate } from '../models/CargoCreate';
 import type { CargoSchema } from '../models/CargoSchema';
-import type { CargoUpdateSchema } from '../models/CargoUpdateSchema';
+import type { CargoUpdate } from '../models/CargoUpdate';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
@@ -26,12 +26,12 @@ export class CargoService {
     /**
      * Create
      * @param requestBody
-     * @returns any Successful Response
+     * @returns CargoSchema Successful Response
      * @throws ApiError
      */
     public static createCargoPost(
-        requestBody: CargoCreateSchema,
-    ): CancelablePromise<any> {
+        requestBody: CargoCreate,
+    ): CancelablePromise<CargoSchema> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/cargo/',
@@ -44,12 +44,12 @@ export class CargoService {
     }
 
     /**
-     * Get
+     * Get By Id
      * @param cargoId
      * @returns CargoSchema Successful Response
      * @throws ApiError
      */
-    public static getCargoCargoIdGet(
+    public static getByIdCargoCargoIdGet(
         cargoId: number,
     ): CancelablePromise<CargoSchema> {
         return __request(OpenAPI, {
@@ -72,7 +72,7 @@ export class CargoService {
      */
     public static deleteCargoCargoIdDelete(
         cargoId: number,
-    ): CancelablePromise<any> {
+    ): CancelablePromise<Record<string, any>> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/cargo/{cargo_id}',
@@ -94,7 +94,7 @@ export class CargoService {
      */
     public static updateCargoCargoIdPatch(
         cargoId: number,
-        requestBody: CargoUpdateSchema,
+        requestBody: CargoUpdate,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',

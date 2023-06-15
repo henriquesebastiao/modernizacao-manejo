@@ -1,9 +1,9 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { DietaCreateSchema } from '../models/DietaCreateSchema';
+import type { DietaCreate } from '../models/DietaCreate';
 import type { DietaSchema } from '../models/DietaSchema';
-import type { DietaUpdateSchema } from '../models/DietaUpdateSchema';
+import type { DietaUpdate } from '../models/DietaUpdate';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
@@ -26,12 +26,12 @@ export class DietaService {
     /**
      * Create
      * @param requestBody
-     * @returns any Successful Response
+     * @returns DietaSchema Successful Response
      * @throws ApiError
      */
     public static createDietaPost(
-        requestBody: DietaCreateSchema,
-    ): CancelablePromise<any> {
+        requestBody: DietaCreate,
+    ): CancelablePromise<DietaSchema> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/dieta/',
@@ -44,12 +44,12 @@ export class DietaService {
     }
 
     /**
-     * Get
+     * Get By Id
      * @param dietaId
      * @returns DietaSchema Successful Response
      * @throws ApiError
      */
-    public static getDietaDietaIdGet(
+    public static getByIdDietaDietaIdGet(
         dietaId: number,
     ): CancelablePromise<DietaSchema> {
         return __request(OpenAPI, {
@@ -72,7 +72,7 @@ export class DietaService {
      */
     public static deleteDietaDietaIdDelete(
         dietaId: number,
-    ): CancelablePromise<any> {
+    ): CancelablePromise<Record<string, any>> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/dieta/{dieta_id}',
@@ -94,7 +94,7 @@ export class DietaService {
      */
     public static updateDietaDietaIdPatch(
         dietaId: number,
-        requestBody: DietaUpdateSchema,
+        requestBody: DietaUpdate,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',

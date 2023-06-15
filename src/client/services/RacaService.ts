@@ -1,9 +1,9 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { RacaCreateSchema } from '../models/RacaCreateSchema';
+import type { RacaCreate } from '../models/RacaCreate';
 import type { RacaSchema } from '../models/RacaSchema';
-import type { RacaUpdateSchema } from '../models/RacaUpdateSchema';
+import type { RacaUpdate } from '../models/RacaUpdate';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
@@ -26,12 +26,12 @@ export class RacaService {
     /**
      * Create
      * @param requestBody
-     * @returns any Successful Response
+     * @returns RacaSchema Successful Response
      * @throws ApiError
      */
     public static createRacaPost(
-        requestBody: RacaCreateSchema,
-    ): CancelablePromise<any> {
+        requestBody: RacaCreate,
+    ): CancelablePromise<RacaSchema> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/raca/',
@@ -44,12 +44,12 @@ export class RacaService {
     }
 
     /**
-     * Get
+     * Get By Id
      * @param racaId
      * @returns RacaSchema Successful Response
      * @throws ApiError
      */
-    public static getRacaRacaIdGet(
+    public static getByIdRacaRacaIdGet(
         racaId: number,
     ): CancelablePromise<RacaSchema> {
         return __request(OpenAPI, {
@@ -72,7 +72,7 @@ export class RacaService {
      */
     public static deleteRacaRacaIdDelete(
         racaId: number,
-    ): CancelablePromise<any> {
+    ): CancelablePromise<Record<string, any>> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/raca/{raca_id}',
@@ -94,7 +94,7 @@ export class RacaService {
      */
     public static updateRacaRacaIdPatch(
         racaId: number,
-        requestBody: RacaUpdateSchema,
+        requestBody: RacaUpdate,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',

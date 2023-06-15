@@ -1,10 +1,9 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { UserCreateSchema } from '../models/UserCreateSchema';
-import type { UserLoginSchema } from '../models/UserLoginSchema';
+import type { UserCreate } from '../models/UserCreate';
 import type { UserSchema } from '../models/UserSchema';
-import type { UserUpdateSchema } from '../models/UserUpdateSchema';
+import type { UserUpdate } from '../models/UserUpdate';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
@@ -27,12 +26,12 @@ export class UserService {
     /**
      * Create
      * @param requestBody
-     * @returns any Successful Response
+     * @returns UserSchema Successful Response
      * @throws ApiError
      */
     public static createUserPost(
-        requestBody: UserCreateSchema,
-    ): CancelablePromise<any> {
+        requestBody: UserCreate,
+    ): CancelablePromise<UserSchema> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/user/',
@@ -45,18 +44,18 @@ export class UserService {
     }
 
     /**
-     * Get
+     * Get By Id
      * @param userId
      * @returns UserSchema Successful Response
      * @throws ApiError
      */
-    public static getUserIdGet(
+    public static getByIdUserUserIdGet(
         userId: number,
     ): CancelablePromise<UserSchema> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/user/{id}',
-            query: {
+            url: '/user/{user_id}',
+            path: {
                 'user_id': userId,
             },
             errors: {
@@ -71,13 +70,13 @@ export class UserService {
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static deleteUserIdDelete(
+    public static deleteUserUserIdDelete(
         userId: number,
-    ): CancelablePromise<any> {
+    ): CancelablePromise<Record<string, any>> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/user/{id}',
-            query: {
+            url: '/user/{user_id}',
+            path: {
                 'user_id': userId,
             },
             errors: {
@@ -93,36 +92,16 @@ export class UserService {
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static updateUserIdPatch(
+    public static updateUserUserIdPatch(
         userId: number,
-        requestBody: UserUpdateSchema,
+        requestBody: UserUpdate,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/user/{id}',
-            query: {
+            url: '/user/{user_id}',
+            path: {
                 'user_id': userId,
             },
-            body: requestBody,
-            mediaType: 'application/json',
-            errors: {
-                422: `Validation Error`,
-            },
-        });
-    }
-
-    /**
-     * Login
-     * @param requestBody
-     * @returns any Successful Response
-     * @throws ApiError
-     */
-    public static loginUserLoginPost(
-        requestBody: UserLoginSchema,
-    ): CancelablePromise<any> {
-        return __request(OpenAPI, {
-            method: 'POST',
-            url: '/user/login',
             body: requestBody,
             mediaType: 'application/json',
             errors: {

@@ -2,9 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type FazendaSchema = {
-    fazendeiro_id: number;
+export type RacaCreate = {
     nome: string;
-    id: number;
 };
 

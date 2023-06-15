@@ -2,10 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 
-/**
- * Classe para validação de dados de atualização de Usuário.
- */
-export type UserUpdateSchema = {
+export type UserCreate = {
     email: string;
     password: string;
 };

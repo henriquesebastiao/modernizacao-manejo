@@ -2,10 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 
-/**
- * Classe para validação de dados de atualização da fazenda.
- */
-export type FazendaUpdateSchema = {
+export type FazendaCreate = {
     fazendeiro_id: number;
     nome: string;
 };

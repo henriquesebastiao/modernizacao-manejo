@@ -1,9 +1,9 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { PropriedadeCreateSchema } from '../models/PropriedadeCreateSchema';
+import type { PropriedadeCreate } from '../models/PropriedadeCreate';
 import type { PropriedadeSchema } from '../models/PropriedadeSchema';
-import type { PropriedadeUpdateSchema } from '../models/PropriedadeUpdateSchema';
+import type { PropriedadeUpdate } from '../models/PropriedadeUpdate';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
@@ -26,12 +26,12 @@ export class PropriedadeService {
     /**
      * Create
      * @param requestBody
-     * @returns any Successful Response
+     * @returns PropriedadeSchema Successful Response
      * @throws ApiError
      */
     public static createPropriedadePost(
-        requestBody: PropriedadeCreateSchema,
-    ): CancelablePromise<any> {
+        requestBody: PropriedadeCreate,
+    ): CancelablePromise<PropriedadeSchema> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/propriedade/',
@@ -44,12 +44,12 @@ export class PropriedadeService {
     }
 
     /**
-     * Get
+     * Get By Id
      * @param propriedadeId
      * @returns PropriedadeSchema Successful Response
      * @throws ApiError
      */
-    public static getPropriedadePropriedadeIdGet(
+    public static getByIdPropriedadePropriedadeIdGet(
         propriedadeId: number,
     ): CancelablePromise<PropriedadeSchema> {
         return __request(OpenAPI, {
@@ -72,7 +72,7 @@ export class PropriedadeService {
      */
     public static deletePropriedadePropriedadeIdDelete(
         propriedadeId: number,
-    ): CancelablePromise<any> {
+    ): CancelablePromise<Record<string, any>> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/propriedade/{propriedade_id}',
@@ -94,7 +94,7 @@ export class PropriedadeService {
      */
     public static updatePropriedadePropriedadeIdPatch(
         propriedadeId: number,
-        requestBody: PropriedadeUpdateSchema,
+        requestBody: PropriedadeUpdate,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',
