@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { focusTrap, toastStore } from '@skeletonlabs/skeleton';
 	import type { ToastSettings } from '@skeletonlabs/skeleton';
-	import type { UserLoginSchema } from '../../client';
-	import { UserService } from '../../client';
+	import type { LoginSchema } from '../../client';
+	import { LoginService } from '../../client';
 	import { goto } from '$app/navigation';
 	import { fade } from 'svelte/transition';
 	import { user } from '../../store';
@@ -10,7 +10,7 @@
 
 	let isFocused = true;
 
-	let userLogin: UserLoginSchema = {
+	let userLogin: LoginSchema = {
 		email: '',
 		password: ''
 	};
@@ -27,7 +27,7 @@
 	function handleSubmit(event: Event) {
 		event.preventDefault();
 
-		UserService.loginUserLoginPost(userLogin)
+		LoginService.loginLoginPost(userLogin)
 			.then((res) => {
 				console.log(res);
 				toastStore.trigger(t);
