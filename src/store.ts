@@ -6,6 +6,5 @@ interface User {
 }
 
 export const user = writable(<User>{
-	isLoggedIn: false,
-	isDarkMode: false
+	isLoggedIn: false
 });

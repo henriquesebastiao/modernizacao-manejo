@@ -4,7 +4,7 @@
 	import { Drawer, drawerStore } from '@skeletonlabs/skeleton';
 	import type { DrawerSettings } from '@skeletonlabs/skeleton';
 
-	let valueSingle: string = 'geral';
+	let valueSingle: string = 'vacinacao';
 
 	const drawerSettings: DrawerSettings = {
 		width: 'w-[280px] md:w-[480px]',
@@ -13,16 +13,16 @@
 
 	let subMenuItems = [
 		{
-			title: 'Relatório geral',
-			icon: 'fa-chart-line',
+			title: 'Vacinação',
+			icon: 'fa-syringe',
 			name: 'geral',
-			value: 'geral'
+			value: 'vacinacao'
 		},
 		{
-			title: 'Relatório lote',
-			icon: 'fa-tree',
+			title: 'Pesagem',
+			icon: 'fa-weight-scale',
 			name: 'geral',
-			value: 'lote'
+			value: 'pesagem'
 		}
 	];
 </script>
@@ -69,13 +69,13 @@
 				<i class={`fa-solid fa-bars text-2xl`} />
 			</button>
 		</div>
-		{#if valueSingle === 'geral'}
+		{#if valueSingle === 'vacinacao'}
 			<div in:fade>
-				<h1 class="text-2xl">Relatório geral</h1>
+				<h1 class="text-2xl">Vacinação</h1>
 			</div>
-		{:else if valueSingle === 'lote'}
+		{:else if valueSingle === 'pesagem'}
 			<div in:fade>
-				<h1 class="text-2xl">Relatório lote</h1>
+				<h1 class="text-2xl">Pesagem</h1>
 			</div>
 		{/if}
 	</div>

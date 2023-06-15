@@ -5,6 +5,8 @@
 	import { UserService } from '../../client';
 	import { goto } from '$app/navigation';
 	import { fade } from 'svelte/transition';
+	import { user } from '../../store';
+	import { onMount } from 'svelte';
 
 	let isFocused = true;
 
@@ -16,6 +18,11 @@
 	const t: ToastSettings = {
 		message: 'Login efetuado com sucesso!'
 	};
+
+	const auto: ToastSettings = {
+		message: 'Autologin efetuado com sucesso!'
+	};
+
 	const e: ToastSettings = {
 		message: 'Erro ao efetuar login!',
 		background: 'bg-warning-600'
@@ -25,15 +32,25 @@
 		event.preventDefault();
 
 		UserService.loginUserLoginPost(userLogin)
-			.then(() => {
+			.then((res) => {
+				console.log(res)
 				toastStore.trigger(t);
-				goto('/');
+				goto('/app/relatorios');
+				localStorage.setItem('isLoggedIn', 'true');
+				$user.isLoggedIn = true;
 			})
 			.catch((err) => {
 				console.log(err);
 				toastStore.trigger(e);
 			});
 	}
+
+	onMount(() => {
+		if ($user.isLoggedIn || localStorage.getItem('isLoggedIn')) {
+			toastStore.trigger(auto);
+			goto('/app');
+		}
+	});
 </script>
 
 <main class="container h-full mx-auto flex justify-center items-center" in:fade>
@@ -41,7 +58,7 @@
 		<form on:submit={handleSubmit} use:focusTrap={isFocused}>
 			<div class="mb-4">
 				<label for="email" class="label block mb-2">
-					<i class="pr-0.5 fa-regular fa-envelope"></i>
+					<i class="pr-0.5 fa-regular fa-envelope" />
 					<span>Email:</span>
 				</label>
 				<input
@@ -54,7 +71,7 @@
 			</div>
 			<div class="mb-4">
 				<label for="password" class="label block mb-2">
-					<i class="pr-0.5 fa-solid fa-lock"></i>
+					<i class="pr-0.5 fa-solid fa-lock" />
 					<span>Senha:</span>
 				</label>
 				<input

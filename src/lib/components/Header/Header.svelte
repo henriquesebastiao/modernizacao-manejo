@@ -2,6 +2,11 @@
 	import { AppBar, Drawer, drawerStore, LightSwitch } from '@skeletonlabs/skeleton';
 	import Navigation from '$lib/Navigation/Navigation.svelte';
 	import { user } from '../../../store';
+	import { Modal, modalStore } from '@skeletonlabs/skeleton';
+	import type { ModalSettings } from '@skeletonlabs/skeleton';
+	import { focusTrap, toastStore } from '@skeletonlabs/skeleton';
+	import type { ToastSettings } from '@skeletonlabs/skeleton';
+	import { goto } from '$app/navigation';
 
 	function drawerClose(): void {
 		drawerStore.close();
@@ -12,6 +17,32 @@
 			width: 'w-[200px] md:w-[300px]'
 		});
 	}
+
+	const t: ToastSettings = {
+		message: 'Logout efetuado com sucesso!'
+	};
+
+	const logOut = () => {
+		localStorage.removeItem('isLoggedIn');
+		$user.isLoggedIn = false;
+		toastStore.trigger(t);
+		goto('/login');
+	};
+
+	const modal: ModalSettings = {
+		type: 'confirm',
+		// Data
+		title: 'Confirmar ação',
+		body: 'Deseja realmente sair?',
+		// TRUE if confirm pressed, FALSE if cancel pressed
+		response: (r: boolean) => {
+			if (r) {
+				logOut();
+			} else {
+				modalStore.close();
+			}
+		}
+	};
 </script>
 
 <Drawer>
@@ -35,7 +66,11 @@
 					<i class="fa-solid fa-bars text-xl" />
 				</button>
 			{/if}
-			<a class="flex items-center space-x-4" href="/" title="Início">
+			<a
+				class="flex items-center space-x-4"
+				href={!$user.isLoggedIn ? '/' : '/app/relatorios'}
+				title="Início"
+			>
 				<svg
 					class="fill-token w-10 h-10"
 					xmlns="http://www.w3.org/2000/svg"
@@ -70,11 +105,10 @@
 				</button>
 			</a>
 		{:else}
-			<a href="/">
-				<button type="button" class="btn variant-filled">
-					<span>Sair</span>
-				</button>
-			</a>
+			<Modal />
+			<button type="button" class="btn variant-filled" on:click={() => modalStore.trigger(modal)}>
+				<span>Sair</span>
+			</button>
 		{/if}
 		<button on:click={() => ($user.isDarkMode = !$user.isDarkMode)}>
 			<LightSwitch />

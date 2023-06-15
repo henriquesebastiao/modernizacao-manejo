@@ -1,9 +1,5 @@
 <script lang="ts">
 	import FaPlusCircle from 'svelte-icons/fa/FaPlusCircle.svelte';
-	import FaDatabase from 'svelte-icons/fa/FaDatabase.svelte';
-	import FaClipboard from 'svelte-icons/fa/FaClipboard.svelte';
-	import MdSettings from 'svelte-icons/md/MdSettings.svelte';
-	import GoSettings from 'svelte-icons/go/GoSettings.svelte';
 	import { fly } from 'svelte/transition';
 	import { goto } from '$app/navigation';
 
@@ -11,20 +7,25 @@
 
 	const appMenu = [
 		{
-			icon: FaDatabase,
-			path: '/app/relatorios'
+			icon: 'fa-chart-line',
+			href: '/app/relatorios'
 		},
 		{
-			icon: FaClipboard,
-			path: '/app/manejo'
+			icon: 'fa-syringe',
+			href: '/app/manejo'
 		},
 		{
-			icon: GoSettings,
-			path: '/app/planejamento'
+			icon: 'fa-cow',
+			href: '/app/animais'
 		},
 		{
-			icon: MdSettings,
-			path: '/app/configuracoes'
+			title: 'Adicionar',
+			icon: 'fa-plus',
+			href: '/app/add'
+		},
+		{
+			icon: 'fa-gear',
+			href: '/app/settings'
 		}
 	];
 
@@ -45,10 +46,10 @@
 			{#each appMenu as item}
 				<button
 					class="card w-full h-[60px] flex items-center justify-center"
-					on:click={() => handleGoto(item.path)}
+					on:click={() => handleGoto(item.href)}
 				>
 					<div class="w-[30px] h-[30px]">
-						<svelte:component this={item.icon} />
+						<i class={`fa-solid ${item.icon} text-2xl`} />
 					</div>
 				</button>
 			{/each}
