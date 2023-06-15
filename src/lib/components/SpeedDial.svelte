@@ -1,5 +1,5 @@
 <script lang="ts">
-	import FaPlusCircle from 'svelte-icons/fa/FaPlusCircle.svelte';
+	import PlusCircle from "$lib/components/PlusCircle.svelte";
 	import { fly } from 'svelte/transition';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
@@ -52,7 +52,7 @@
 					on:click={() => handleGoto(item.href)}
 				>
 					<div class="w-[30px] h-[30px]">
-						<i class={`fa-solid ${item.icon} text-2xl`} />
+						<i class={`fa-solid ${item.icon} text-2xl`}></i>
 					</div>
 				</button>
 			{/each}
@@ -64,7 +64,7 @@
 		class:rotate-back={!isOpen}
 		on:click={() => (isOpen = !isOpen)}
 	>
-		<FaPlusCircle />
+		<PlusCircle />
 	</button>
 </div>
 
