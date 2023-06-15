@@ -2,6 +2,7 @@
 	import FaPlusCircle from 'svelte-icons/fa/FaPlusCircle.svelte';
 	import { fly } from 'svelte/transition';
 	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
 
 	let isOpen = false;
 
@@ -46,6 +47,8 @@
 			{#each appMenu as item}
 				<button
 					class="card w-full h-[60px] flex items-center justify-center"
+					class:border-2={$page.route.id === item.href}
+					class:border-white={$page.route.id === item.href}
 					on:click={() => handleGoto(item.href)}
 				>
 					<div class="w-[30px] h-[30px]">

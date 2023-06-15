@@ -19,10 +19,6 @@
 		message: 'Login efetuado com sucesso!'
 	};
 
-	const auto: ToastSettings = {
-		message: 'Autologin efetuado com sucesso!'
-	};
-
 	const e: ToastSettings = {
 		message: 'Erro ao efetuar login!',
 		background: 'bg-warning-600'
@@ -33,7 +29,7 @@
 
 		UserService.loginUserLoginPost(userLogin)
 			.then((res) => {
-				console.log(res)
+				console.log(res);
 				toastStore.trigger(t);
 				goto('/app/relatorios');
 				localStorage.setItem('isLoggedIn', 'true');
@@ -47,8 +43,7 @@
 
 	onMount(() => {
 		if ($user.isLoggedIn || localStorage.getItem('isLoggedIn')) {
-			toastStore.trigger(auto);
-			goto('/app');
+			goto('/app/relatorios');
 		}
 	});
 </script>
