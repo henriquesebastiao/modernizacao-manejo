@@ -6,10 +6,10 @@
     import IoIosArrowDropleftCircle from 'svelte-icons/io/IoIosArrowDropleftCircle.svelte';
     import Vacinacao from "./components/Vacinacao.svelte";
 
-    let valueSingle: string = 'vacinacao';
+    let valueSingle = 'vacinacao';
 
     const drawerSettings: DrawerSettings = {
-        width: 'w-[280px] md:w-[480px]',
+        width: 'w-[52%] md:w-[480px]',
         rounded: 'none'
     };
 

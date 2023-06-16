@@ -6,10 +6,10 @@
     import IoIosArrowDropleftCircle from 'svelte-icons/io/IoIosArrowDropleftCircle.svelte';
     import Desmama from "../cria/components/Desmama.svelte";
 
-    let valueSingle: string = 'desmama';
+    let valueSingle = 'desmama';
 
     const drawerSettings: DrawerSettings = {
-        width: 'w-[280px] md:w-[480px]',
+        width: 'w-[52%] md:w-[480px]',
         rounded: 'none'
     };
 

@@ -5,10 +5,10 @@
 	import type { DrawerSettings } from '@skeletonlabs/skeleton';
 	import IoIosArrowDropleftCircle from 'svelte-icons/io/IoIosArrowDropleftCircle.svelte';
 
-	let valueSingle: string = 'perfil';
+	let valueSingle = 'perfil';
 
 	const drawerSettings: DrawerSettings = {
-		width: 'w-[280px] md:w-[480px]',
+		width: 'w-[52%] md:w-[480px]',
 		rounded: 'none'
 	};
 

@@ -11,7 +11,7 @@
 	let valueSingle = 'adicionar_animal';
 
 	const drawerSettings: DrawerSettings = {
-		width: 'w-[280px] md:w-[480px]',
+		width: 'w-[52%] md:w-[480px]',
 		rounded: 'none',
 	};
 
