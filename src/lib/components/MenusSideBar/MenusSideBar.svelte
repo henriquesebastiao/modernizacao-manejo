@@ -37,6 +37,12 @@
 			icon: 'fa-tree',
 			href: '/app/lotes',
 			value: 5
+		},
+		{
+			title: 'Financeiro',
+			icon: 'fa-cash-register',
+			href: '/app/financeiro',
+			value: 6
 		}
 	];
 </script>
