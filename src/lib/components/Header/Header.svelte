@@ -110,8 +110,6 @@
 				<span>Sair</span>
 			</button>
 		{/if}
-		<button on:click={() => ($user.isDarkMode = !$user.isDarkMode)}>
-			<LightSwitch />
-		</button>
+		<LightSwitch />
 	</svelte:fragment>
 </AppBar>

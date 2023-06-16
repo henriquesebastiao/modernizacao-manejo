@@ -1,15 +1,29 @@
 <script lang="ts">
 	import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
+	import { RacaService } from '../../../../client';
+	import type { RacaSchema } from '../../../../client';
 	import { fade } from 'svelte/transition';
+	import { onMount } from 'svelte';
+
+	let races: RacaSchema[] = [];
 
 	let idade = 'data_nascimento';
 	let sexo = 'macho';
-	let raca = 'nelore';
+	let raca = 1;
 	let brinco_do_animal: string = '';
-    let brinco_da_mae: string | null = null;
+	let brinco_da_mae: string | null = null;
 	let primeiro_peso_do_animal: string | null = null;
 	let idade_do_animal_em_meses: string | null = null;
 	let data_de_nascimento_do_animal: string | null = null;
+
+	const fetchRaces = async () => {
+		const res = await RacaService.getAllRacaGet();
+		races = res;
+	};
+
+	onMount(async () => {
+		await fetchRaces();
+	});
 </script>
 
 <div class="w-full h-full flex items-center justify-center max-lg:items-start">
@@ -19,14 +33,14 @@
 			<div class="flex w-full flex-col space-y-4 mt-7">
 				<label>
 					<div class="mb-1 flex items-center space-x-1">
-						<i class="fa-solid fa-tag mr-1"></i>
+						<i class="fa-solid fa-tag mr-1" />
 						<span>Brinco do animal</span>
 					</div>
 					<input type="number" class="input rounded" bind:value={brinco_do_animal} />
 				</label>
 				<label>
 					<div class="mb-1 flex items-center space-x-1">
-						<i class="fa-solid fa-weight-hanging mr-1"></i>
+						<i class="fa-solid fa-weight-hanging mr-1" />
 						<span>Primeiro peso do animal</span>
 					</div>
 					<input type="number" class="input rounded" bind:value={primeiro_peso_do_animal} />
@@ -45,7 +59,7 @@
 				{#if idade === 'meses'}
 					<label in:fade|local>
 						<div class="mb-1 flex items-center space-x-1">
-							<i class="fa-solid fa-calendar mr-1"></i>
+							<i class="fa-solid fa-calendar mr-1" />
 							<span>Idade do animal em meses</span>
 						</div>
 						<input type="number" class="input rounded" bind:value={idade_do_animal_em_meses} />
@@ -54,7 +68,7 @@
 				{#if idade === 'data_nascimento'}
 					<label in:fade|local>
 						<div class="mb-1 flex items-center space-x-1">
-							<i class="fa-solid fa-calendar mr-1"></i>
+							<i class="fa-solid fa-calendar mr-1" />
 							<span>Data de nascimento do animal</span>
 						</div>
 						<input type="date" class="input rounded" bind:value={data_de_nascimento_do_animal} />
@@ -62,10 +76,14 @@
 				{/if}
 				<div class="flex flex-col justify-center items-center">
 					<div class="mb-2">
-						<i class="fa-solid fa-venus-mars mr-1"></i>
+						<i class="fa-solid fa-venus-mars mr-1" />
 						<span>Sexo</span>
 					</div>
-					<RadioGroup active="variant-filled-primary" hover="hover:variant-soft-primary">
+					<RadioGroup
+						active="variant-filled-primary"
+						hover="hover:variant-soft-primary"
+						class="flex flex-wrap justify-center items-center"
+					>
 						<RadioItem bind:group={sexo} name="idade" value="macho">
 							<span>Macho</span>
 						</RadioItem>
@@ -76,26 +94,26 @@
 				</div>
 				<label>
 					<div class="mb-1 flex items-center space-x-1">
-						<i class="fa-solid fa-weight-hanging mr-1"></i>
+						<i class="fa-solid fa-weight-hanging mr-1" />
 						<span>Brinco da mãe</span>
 					</div>
 					<input type="number" class="input rounded" bind:value={brinco_da_mae} />
 				</label>
 				<div class="flex flex-col justify-center items-center mt-4">
 					<div class="mb-2">
-						<i class="fa-solid fa-tag mr-1"></i>
+						<i class="fa-solid fa-tag mr-1" />
 						<span>Raça</span>
 					</div>
-					<RadioGroup active="variant-filled-primary" hover="hover:variant-soft-primary">
-						<RadioItem bind:group={raca} name="raca" value="guzera">
-							<span>Guzerá</span>
-						</RadioItem>
-						<RadioItem bind:group={raca} name="raca" value="nelore">
-							<span>Nelore</span>
-						</RadioItem>
-						<RadioItem bind:group={raca} name="raca" value="giro">
-							<span>Giro</span>
-						</RadioItem>
+					<RadioGroup
+						active="variant-filled-primary"
+						hover="hover:variant-soft-primary"
+						class="flex-wrap justify-center items-center"
+					>
+						{#each races as race}
+							<RadioItem bind:group={raca} name={race.nome} value={race.id}>
+								<span>{race.nome}</span>
+							</RadioItem>
+						{/each}
 					</RadioGroup>
 				</div>
 			</div>
