@@ -4,7 +4,7 @@
 
 export type PessoaUpdate = {
     nome: string;
-    sobre_nome: string;
-    cargo_id: number;
+    sobrenome?: string;
+    cargo_id?: number;
 };
 

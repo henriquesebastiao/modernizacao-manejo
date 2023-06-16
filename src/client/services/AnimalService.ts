@@ -13,10 +13,10 @@ export class AnimalService {
 
     /**
      * Get All
-     * @returns AnimalSchema Successful Response
+     * @returns any Successful Response
      * @throws ApiError
      */
-    public static getAllAnimalGet(): CancelablePromise<Array<AnimalSchema>> {
+    public static getAllAnimalGet(): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/animal/',
