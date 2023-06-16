@@ -8,8 +8,10 @@ export default defineConfig({
 		SvelteKitPWA({
 			strategies: 'injectManifest',
 			srcDir: 'src',
-			filename: 'my-sw.js' // or `my-sw.ts`
-			/* other pwa options */
+			filename: 'my-sw.js', // or `my-sw.ts`
+			injectManifest: {
+				injectionPoint: undefined
+			}
 		})
 	],
 	server: {

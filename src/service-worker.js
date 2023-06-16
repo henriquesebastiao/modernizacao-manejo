@@ -3,7 +3,10 @@
 const config = {
 	kit: {
 		files: {
-			serviceWorker: 'src/my-sw.js' // or `src/my-sw.ts`
+			serviceWorker: 'src/my-sw.js', // or `src/my-sw.ts`
+			injectManifest: {
+				injectionPoint: undefined
+			}
 		}
 	}
 };
