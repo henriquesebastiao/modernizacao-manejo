@@ -1,5 +1,5 @@
 <script lang="ts">
-	import PlusCircle from "$lib/components/PlusCircle.svelte";
+	import PlusCircle from '$lib/components/PlusCircle.svelte';
 	import { fly } from 'svelte/transition';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
@@ -38,22 +38,20 @@
 	};
 </script>
 
-<div class="absolute bottom-0 right-0 m-5 lg:hidden flex flex-col gap-y-7">
+<div class="absolute w-[60px] bottom-0 right-0 m-5 lg:hidden flex flex-col items-center gap-y-7">
 	{#if isOpen}
 		<div
-			class="flex flex-col space-y-5 items-center justify-center"
+			class="flex flex-col space-y-5 items-center justify-center w-full"
 			transition:fly|local={{ y: 80, duration: 200 }}
 		>
 			{#each appMenu as item}
 				<button
-					class="card w-full h-[60px] flex items-center justify-center"
+					class="card w-full h-[60px] flex items-center justify-center rounded-full"
 					class:border-2={$page.route.id === item.href}
 					class:border-white={$page.route.id === item.href}
 					on:click={() => handleGoto(item.href)}
 				>
-					<div class="w-[30px] h-[30px]">
-						<i class={`fa-solid ${item.icon} text-2xl`}></i>
-					</div>
+					<i class={`fa-solid ${item.icon} text-2xl`} />
 				</button>
 			{/each}
 		</div>
