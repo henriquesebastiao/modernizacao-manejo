@@ -1,7 +1,14 @@
 <script lang="ts">
 	import { drawerStore } from '@skeletonlabs/skeleton';
-	import { user } from '../../store';
 	import { page } from '$app/stores';
+
+	const menuItems = [
+		{ id: '/', label: 'INÍCIO' },
+		{ id: '/about', label: 'SOBRE' },
+		{ id: '/blog', label: 'BLOG' },
+		{ id: '/pricing', label: 'PLANOS' },
+		{ id: '/suporte', label: 'SUPORTE' }
+	];
 
 	function drawerClose(): void {
 		drawerStore.close();
@@ -12,42 +19,17 @@
 	<div
 		class="flex space-x-3 max-lg:flex max-lg:justify-start max-lg:items-start max-lg:flex-col max-lg:space-y-4 max-lg:mt-4 max-lg:ml-1"
 	>
-		{#if !$user.isLoggedIn}
-			<button
-				class:variant-filled={$page.route.id === '/'}
-				class:rounded-xl={$page.route.id === '/'}
-				class:font-bold={$page.route.id === '/'}
-				class="hover:variant-filled hover:font-bold hover:rounded-xl w-[90px]"
-				><a class="btn btn-sm" href="/" on:click={drawerClose}>INÍCIO</a></button
-			>
-			<button
-				class:variant-filled={$page.route.id === '/about'}
-				class:rounded-xl={$page.route.id === '/about'}
-				class:font-bold={$page.route.id === '/about'}
-				class="hover:variant-filled hover:font-bold hover:rounded-xl w-[90px]"
-				><a class="btn btn-sm" href="/about" on:click={drawerClose}>SOBRE</a></button
-			>
-			<button
-				class:variant-filled={$page.route.id === '/blog'}
-				class:rounded-xl={$page.route.id === '/blog'}
-				class:font-bold={$page.route.id === '/blog'}
-				class="hover:variant-filled hover:font-bold hover:rounded-xl w-[90px]"
-				><a class="btn btn-sm" href="/blog" on:click={drawerClose}>BLOG</a></button
-			>
-			<button
-				class:variant-filled={$page.route.id === '/pricing'}
-				class:rounded-xl={$page.route.id === '/pricing'}
-				class:font-bold={$page.route.id === '/pricing'}
-				class="hover:variant-filled hover:font-bold hover:rounded-xl w-[90px]"
-				><a class="btn btn-sm" href="/pricing" on:click={drawerClose}>PLANOS</a></button
-			>
-			<button
-				class:variant-filled={$page.route.id === '/suporte'}
-				class:rounded-xl={$page.route.id === '/suporte'}
-				class:font-bold={$page.route.id === '/suporte'}
-				class="hover:variant-filled hover:font-bold hover:rounded-xl w-[90px]"
-				><a class="btn btn-sm" href="/suporte" on:click={drawerClose}>SUPORTE</a></button
-			>
-		{/if}
+		{#each menuItems as item}
+			{#if !$page.route.id?.includes('/app')}
+				<button
+					class:variant-filled={$page.route.id === item.id}
+					class:rounded-xl={$page.route.id === item.id}
+					class:font-bold={$page.route.id === item.id}
+					class="hover:variant-filled hover:font-bold hover:rounded-xl w-[90px]"
+				>
+					<a class="btn btn-sm" href={item.id} on:click={drawerClose}>{item.label}</a>
+				</button>
+			{/if}
+		{/each}
 	</div>
 </nav>

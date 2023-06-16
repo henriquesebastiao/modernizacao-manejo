@@ -37,7 +37,7 @@
             {/each}
         </ListBox>
     </div>
-    <div class="w-full h-full px-4 pt-4">
+    <div class="w-full overflow-scroll overflow-x-hidden px-4 py-4">
         <Drawer>
             <div class="w-full flex justify-end items-end pr-3 my-2">
                 <button on:click={() => drawerStore.close()}>
@@ -67,7 +67,7 @@
             </button>
         </div>
         {#if valueSingle === 'desmama'}
-            <div class="w-full h-full" in:fade>
+            <div class="w-full" in:fade>
                 <Desmama />
             </div>
         {/if}

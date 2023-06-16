@@ -4,9 +4,10 @@
 	import { user } from '../../../store';
 	import { Modal, modalStore } from '@skeletonlabs/skeleton';
 	import type { ModalSettings } from '@skeletonlabs/skeleton';
-	import { focusTrap, toastStore } from '@skeletonlabs/skeleton';
+	import { toastStore } from '@skeletonlabs/skeleton';
 	import type { ToastSettings } from '@skeletonlabs/skeleton';
 	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
 
 	function drawerClose(): void {
 		drawerStore.close();
@@ -31,10 +32,8 @@
 
 	const modal: ModalSettings = {
 		type: 'confirm',
-		// Data
 		title: 'Confirmar ação',
 		body: 'Deseja realmente sair?',
-		// TRUE if confirm pressed, FALSE if cancel pressed
 		response: (r: boolean) => {
 			if (r) {
 				logOut();
@@ -98,7 +97,7 @@
 		<Navigation />
 	</div>
 	<svelte:fragment slot="trail">
-		{#if !$user.isLoggedIn}
+		{#if !$page.route.id?.includes('/app')}
 			<a href="/login">
 				<button type="button" class="btn variant-filled">
 					<span>Entrar</span>

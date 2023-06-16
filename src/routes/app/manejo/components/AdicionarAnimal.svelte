@@ -27,7 +27,7 @@
 </script>
 
 <div class="w-full h-full flex items-center justify-center max-lg:items-start">
-	<div class="card w-[600px] h-[820px] shadow-2xl p-4 flex flex-col justify-between">
+	<div class="card w-[600px] shadow-2xl p-4 flex flex-col justify-between space-y-10">
 		<div>
 			<h1 class="font-bold text-3xl">Adicionar animal</h1>
 			<div class="flex w-full flex-col space-y-4 mt-7">
