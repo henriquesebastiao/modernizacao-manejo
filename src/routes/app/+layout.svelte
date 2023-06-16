@@ -16,14 +16,14 @@
 	<div class="w-[80px] max-lg:hidden">
 		<MenusSideBar />
 	</div>
-	<div class="dinamic-width max-lg:!w-full">
+	<div class="dynamic-width max-lg:!w-full">
 		<slot />
 	</div>
 	<SpeedDial />
 </div>
 
 <style>
-	.dinamic-width {
+	.dynamic-width {
 		width: calc(100% - 80px);
 	}
 </style>

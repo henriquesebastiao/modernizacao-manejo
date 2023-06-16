@@ -2,13 +2,12 @@
 	import '../theme.postcss';
 	import '@skeletonlabs/skeleton/styles/skeleton.css';
 	import '../app.postcss';
-	import { AppShell, autoModeWatcher, Toast } from '@skeletonlabs/skeleton';
+	import { autoModeWatcher, Toast } from '@skeletonlabs/skeleton';
 	import { OpenAPI } from '../client';
 	import Header from '$lib/components/Header/Header.svelte';
 	import Footer from '$lib/components/Footer/Footer.svelte';
 	import { user } from '../store';
 	import { onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
 
 	OpenAPI.BASE = 'https://api.henriquesebastiao.com';
 

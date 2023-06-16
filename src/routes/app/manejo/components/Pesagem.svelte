@@ -1,7 +1,18 @@
 <script lang="ts">
-	import { focusTrap } from '@skeletonlabs/skeleton';
+	import type { ToastSettings } from '@skeletonlabs/skeleton';
+	import {focusTrap, toastStore} from '@skeletonlabs/skeleton';
 	import type { PesoLogCreate} from "../../../../client";
 	import {PesoLogService} from "../../../../client";
+
+
+	const s: ToastSettings = {
+		message: 'Pesagem adicionada com sucesso!'
+	};
+
+	const e: ToastSettings = {
+		message: 'Erro ao adicionar pesagem!',
+		background: 'bg-warning-600'
+	};
 
 	let pesoLog: PesoLogCreate = {
 		data: '',
@@ -15,9 +26,11 @@
 		PesoLogService.createPesoLogPost(pesoLog)
 				.then((res) => {
 					console.log(res);
+					toastStore.trigger(s);
 				})
 				.catch((err) => {
 					console.log(err);
+					toastStore.trigger(e);
 				});
 	}
 
