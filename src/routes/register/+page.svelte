@@ -67,7 +67,6 @@
 						name="phone"
 						class="input w-full px-4 py-2 border rounded"
 						placeholder="(00) 00000-0000"
-						pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$"
 					/>
 				</div>
 

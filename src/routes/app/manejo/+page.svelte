@@ -5,8 +5,10 @@
 	import type { DrawerSettings } from '@skeletonlabs/skeleton';
 	import IoIosArrowDropleftCircle from 'svelte-icons/io/IoIosArrowDropleftCircle.svelte';
 	import AdicionarAnimal from './components/AdicionarAnimal.svelte';
+	import RemoverAnimal from './components/RemoverAnimal.svelte';
 	import Vacinacao from './components/Vacinacao.svelte';
 	import Pesagem from './components/Pesagem.svelte';
+	import Desmama from "./components/Desmama.svelte";
 
 	let valueSingle: string = 'adicionar_animal';
 
@@ -23,6 +25,12 @@
 			value: 'adicionar_animal'
 		},
 		{
+			title: 'Saída de Animal',
+			icon: 'fa-arrow-right-from-bracket',
+			name: 'geral',
+			value: 'remover_animal'
+		},
+		{
 			title: 'Vacinação',
 			icon: 'fa-syringe',
 			name: 'geral',
@@ -33,6 +41,12 @@
 			icon: 'fa-weight-scale',
 			name: 'geral',
 			value: 'pesagem'
+		},
+		{
+			title: 'Desmama',
+			icon: 'fa-circle-xmark',
+			name: 'geral',
+			value: 'desmama'
 		}
 	];
 </script>
@@ -84,6 +98,10 @@
 			<div class="w-full h-full" in:fade>
 				<AdicionarAnimal />
 			</div>
+		{:else if valueSingle === 'remover_animal'}
+			<div class="w-full h-full" in:fade>
+				<RemoverAnimal />
+			</div>
 		{:else if valueSingle === 'vacinacao'}
 			<div class="w-full h-full" in:fade>
 				<Vacinacao />
@@ -91,6 +109,10 @@
 		{:else if valueSingle === 'pesagem'}
 			<div class="w-full h-full" in:fade>
 				<Pesagem />
+			</div>
+		{:else if valueSingle === 'desmama'}
+			<div class="w-full h-full" in:fade>
+				<Desmama />
 			</div>
 		{/if}
 	</div>
