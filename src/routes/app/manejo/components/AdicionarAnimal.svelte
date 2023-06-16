@@ -1,24 +1,23 @@
 <script lang="ts">
-	import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
-	import { RacaService } from '../../../../client';
-	import type { RacaSchema } from '../../../../client';
-	import { fade } from 'svelte/transition';
-	import { onMount } from 'svelte';
+	import {RadioGroup, RadioItem} from '@skeletonlabs/skeleton';
+	import type {RacaSchema} from '../../../../client';
+	import {RacaService} from '../../../../client';
+	import {fade} from 'svelte/transition';
+	import {onMount} from 'svelte';
 
 	let races: RacaSchema[] = [];
 
 	let idade = 'data_nascimento';
 	let sexo = 'macho';
 	let raca = 1;
-	let brinco_do_animal: string = '';
+	let brinco_do_animal = '';
 	let brinco_da_mae: string | null = null;
 	let primeiro_peso_do_animal: string | null = null;
 	let idade_do_animal_em_meses: string | null = null;
 	let data_de_nascimento_do_animal: string | null = null;
 
 	const fetchRaces = async () => {
-		const res = await RacaService.getAllRacaGet();
-		races = res;
+		races = await RacaService.getAllRacaGet();
 	};
 
 	onMount(async () => {

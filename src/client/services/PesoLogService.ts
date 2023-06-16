@@ -26,12 +26,12 @@ export class PesoLogService {
     /**
      * Create
      * @param requestBody
-     * @returns PesoLogSchema Successful Response
+     * @returns any Successful Response
      * @throws ApiError
      */
     public static createPesoLogPost(
         requestBody: PesoLogCreate,
-    ): CancelablePromise<PesoLogSchema> {
+    ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/peso_log/',

@@ -8,7 +8,7 @@
 	import RemoverAnimal from './components/RemoverAnimal.svelte';
 	import Pesagem from './components/Pesagem.svelte';
 
-	let valueSingle: string = 'adicionar_animal';
+	let valueSingle = 'adicionar_animal';
 
 	const drawerSettings: DrawerSettings = {
 		width: 'w-[280px] md:w-[480px]',

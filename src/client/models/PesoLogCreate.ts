@@ -5,6 +5,6 @@
 export type PesoLogCreate = {
     data: string;
     peso: number;
-    animal_id: number;
+    ref: string;
 };
 
