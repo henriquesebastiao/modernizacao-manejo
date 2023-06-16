@@ -32,17 +32,17 @@
 			<div class="flex w-full flex-col space-y-4 mt-7">
 				<label>
 					<div class="mb-1 flex items-center space-x-1">
-						<i class="fa-solid fa-tag mr-1" />
+						<i class="fa-solid fa-tag mr-1"></i>
 						<span>Brinco do animal</span>
 					</div>
-					<input type="number" class="input rounded" bind:value={brinco_do_animal} />
+					<input type="text" class="input rounded" bind:value={brinco_do_animal} />
 				</label>
 				<label>
 					<div class="mb-1 flex items-center space-x-1">
-						<i class="fa-solid fa-weight-hanging mr-1" />
+						<i class="fa-solid fa-weight-hanging mr-1"></i>
 						<span>Primeiro peso do animal</span>
 					</div>
-					<input type="number" class="input rounded" bind:value={primeiro_peso_do_animal} />
+					<input type="text" class="input rounded" bind:value={primeiro_peso_do_animal} />
 				</label>
 				<div class="flex flex-col justify-center items-center">
 					<div class="mb-2">Idade do animal</div>
@@ -58,16 +58,16 @@
 				{#if idade === 'meses'}
 					<label in:fade|local>
 						<div class="mb-1 flex items-center space-x-1">
-							<i class="fa-solid fa-calendar mr-1" />
+							<i class="fa-solid fa-calendar mr-1"></i>
 							<span>Idade do animal em meses</span>
 						</div>
-						<input type="number" class="input rounded" bind:value={idade_do_animal_em_meses} />
+						<input type="text" class="input rounded" bind:value={idade_do_animal_em_meses} />
 					</label>
 				{/if}
 				{#if idade === 'data_nascimento'}
 					<label in:fade|local>
 						<div class="mb-1 flex items-center space-x-1">
-							<i class="fa-solid fa-calendar mr-1" />
+							<i class="fa-solid fa-calendar mr-1"></i>
 							<span>Data de nascimento do animal</span>
 						</div>
 						<input type="date" class="input rounded" bind:value={data_de_nascimento_do_animal} />
@@ -75,7 +75,7 @@
 				{/if}
 				<div class="flex flex-col justify-center items-center">
 					<div class="mb-2">
-						<i class="fa-solid fa-venus-mars mr-1" />
+						<i class="fa-solid fa-venus-mars mr-1"></i>
 						<span>Sexo</span>
 					</div>
 					<RadioGroup
@@ -93,14 +93,14 @@
 				</div>
 				<label>
 					<div class="mb-1 flex items-center space-x-1">
-						<i class="fa-solid fa-weight-hanging mr-1" />
+						<i class="fa-solid fa-weight-hanging mr-1"></i>
 						<span>Brinco da mãe</span>
 					</div>
-					<input type="number" class="input rounded" bind:value={brinco_da_mae} />
+					<input type="text" class="input rounded" bind:value={brinco_da_mae} />
 				</label>
 				<div class="flex flex-col justify-center items-center mt-4">
 					<div class="mb-2">
-						<i class="fa-solid fa-tag mr-1" />
+						<i class="fa-solid fa-tag mr-1"></i>
 						<span>Raça</span>
 					</div>
 					<RadioGroup
