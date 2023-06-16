@@ -27,6 +27,7 @@
 
 <svelte:head
 	>{@html `<script>${autoModeWatcher.toString()} autoModeWatcher();</script>`}
+	<link rel="manifest" href="/manifest.webmanifest" />
 	<title>Modernização manejo</title></svelte:head
 >
 
