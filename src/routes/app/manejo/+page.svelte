@@ -6,9 +6,7 @@
 	import IoIosArrowDropleftCircle from 'svelte-icons/io/IoIosArrowDropleftCircle.svelte';
 	import AdicionarAnimal from './components/AdicionarAnimal.svelte';
 	import RemoverAnimal from './components/RemoverAnimal.svelte';
-	import Vacinacao from './components/Vacinacao.svelte';
 	import Pesagem from './components/Pesagem.svelte';
-	import Desmama from "./components/Desmama.svelte";
 
 	let valueSingle: string = 'adicionar_animal';
 
@@ -31,23 +29,11 @@
 			value: 'remover_animal'
 		},
 		{
-			title: 'Vacinação',
-			icon: 'fa-syringe',
-			name: 'geral',
-			value: 'vacinacao'
-		},
-		{
 			title: 'Pesagem',
 			icon: 'fa-weight-scale',
 			name: 'geral',
 			value: 'pesagem'
 		},
-		{
-			title: 'Desmama',
-			icon: 'fa-circle-xmark',
-			name: 'geral',
-			value: 'desmama'
-		}
 	];
 </script>
 
@@ -102,17 +88,9 @@
 			<div class="w-full h-full" in:fade>
 				<RemoverAnimal />
 			</div>
-		{:else if valueSingle === 'vacinacao'}
-			<div class="w-full h-full" in:fade>
-				<Vacinacao />
-			</div>
 		{:else if valueSingle === 'pesagem'}
 			<div class="w-full h-full" in:fade>
 				<Pesagem />
-			</div>
-		{:else if valueSingle === 'desmama'}
-			<div class="w-full h-full" in:fade>
-				<Desmama />
 			</div>
 		{/if}
 	</div>

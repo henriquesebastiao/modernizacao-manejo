@@ -21,16 +21,22 @@
 			value: 2
 		},
 		{
-			title: 'Animais',
-			icon: 'fa-cow',
-			href: '/app/animais',
+			title: 'Sanitário',
+			icon: 'fa-vial-circle-check',
+			href: '/app/sanitario',
 			value: 3
 		},
 		{
-			title: 'Adicionar',
-			icon: 'fa-plus',
-			href: '/app/add',
+			title: 'Cria',
+			icon: 'fa-cow',
+			href: '/app/cria',
 			value: 4
+		},
+		{
+			title: 'Lotes',
+			icon: 'fa-tree',
+			href: '/app/lotes',
+			value: 5
 		}
 	];
 </script>
@@ -45,7 +51,7 @@
 			class={`${item.href === currentPage ? 'bg-primary-active-token' : ''}`}
 			on:click={() => goto(item.href)}
 		>
-			<svelte:fragment slot="lead"><i class={`fa-solid ${item.icon} text-2xl`} /></svelte:fragment>
+			<svelte:fragment slot="lead"><i class={`fa-solid ${item.icon} text-2xl`}></i></svelte:fragment>
 			<span>{item.title}</span>
 		</AppRailTile>
 	{/each}
@@ -57,7 +63,7 @@
 		class={`${currentPage === 'app/settings' ? 'bg-primary-active-token' : ''}`}
 		on:click={() => goto('/app/settings')}
 	>
-		<svelte:fragment slot="lead"><i class="fa-solid fa-gear text-2xl" /></svelte:fragment>
+		<svelte:fragment slot="lead"><i class="fa-solid fa-gear text-2xl"></i></svelte:fragment>
 		<span>Ajustes</span>
 	</AppRailTile>
 </AppRail>

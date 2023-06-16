@@ -4,8 +4,8 @@ export const menuNavLinks: Record<string, Array<{ title: string; list: List }>> 
         {
             title: 'Relatórios',
             list: [
-                { href: '/teste/relatorio_geral', label: 'Relatório Geral', keywords: 'relatorio' },
-                { href: '/teste/relatorio_lote', label: 'Relatório Lote', keywords: 'relatorio' },
+                { href: 'app/relatorios/relatorio_geral', label: 'Relatório Geral', keywords: 'relatorio' },
+                { href: 'app/relatorios/relatorio_lote', label: 'Relatório Lote', keywords: 'relatorio' },
             ]
         }
     ],
@@ -19,12 +19,28 @@ export const menuNavLinks: Record<string, Array<{ title: string; list: List }>> 
             ]
         }
     ],
-    '/animais': [
+    '/sanitario': [
         {
-            title: 'Animais',
+            title: 'Sanitário',
             list: [
-                { href: '/animais', label: 'Animais', keywords: 'animais' },
+                { href: 'app/sanitario', label: 'Sanitário', keywords: 'sanitario' },
             ]
         }
-    ]
+    ],
+    '/cria': [
+        {
+            title: 'Cria',
+            list: [
+                { href: 'app/cria', label: 'Cria', keywords: 'cria' },
+            ]
+        }
+    ],
+    '/lotes': [
+        {
+            title: 'Lotes',
+            list: [
+                { href: 'app/lotes', label: 'Lotes', keywords: 'lotes' },
+            ]
+        }
+    ],
 }

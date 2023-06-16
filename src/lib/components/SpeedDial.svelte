@@ -22,7 +22,7 @@
 		{
 			title: 'Adicionar',
 			icon: 'fa-plus',
-			href: '/app/add'
+			href: '/app/lotes'
 		},
 		{
 			icon: 'fa-gear',
