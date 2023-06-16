@@ -46,14 +46,14 @@
 					<span>Identificador</span>
 					<input
 						class="input rounded"
-						type="text"
+						type="number"
 						placeholder="Ex: farmaco"
 						bind:value={pesoLog.ref}
 					/>
 				</label>
 				<label class="label">
 					<span>Peso (KG)</span>
-					<input class="input rounded" type="text" placeholder="Ex: 10" bind:value={pesoLog.peso} />
+					<input class="input rounded" type="number" placeholder="Ex: 10" bind:value={pesoLog.peso} />
 				</label>
 				<label class="label">
 					<span>Data de pesagem</span>

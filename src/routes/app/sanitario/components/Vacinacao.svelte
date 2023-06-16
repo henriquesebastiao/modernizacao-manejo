@@ -28,7 +28,7 @@
 					<span>Período de carência em dias</span>
 					<input
 						class="input rounded"
-						type="text"
+						type="number"
 						placeholder="Ex: 23 dias"
 						bind:value={carencia}
 					/>

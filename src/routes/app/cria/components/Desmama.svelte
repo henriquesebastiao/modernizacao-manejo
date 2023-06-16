@@ -25,7 +25,7 @@
                     <span>Brinco do animal:</span>
                     <input
                             class="input rounded"
-                            type="text"
+                            type="number"
                             bind:value={brinco_animal}
                     />
                 </label>
@@ -33,7 +33,7 @@
                 <label class="label">
                     <i class="fa-solid fa-weight-hanging mr-1"></i>
                     <span>Peso de desmama (Kg):</span>
-                    <input class="input rounded" type="text" placeholder="Ex: 10" bind:value={peso_desmama} />
+                    <input class="input rounded" type="number" placeholder="Ex: 10" bind:value={peso_desmama} />
                 </label>
 
                 <label class="label">

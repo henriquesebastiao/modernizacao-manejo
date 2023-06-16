@@ -34,7 +34,7 @@
 						<i class="fa-solid fa-tag mr-1"></i>
 						<span>Brinco do animal</span>
 					</div>
-					<input type="text" class="input rounded" bind:value={brinco_do_animal} />
+					<input type="number" class="input rounded" bind:value={brinco_do_animal} />
 				</label>
 
 				<label>
@@ -50,7 +50,7 @@
 						<i class="fa-solid fa-weight-hanging mr-1"></i>
 						<span>Peso de saída:</span>
 					</div>
-					<input type="text" class="input rounded" bind:value={peso_de_saida} />
+					<input type="number" class="input rounded" bind:value={peso_de_saida} />
 				</label>
 			</div>
 		</div>
