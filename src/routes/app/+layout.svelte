@@ -1,7 +1,6 @@
 <script lang="ts">
 	import MenusSideBar from '$lib/components/MenusSideBar/MenusSideBar.svelte';
 	import SpeedDial from '$lib/components/SpeedDial.svelte';
-	import { AppShell } from '@skeletonlabs/skeleton';
 	import { user } from '../../store';
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
@@ -13,10 +12,18 @@
 	});
 </script>
 
-<AppShell class="shadow-xl relative">
-	<svelte:fragment slot="sidebarLeft">
+<div class="w-full h-full flex relative">
+	<div class="w-[80px] max-lg:hidden">
 		<MenusSideBar />
-	</svelte:fragment>
-	<slot />
+	</div>
+	<div class="dinamic-width max-lg:!w-full">
+		<slot />
+	</div>
 	<SpeedDial />
-</AppShell>
+</div>
+
+<style>
+	.dinamic-width {
+		width: calc(100% - 80px);
+	}
+</style>

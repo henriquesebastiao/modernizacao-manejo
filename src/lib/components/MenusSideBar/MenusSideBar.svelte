@@ -41,7 +41,7 @@
 	];
 </script>
 
-<AppRail class="max-lg:hidden">
+<AppRail class="w-full h-full">
 	{#each appRailMenuItems as item}
 		<AppRailTile
 			bind:group={currentTile}

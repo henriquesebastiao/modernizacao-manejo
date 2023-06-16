@@ -16,12 +16,15 @@
 			href: '/app/manejo'
 		},
 		{
-			icon: 'fa-cow',
-			href: '/app/animais'
+			icon: 'fa-vial-circle-check',
+			href: '/app/sanitario'
 		},
 		{
-			title: 'Adicionar',
-			icon: 'fa-plus',
+			icon: 'fa-cow',
+			href: '/app/cria'
+		},
+		{
+			icon: 'fa-tree',
 			href: '/app/lotes'
 		},
 		{

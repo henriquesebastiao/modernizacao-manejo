@@ -31,18 +31,17 @@
 	<title>Modernização manejo</title></svelte:head
 >
 
-<div class="w-full h-full" in:fade>
-	<AppShell>
-		<svelte:fragment slot="header">
-			<Header />
-		</svelte:fragment>
-
+<div class="w-full h-full">
+	<div class="w-full h-[75px]">
+		<Header />
+	</div>
+	<div class="w-full dinamic-height">
 		<slot />
-
-		<svelte:fragment slot="footer">
-			{#if !$user.isLoggedIn}
-				<Footer />
-			{/if}
-		</svelte:fragment>
-	</AppShell>
+	</div>
 </div>
+
+<style>
+	.dinamic-height {
+		height: calc(100% - 75px);
+	}
+</style>

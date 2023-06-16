@@ -12,7 +12,7 @@
 
 	const drawerSettings: DrawerSettings = {
 		width: 'w-[280px] md:w-[480px]',
-		rounded: 'none'
+		rounded: 'none',
 	};
 
 	let subMenuItems = [
@@ -51,7 +51,7 @@
 			{/each}
 		</ListBox>
 	</div>
-	<div class="w-full h-full px-4 pt-4">
+	<div class="w-full overflow-scroll overflow-x-hidden px-4 py-4">
 		<Drawer>
 			<div class="w-full flex justify-end items-end pr-3 my-2">
 				<button on:click={() => drawerStore.close()}>
@@ -75,21 +75,21 @@
 				{/each}
 			</ListBox>
 		</Drawer>
-		<div class="md:hidden absolute bottom-0 right-0 mr-[4.7em] mb-2">
+		<div class="md:hidden absolute bottom-0 right-0 mr-[4.7em] mb-[0.55em]">
 			<button class="w-[54px]" on:click={() => drawerStore.open(drawerSettings)}>
 				<IoIosArrowDropleftCircle />
 			</button>
 		</div>
 		{#if valueSingle === 'adicionar_animal'}
-			<div class="w-full h-full" in:fade>
+			<div class="w-full" in:fade>
 				<AdicionarAnimal />
 			</div>
 		{:else if valueSingle === 'remover_animal'}
-			<div class="w-full h-full" in:fade>
+			<div class="w-full" in:fade>
 				<RemoverAnimal />
 			</div>
 		{:else if valueSingle === 'pesagem'}
-			<div class="w-full h-full" in:fade>
+			<div class="w-full" in:fade>
 				<Pesagem />
 			</div>
 		{/if}
