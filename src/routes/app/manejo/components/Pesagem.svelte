@@ -15,7 +15,7 @@
     };
 
     let pesoLog: PesoLogCreate = {
-        data: '',
+        data: new Date().toISOString().substr(0, 10),
         peso: 0,
         ref: ''
     };
@@ -27,6 +27,8 @@
             .then((res) => {
                 console.log(res);
                 toastStore.trigger(s);
+                pesoLog.peso = 0;
+                pesoLog.ref = '';
             })
             .catch((err) => {
                 console.log(err);
