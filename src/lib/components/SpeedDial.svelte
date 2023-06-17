@@ -28,6 +28,10 @@
 			href: '/app/lotes'
 		},
 		{
+			icon: 'fa-cash-register',
+			href: '/app/financeiro'
+		},
+		{
 			icon: 'fa-gear',
 			href: '/app/settings'
 		}
@@ -54,7 +58,7 @@
 					class:border-white={$page.route.id === item.href}
 					on:click={() => handleGoto(item.href)}
 				>
-					<i class={`fa-solid ${item.icon} text-2xl`} />
+					<i class={`fa-solid ${item.icon} text-2xl`}></i>
 				</button>
 			{/each}
 		</div>
