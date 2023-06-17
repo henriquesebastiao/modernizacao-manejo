@@ -5,6 +5,9 @@
     import type { DrawerSettings } from '@skeletonlabs/skeleton';
     import IoIosArrowDropleftCircle from 'svelte-icons/io/IoIosArrowDropleftCircle.svelte';
     import Vacinacao from "./components/Vacinacao.svelte";
+    import Procedimento from "./components/Procedimento.svelte";
+    import Exame from "./components/Exame.svelte";
+    import Outro from "./components/Outro.svelte";
 
     let valueSingle = 'vacinacao';
 
@@ -90,15 +93,15 @@
             </div>
         {:else if valueSingle === 'procedimento'}
             <div class="w-full" in:fade>
-                <h1 class="text-2xl">Procedimento</h1>
+                <Procedimento />
             </div>
         {:else if valueSingle === 'exame'}
             <div class="w-full" in:fade>
-                <h1 class="text-2xl">Exame</h1>
+                <Exame />
             </div>
         {:else if valueSingle === 'outro'}
             <div class="w-full" in:fade>
-                <h1 class="text-2xl">Outro</h1>
+                <Outro />
             </div>
         {/if}
     </div>
