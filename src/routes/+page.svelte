@@ -19,6 +19,6 @@
 				rgba(var(--color-secondary-500) / 0.33) 0px,
 				transparent 50%
 			),
-			radial-gradient(at 98% 1%, rgba(var(--color-error-500) / 0.33) 0px, transparent 50%);
+			radial-gradient(at 98% 1%, rgba(var(--color-primary-900) / 0.40) 0px, transparent 80%);
 	}
 </style>
