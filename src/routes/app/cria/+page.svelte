@@ -5,6 +5,7 @@
     import type { DrawerSettings } from '@skeletonlabs/skeleton';
     import IoIosArrowDropleftCircle from 'svelte-icons/io/IoIosArrowDropleftCircle.svelte';
     import Desmama from "../cria/components/Desmama.svelte";
+    import Parto from "../cria/components/Parto.svelte";
 
     let valueSingle = 'desmama';
 
@@ -19,6 +20,12 @@
             icon: 'fa-circle-xmark',
             name: 'geral',
             value: 'desmama'
+        },
+        {
+            title: 'Parto',
+            icon: 'fa-circle-xmark',
+            name: 'geral',
+            value: 'parto'
         }
     ];
 </script>
@@ -69,6 +76,10 @@
         {#if valueSingle === 'desmama'}
             <div class="w-full" in:fade>
                 <Desmama />
+            </div>
+        {:else if valueSingle === 'parto'}
+            <div class="w-full" in:fade>
+                <Parto />
             </div>
         {/if}
     </div>
