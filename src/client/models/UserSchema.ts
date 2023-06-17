@@ -5,6 +5,5 @@
 export type UserSchema = {
     email: string;
     password: string;
-    id: number;
 };
 
