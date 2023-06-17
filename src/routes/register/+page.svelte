@@ -38,8 +38,8 @@
 	}
 </script>
 
-<main class="h-full mx-auto flex justify-center items-center" in:fade>
-	<div class="card w-[600px] shadow-2xl p-4">
+<main class="w-full h-full mx-auto flex justify-center items-center" in:fade>
+	<div class="card w-[600px] shadow-2xl p-4 mx-4">
 		<form use:focusTrap={isFocused}>
 			<Stepper stepTerm="Passo" buttonBackLabel="← Voltar" buttonNextLabel="Próximo →" buttonCompleteLabel="Registrar" on:complete={userRegister}>
 				<Step active>
