@@ -3,11 +3,11 @@
 	import { page } from '$app/stores';
 
 	const menuItems = [
-		{ id: '/', label: 'INÍCIO' },
-		{ id: '/about', label: 'SOBRE' },
-		{ id: '/blog', label: 'BLOG' },
-		{ id: '/pricing', label: 'PLANOS' },
-		{ id: '/suporte', label: 'SUPORTE' }
+		{ href: '/', label: 'INÍCIO' },
+		{ href: '/about', label: 'SOBRE' },
+		{ href: '/blog', label: 'BLOG' },
+		{ href: '/pricing', label: 'PLANOS' },
+		{ href: '/suporte', label: 'SUPORTE' }
 	];
 
 	function drawerClose(): void {
@@ -22,12 +22,12 @@
 		{#each menuItems as item}
 			{#if !$page.route.id?.includes('/app')}
 				<button
-					class:variant-filled={$page.route.id === item.id}
-					class:rounded-xl={$page.route.id === item.id}
-					class:font-bold={$page.route.id === item.id}
+					class:variant-filled={$page.route.id === item.href}
+					class:rounded-xl={$page.route.id === item.href}
+					class:font-bold={$page.route.id === item.href}
 					class="hover:variant-filled hover:font-bold hover:rounded-xl w-[90px]"
 				>
-					<a class="btn btn-sm" href={item.id} on:click={drawerClose}>{item.label}</a>
+					<a class="btn btn-sm" href={item.href} on:click={drawerClose}>{item.label}</a>
 				</button>
 			{/if}
 		{/each}

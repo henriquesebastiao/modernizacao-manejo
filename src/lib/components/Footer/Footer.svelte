@@ -1,7 +1,5 @@
 <script lang="ts">
-
     const cRow = 'flex flex-col md:flex-row justify-center items-center md:items-center space-y-2 md:space-y-0';
-
 </script>
 
 <div class="page-footer">

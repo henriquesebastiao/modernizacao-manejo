@@ -3,13 +3,14 @@
     import { ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
     import { Drawer, drawerStore } from '@skeletonlabs/skeleton';
     import type { DrawerSettings } from '@skeletonlabs/skeleton';
-    import IoIosArrowDropleftCircle from 'svelte-icons/io/IoIosArrowDropleftCircle.svelte';
+    import IoMdMenu from 'svelte-icons/io/IoMdMenu.svelte';
 
     let valueSingle = 'troca_lote';
 
     const drawerSettings: DrawerSettings = {
         width: 'w-[52%] md:w-[480px]',
-        rounded: 'none'
+        rounded: 'none',
+        duration: 400
     };
 
     let subMenuItems = [
@@ -60,11 +61,12 @@
                 {/each}
             </ListBox>
         </Drawer>
-        <div class="md:hidden absolute bottom-0 right-0 mr-[4.7em] mb-2">
-            <button class="w-[54px]" on:click={() => drawerStore.open(drawerSettings)}>
-                <IoIosArrowDropleftCircle />
-            </button>
-        </div>
+        <button
+			class="w-[45px] m-5 md:hidden absolute bottom-0 left-0 bg-white rounded-full text-black p-1"
+			on:click={() => drawerStore.open(drawerSettings)}
+		>
+			<IoMdMenu />
+		</button>
         {#if valueSingle === 'troca_lote'}
             <div class="w-full h-full" in:fade>
                 <h1 class="text-2xl">Troca de Lote</h1>

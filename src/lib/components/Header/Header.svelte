@@ -89,7 +89,7 @@
 						fill-rule="nonzero"
 					/>
 				</svg>
-				<strong class="text-xl">Manejo</strong>
+				<strong class="text-xl max-small:hidden">Manejo</strong>
 			</a>
 		</div>
 	</svelte:fragment>
