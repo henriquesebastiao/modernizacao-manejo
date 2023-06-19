@@ -68,12 +68,12 @@
 
 <div
 	class="absolute w-[60px] max-small:w-[45px] bottom-0 right-0 m-5 lg:hidden flex flex-col items-center gap-y-7"
+	bind:this={modalRef}
 >
 	{#if isOpen}
 		<div
 			class="flex flex-col space-y-5 items-center justify-center w-full"
 			transition:fly|local={{ y: 80, duration: 200 }}
-			bind:this={modalRef}
 		>
 			{#each appMenu as item}
 				<button
