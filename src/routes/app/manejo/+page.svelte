@@ -54,7 +54,7 @@
 	</div>
 	<div class="w-full overflow-scroll overflow-x-hidden px-4 py-4">
 		<Drawer>
-			<div class="flex w-full h-full justify-between flex-col">
+			<div class="flex w-full h-full flex-col">
 				<div class="w-full flex justify-end items-end pr-3 my-2">
 					<button on:click={() => drawerStore.close()}>
 						<i class={`fa-solid fa-times text-2xl`} />
