@@ -8,6 +8,7 @@
 	import type { ToastSettings } from '@skeletonlabs/skeleton';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 
 	function drawerClose(): void {
 		drawerStore.close();
@@ -42,6 +43,43 @@
 			}
 		}
 	};
+
+	let deferredPrompt: any;
+
+	function showInstallPrompt() {
+		if (typeof document !== undefined) {
+			// Show the install prompt
+			const installButton: any = document.getElementById('install-button');
+			installButton.style.display = 'block';
+			installButton.addEventListener('click', () => {
+				// Hide the install button
+				installButton.style.display = 'none';
+				// Show the install prompt
+				deferredPrompt.prompt();
+				// Wait for the user to respond to the prompt
+				deferredPrompt.userChoice.then((choiceResult: any) => {
+					if (choiceResult.outcome === 'accepted') {
+						console.log('User accepted the install prompt');
+					} else {
+						console.log('User dismissed the install prompt');
+					}
+					// Reset the deferred prompt variable
+					deferredPrompt = null;
+				});
+			});
+		}
+	}
+
+	onMount(() => {
+		window.addEventListener('beforeinstallprompt', (e) => {
+			// Prevent Chrome 67 and earlier from automatically showing the prompt
+			e.preventDefault();
+			// Stash the event so it can be triggered later.
+			deferredPrompt = e;
+			// Show the prompt
+			showInstallPrompt();
+		});
+	});
 </script>
 
 <Drawer>
@@ -91,6 +129,7 @@
 				</svg>
 				<strong class="text-xl max-small:hidden">Manejo</strong>
 			</a>
+			<button on:click={showInstallPrompt}>instalar</button>
 		</div>
 	</svelte:fragment>
 	<div class="relative hidden lg:block">
