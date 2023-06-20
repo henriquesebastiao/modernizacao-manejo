@@ -47,7 +47,7 @@
               <span class="text-5xl font-bold tracking-tight">$349</span>
               <span class="text-sm font-semibold leading-6 tracking-wide">USD</span>
             </p>
-            <a href="#" class="btn variant-filled-primary mt-10 block w-full rounded-md px-3 py-2 text-center text-sm font-semibold shadow-sm">Get access</a>
+            <a href="www.pricing.com" class="btn variant-filled-primary mt-10 block w-full rounded-md px-3 py-2 text-center text-sm font-semibold shadow-sm">Get access</a>
             <p class="mt-6 text-xs leading-5">Invoices and receipts available for easy company reimbursement</p>
           </div>
         </div>
