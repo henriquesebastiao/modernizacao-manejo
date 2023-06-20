@@ -72,7 +72,7 @@ export class RacaService {
      */
     public static deleteRacaRacaIdDelete(
         racaId: number,
-    ): CancelablePromise<Record<string, any>> {
+    ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/raca/{raca_id}',
@@ -88,14 +88,12 @@ export class RacaService {
     /**
      * Update
      * @param racaId
-     * @param session
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
     public static updateRacaRacaIdPatch(
         racaId: number,
-        session: any,
         requestBody: RacaUpdate,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
@@ -103,9 +101,6 @@ export class RacaService {
             url: '/raca/{raca_id}',
             path: {
                 'raca_id': racaId,
-            },
-            query: {
-                'session': session,
             },
             body: requestBody,
             mediaType: 'application/json',

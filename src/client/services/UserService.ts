@@ -67,22 +67,17 @@ export class UserService {
     /**
      * Delete
      * @param userId
-     * @param session
      * @returns any Successful Response
      * @throws ApiError
      */
     public static deleteUserUserIdDelete(
         userId: number,
-        session: any,
-    ): CancelablePromise<Record<string, any>> {
+    ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/user/{user_id}',
             path: {
                 'user_id': userId,
-            },
-            query: {
-                'session': session,
             },
             errors: {
                 422: `Validation Error`,

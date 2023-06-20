@@ -72,7 +72,7 @@ export class PesoLogService {
      */
     public static deletePesoLogPesoLogIdDelete(
         pesoLogId: number,
-    ): CancelablePromise<Record<string, any>> {
+    ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/peso_log/{peso_log_id}',

@@ -72,7 +72,7 @@ export class LoteService {
      */
     public static deleteLoteLoteIdDelete(
         loteId: number,
-    ): CancelablePromise<Record<string, any>> {
+    ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/lote/{lote_id}',

@@ -72,7 +72,7 @@ export class DietaService {
      */
     public static deleteDietaDietaIdDelete(
         dietaId: number,
-    ): CancelablePromise<Record<string, any>> {
+    ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/dieta/{dieta_id}',

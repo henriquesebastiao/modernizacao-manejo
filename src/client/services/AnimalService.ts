@@ -66,22 +66,17 @@ export class AnimalService {
     /**
      * Delete
      * @param animalId
-     * @param session
      * @returns any Successful Response
      * @throws ApiError
      */
     public static deleteAnimalAnimalIdDelete(
         animalId: number,
-        session: any,
-    ): CancelablePromise<Record<string, any>> {
+    ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/animal/{animal_id}',
             path: {
                 'animal_id': animalId,
-            },
-            query: {
-                'session': session,
             },
             errors: {
                 422: `Validation Error`,

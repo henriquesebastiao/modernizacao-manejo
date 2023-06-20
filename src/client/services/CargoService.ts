@@ -72,7 +72,7 @@ export class CargoService {
      */
     public static deleteCargoCargoIdDelete(
         cargoId: number,
-    ): CancelablePromise<Record<string, any>> {
+    ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/cargo/{cargo_id}',

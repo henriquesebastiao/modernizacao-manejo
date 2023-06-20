@@ -72,7 +72,7 @@ export class FazendaService {
      */
     public static deleteFazendaFazendaIdDelete(
         fazendaId: number,
-    ): CancelablePromise<Record<string, any>> {
+    ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/fazenda/{fazenda_id}',

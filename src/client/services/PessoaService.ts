@@ -72,7 +72,7 @@ export class PessoaService {
      */
     public static deletePessoaPessoaIdDelete(
         pessoaId: number,
-    ): CancelablePromise<Record<string, any>> {
+    ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/pessoa/{pessoa_id}',
