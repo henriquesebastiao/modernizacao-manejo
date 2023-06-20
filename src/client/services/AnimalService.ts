@@ -2,7 +2,6 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { AnimalCreate } from '../models/AnimalCreate';
-import type { AnimalSchema } from '../models/AnimalSchema';
 import type { AnimalUpdate } from '../models/AnimalUpdate';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
@@ -26,12 +25,12 @@ export class AnimalService {
     /**
      * Create
      * @param requestBody
-     * @returns AnimalSchema Successful Response
+     * @returns any Successful Response
      * @throws ApiError
      */
     public static createAnimalPost(
         requestBody: AnimalCreate,
-    ): CancelablePromise<AnimalSchema> {
+    ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/animal/',
@@ -46,12 +45,12 @@ export class AnimalService {
     /**
      * Get By Id
      * @param animalId
-     * @returns AnimalSchema Successful Response
+     * @returns any Successful Response
      * @throws ApiError
      */
     public static getByIdAnimalAnimalIdGet(
         animalId: number,
-    ): CancelablePromise<AnimalSchema> {
+    ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/animal/{animal_id}',
@@ -67,17 +66,22 @@ export class AnimalService {
     /**
      * Delete
      * @param animalId
+     * @param session
      * @returns any Successful Response
      * @throws ApiError
      */
     public static deleteAnimalAnimalIdDelete(
         animalId: number,
+        session: any,
     ): CancelablePromise<Record<string, any>> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/animal/{animal_id}',
             path: {
                 'animal_id': animalId,
+            },
+            query: {
+                'session': session,
             },
             errors: {
                 422: `Validation Error`,
@@ -113,12 +117,12 @@ export class AnimalService {
     /**
      * Get By Brinco
      * @param brinco
-     * @returns AnimalSchema Successful Response
+     * @returns any Successful Response
      * @throws ApiError
      */
     public static getByBrincoAnimalBrincoGet(
         brinco: string,
-    ): CancelablePromise<AnimalSchema> {
+    ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/animal/{brinco}',
@@ -134,12 +138,12 @@ export class AnimalService {
     /**
      * Get By Chip
      * @param chip
-     * @returns AnimalSchema Successful Response
+     * @returns any Successful Response
      * @throws ApiError
      */
     public static getByChipAnimalChipGet(
         chip: string,
-    ): CancelablePromise<AnimalSchema> {
+    ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/animal/{chip}',

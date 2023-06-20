@@ -12,12 +12,12 @@ export class LoginService {
     /**
      * Login
      * @param requestBody
-     * @returns LoginSchema Successful Response
+     * @returns any Successful Response
      * @throws ApiError
      */
     public static loginLoginPost(
         requestBody: LoginSchema,
-    ): CancelablePromise<LoginSchema> {
+    ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/login/',

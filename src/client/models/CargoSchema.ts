@@ -4,6 +4,5 @@
 
 export type CargoSchema = {
     nome: string;
-    id: number;
 };
 

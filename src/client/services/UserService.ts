@@ -2,7 +2,6 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { UserCreate } from '../models/UserCreate';
-import type { UserSchema } from '../models/UserSchema';
 import type { UserUpdate } from '../models/UserUpdate';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
@@ -13,10 +12,10 @@ export class UserService {
 
     /**
      * Get All
-     * @returns UserSchema Successful Response
+     * @returns any Successful Response
      * @throws ApiError
      */
-    public static getAllUserGet(): CancelablePromise<Array<UserSchema>> {
+    public static getAllUserGet(): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/user/',
@@ -26,12 +25,12 @@ export class UserService {
     /**
      * Create
      * @param requestBody
-     * @returns UserSchema Successful Response
+     * @returns any Successful Response
      * @throws ApiError
      */
     public static createUserPost(
         requestBody: UserCreate,
-    ): CancelablePromise<UserSchema> {
+    ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/user/',
@@ -46,12 +45,12 @@ export class UserService {
     /**
      * Get By Id
      * @param userId
-     * @returns UserSchema Successful Response
+     * @returns any Successful Response
      * @throws ApiError
      */
     public static getByIdUserUserIdGet(
         userId: number,
-    ): CancelablePromise<UserSchema> {
+    ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/user/{user_id}',
@@ -67,17 +66,22 @@ export class UserService {
     /**
      * Delete
      * @param userId
+     * @param session
      * @returns any Successful Response
      * @throws ApiError
      */
     public static deleteUserUserIdDelete(
         userId: number,
+        session: any,
     ): CancelablePromise<Record<string, any>> {
         return __request(OpenAPI, {
             method: 'DELETE',
             url: '/user/{user_id}',
             path: {
                 'user_id': userId,
+            },
+            query: {
+                'session': session,
             },
             errors: {
                 422: `Validation Error`,

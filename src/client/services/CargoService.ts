@@ -26,12 +26,12 @@ export class CargoService {
     /**
      * Create
      * @param requestBody
-     * @returns CargoSchema Successful Response
+     * @returns any Successful Response
      * @throws ApiError
      */
     public static createCargoPost(
         requestBody: CargoCreate,
-    ): CancelablePromise<CargoSchema> {
+    ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/cargo/',

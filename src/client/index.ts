@@ -7,7 +7,6 @@ export { OpenAPI } from './core/OpenAPI';
 export type { OpenAPIConfig } from './core/OpenAPI';
 
 export type { AnimalCreate } from './models/AnimalCreate';
-export type { AnimalSchema } from './models/AnimalSchema';
 export type { AnimalUpdate } from './models/AnimalUpdate';
 export type { CargoCreate } from './models/CargoCreate';
 export type { CargoSchema } from './models/CargoSchema';
@@ -43,7 +42,6 @@ export type { RacaSchema } from './models/RacaSchema';
 export type { RacaUpdate } from './models/RacaUpdate';
 export { Sexo } from './models/Sexo';
 export type { UserCreate } from './models/UserCreate';
-export type { UserSchema } from './models/UserSchema';
 export type { UserUpdate } from './models/UserUpdate';
 export type { ValidationError } from './models/ValidationError';
 
