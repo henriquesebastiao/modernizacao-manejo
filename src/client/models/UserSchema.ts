@@ -2,11 +2,10 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type UserCreate = {
+export type UserSchema = {
     email: string;
     first_name: string;
     last_name: string;
     phone: string;
-    password: string;
 };
 

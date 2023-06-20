@@ -26,12 +26,12 @@ export class RacaService {
     /**
      * Create
      * @param requestBody
-     * @returns RacaSchema Successful Response
+     * @returns any Successful Response
      * @throws ApiError
      */
     public static createRacaPost(
         requestBody: RacaCreate,
-    ): CancelablePromise<RacaSchema> {
+    ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/raca/',
@@ -88,12 +88,14 @@ export class RacaService {
     /**
      * Update
      * @param racaId
+     * @param session
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
     public static updateRacaRacaIdPatch(
         racaId: number,
+        session: any,
         requestBody: RacaUpdate,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
@@ -101,6 +103,9 @@ export class RacaService {
             url: '/raca/{raca_id}',
             path: {
                 'raca_id': racaId,
+            },
+            query: {
+                'session': session,
             },
             body: requestBody,
             mediaType: 'application/json',

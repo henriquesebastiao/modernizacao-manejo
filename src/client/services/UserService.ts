@@ -2,6 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 import type { UserCreate } from '../models/UserCreate';
+import type { UserSchema } from '../models/UserSchema';
 import type { UserUpdate } from '../models/UserUpdate';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
@@ -12,10 +13,10 @@ export class UserService {
 
     /**
      * Get All
-     * @returns any Successful Response
+     * @returns UserSchema Successful Response
      * @throws ApiError
      */
-    public static getAllUserGet(): CancelablePromise<any> {
+    public static getAllUserGet(): CancelablePromise<Array<UserSchema>> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/user/',
@@ -45,12 +46,12 @@ export class UserService {
     /**
      * Get By Id
      * @param userId
-     * @returns any Successful Response
+     * @returns UserSchema Successful Response
      * @throws ApiError
      */
     public static getByIdUserUserIdGet(
         userId: number,
-    ): CancelablePromise<any> {
+    ): CancelablePromise<UserSchema> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/user/{user_id}',

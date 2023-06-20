@@ -42,6 +42,7 @@ export type { RacaSchema } from './models/RacaSchema';
 export type { RacaUpdate } from './models/RacaUpdate';
 export { Sexo } from './models/Sexo';
 export type { UserCreate } from './models/UserCreate';
+export type { UserSchema } from './models/UserSchema';
 export type { UserUpdate } from './models/UserUpdate';
 export type { ValidationError } from './models/ValidationError';
 
