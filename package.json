@@ -45,6 +45,7 @@
 	"type": "module",
 	"dependencies": {
 		"kolorist": "^1.8.0",
+		"svelte-frappe-charts": "^1.10.0",
 		"svelte-icons": "^2.1.0"
 	}
 }

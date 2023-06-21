@@ -4,6 +4,8 @@
 	import { Drawer, drawerStore } from '@skeletonlabs/skeleton';
 	import type { DrawerSettings } from '@skeletonlabs/skeleton';
 	import IoMdMenu from 'svelte-icons/io/IoMdMenu.svelte';
+	import RelatorioGeral from './components/RelatorioGeral.svelte';
+	import RelatorioLote from './components/RelatorioLote.svelte';
 
 	let valueSingle = 'geral';
 
@@ -77,13 +79,9 @@
 			<IoMdMenu />
 		</button>
 		{#if valueSingle === 'geral'}
-			<div in:fade>
-				<h1 class="text-2xl">Relatório geral</h1>
-			</div>
+			<RelatorioGeral />
 		{:else if valueSingle === 'lote'}
-			<div in:fade>
-				<h1 class="text-2xl">Relatório lote</h1>
-			</div>
+			<RelatorioLote />
 		{/if}
 	</div>
 </div>
