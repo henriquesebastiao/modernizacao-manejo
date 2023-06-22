@@ -1,40 +1,38 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { FazendeiroCreate } from '../models/FazendeiroCreate';
-import type { FazendeiroSchema } from '../models/FazendeiroSchema';
-import type { FazendeiroUpdate } from '../models/FazendeiroUpdate';
+import type { BreedSchema } from '../models/BreedSchema';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 
-export class FazendeiroService {
+export class AnimalBreedService {
 
     /**
      * Get All
-     * @returns FazendeiroSchema Successful Response
+     * @returns any Successful Response
      * @throws ApiError
      */
-    public static getAllFazendeiroGet(): CancelablePromise<Array<FazendeiroSchema>> {
+    public static getAllAnimalBreedGet(): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/fazendeiro/',
+            url: '/animal/breed/',
         });
     }
 
     /**
      * Create
      * @param requestBody
-     * @returns FazendeiroSchema Successful Response
+     * @returns any Successful Response
      * @throws ApiError
      */
-    public static createFazendeiroPost(
-        requestBody: FazendeiroCreate,
-    ): CancelablePromise<FazendeiroSchema> {
+    public static createAnimalBreedPost(
+        requestBody: BreedSchema,
+    ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/fazendeiro/',
+            url: '/animal/breed/',
             body: requestBody,
             mediaType: 'application/json',
             errors: {
@@ -44,19 +42,19 @@ export class FazendeiroService {
     }
 
     /**
-     * Get By Id
-     * @param fazendeiroId
-     * @returns FazendeiroSchema Successful Response
+     * Get By
+     * @param breedId
+     * @returns any Successful Response
      * @throws ApiError
      */
-    public static getByIdFazendeiroFazendeiroIdGet(
-        fazendeiroId: number,
-    ): CancelablePromise<FazendeiroSchema> {
+    public static getByAnimalBreedBreedIdGet(
+        breedId: number,
+    ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/fazendeiro/{fazendeiro_id}',
+            url: '/animal/breed/{breed_id}',
             path: {
-                'fazendeiro_id': fazendeiroId,
+                'breed_id': breedId,
             },
             errors: {
                 422: `Validation Error`,
@@ -66,18 +64,18 @@ export class FazendeiroService {
 
     /**
      * Delete
-     * @param fazendeiroId
+     * @param breedId
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static deleteFazendeiroFazendeiroIdDelete(
-        fazendeiroId: number,
+    public static deleteAnimalBreedBreedIdDelete(
+        breedId: number,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/fazendeiro/{fazendeiro_id}',
+            url: '/animal/breed/{breed_id}',
             path: {
-                'fazendeiro_id': fazendeiroId,
+                'breed_id': breedId,
             },
             errors: {
                 422: `Validation Error`,
@@ -87,20 +85,20 @@ export class FazendeiroService {
 
     /**
      * Update
-     * @param fazendeiroId
+     * @param breedId
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static updateFazendeiroFazendeiroIdPatch(
-        fazendeiroId: number,
-        requestBody: FazendeiroUpdate,
+    public static updateAnimalBreedBreedIdPatch(
+        breedId: number,
+        requestBody: BreedSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/fazendeiro/{fazendeiro_id}',
+            url: '/animal/breed/{breed_id}',
             path: {
-                'fazendeiro_id': fazendeiroId,
+                'breed_id': breedId,
             },
             body: requestBody,
             mediaType: 'application/json',

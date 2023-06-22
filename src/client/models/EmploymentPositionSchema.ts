@@ -2,7 +2,8 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type FazendeiroSchema = {
+export type EmploymentPositionSchema = {
     id: number;
+    name: number;
 };
 

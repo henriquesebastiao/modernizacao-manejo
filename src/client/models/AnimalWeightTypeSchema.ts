@@ -2,6 +2,8 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type FazendeiroUpdate = {
+export type AnimalWeightTypeSchema = {
+    id: number;
+    type: string;
 };
 

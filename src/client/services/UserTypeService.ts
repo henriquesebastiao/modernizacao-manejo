@@ -1,25 +1,23 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { CargoCreate } from '../models/CargoCreate';
-import type { CargoSchema } from '../models/CargoSchema';
-import type { CargoUpdate } from '../models/CargoUpdate';
+import type { UserTypeSchema } from '../models/UserTypeSchema';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 
-export class CargoService {
+export class UserTypeService {
 
     /**
      * Get All
-     * @returns CargoSchema Successful Response
+     * @returns any Successful Response
      * @throws ApiError
      */
-    public static getAllCargoGet(): CancelablePromise<Array<CargoSchema>> {
+    public static getAllUserTypeGet(): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/cargo/',
+            url: '/user/type/',
         });
     }
 
@@ -29,12 +27,12 @@ export class CargoService {
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static createCargoPost(
-        requestBody: CargoCreate,
+    public static createUserTypePost(
+        requestBody: UserTypeSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/cargo/',
+            url: '/user/type/',
             body: requestBody,
             mediaType: 'application/json',
             errors: {
@@ -44,19 +42,19 @@ export class CargoService {
     }
 
     /**
-     * Get By Id
-     * @param cargoId
-     * @returns CargoSchema Successful Response
+     * Get By
+     * @param userTypeId
+     * @returns any Successful Response
      * @throws ApiError
      */
-    public static getByIdCargoCargoIdGet(
-        cargoId: number,
-    ): CancelablePromise<CargoSchema> {
+    public static getByUserTypeUserTypeIdGet(
+        userTypeId: number,
+    ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/cargo/{cargo_id}',
+            url: '/user/type/{user_type_id}',
             path: {
-                'cargo_id': cargoId,
+                'user_type_id': userTypeId,
             },
             errors: {
                 422: `Validation Error`,
@@ -66,18 +64,18 @@ export class CargoService {
 
     /**
      * Delete
-     * @param cargoId
+     * @param userTypeId
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static deleteCargoCargoIdDelete(
-        cargoId: number,
+    public static deleteUserTypeUserTypeIdDelete(
+        userTypeId: number,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/cargo/{cargo_id}',
+            url: '/user/type/{user_type_id}',
             path: {
-                'cargo_id': cargoId,
+                'user_type_id': userTypeId,
             },
             errors: {
                 422: `Validation Error`,
@@ -87,20 +85,20 @@ export class CargoService {
 
     /**
      * Update
-     * @param cargoId
+     * @param userTypeId
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static updateCargoCargoIdPatch(
-        cargoId: number,
-        requestBody: CargoUpdate,
+    public static updateUserTypeUserTypeIdPatch(
+        userTypeId: number,
+        requestBody: UserTypeSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/cargo/{cargo_id}',
+            url: '/user/type/{user_type_id}',
             path: {
-                'cargo_id': cargoId,
+                'user_type_id': userTypeId,
             },
             body: requestBody,
             mediaType: 'application/json',

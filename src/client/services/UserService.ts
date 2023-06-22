@@ -1,9 +1,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { UserCreate } from '../models/UserCreate';
 import type { UserSchema } from '../models/UserSchema';
-import type { UserUpdate } from '../models/UserUpdate';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
@@ -13,10 +11,10 @@ export class UserService {
 
     /**
      * Get All
-     * @returns UserSchema Successful Response
+     * @returns any Successful Response
      * @throws ApiError
      */
-    public static getAllUserGet(): CancelablePromise<Array<UserSchema>> {
+    public static getAllUserGet(): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/user/',
@@ -30,7 +28,7 @@ export class UserService {
      * @throws ApiError
      */
     public static createUserPost(
-        requestBody: UserCreate,
+        requestBody: UserSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
@@ -44,14 +42,14 @@ export class UserService {
     }
 
     /**
-     * Get By Id
+     * Get By
      * @param userId
-     * @returns UserSchema Successful Response
+     * @returns any Successful Response
      * @throws ApiError
      */
-    public static getByIdUserUserIdGet(
+    public static getByUserUserIdGet(
         userId: number,
-    ): CancelablePromise<UserSchema> {
+    ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/user/{user_id}',
@@ -94,7 +92,7 @@ export class UserService {
      */
     public static updateUserUserIdPatch(
         userId: number,
-        requestBody: UserUpdate,
+        requestBody: UserSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',

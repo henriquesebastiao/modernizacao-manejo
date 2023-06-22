@@ -2,9 +2,9 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type PropriedadeSchema = {
-    nome: string;
-    fazendeiro_id: number;
+export type BatchSchema = {
     id: number;
+    reg: string;
+    farm_id: number;
 };
 

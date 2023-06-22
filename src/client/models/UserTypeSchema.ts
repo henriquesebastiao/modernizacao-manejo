@@ -2,7 +2,8 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type RacaUpdate = {
-    nome: string;
+export type UserTypeSchema = {
+    id: number;
+    type: string;
 };
 

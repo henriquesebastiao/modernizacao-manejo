@@ -1,25 +1,23 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { PesoLogCreate } from '../models/PesoLogCreate';
-import type { PesoLogSchema } from '../models/PesoLogSchema';
-import type { PesoLogUpdate } from '../models/PesoLogUpdate';
+import type { EmploymentPositionSchema } from '../models/EmploymentPositionSchema';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 
-export class PesoLogService {
+export class EmploymentPositionService {
 
     /**
      * Get All
-     * @returns PesoLogSchema Successful Response
+     * @returns any Successful Response
      * @throws ApiError
      */
-    public static getAllPesoLogGet(): CancelablePromise<Array<PesoLogSchema>> {
+    public static getAllEmploymentPositionGet(): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/peso_log/',
+            url: '/employment/position/',
         });
     }
 
@@ -29,12 +27,12 @@ export class PesoLogService {
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static createPesoLogPost(
-        requestBody: PesoLogCreate,
+    public static createEmploymentPositionPost(
+        requestBody: EmploymentPositionSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/peso_log/',
+            url: '/employment/position/',
             body: requestBody,
             mediaType: 'application/json',
             errors: {
@@ -44,19 +42,19 @@ export class PesoLogService {
     }
 
     /**
-     * Get By Id
-     * @param pesoLogId
-     * @returns PesoLogSchema Successful Response
+     * Get By
+     * @param employmentPositionId
+     * @returns any Successful Response
      * @throws ApiError
      */
-    public static getByIdPesoLogPesoLogIdGet(
-        pesoLogId: number,
-    ): CancelablePromise<PesoLogSchema> {
+    public static getByEmploymentPositionEmploymentPositionIdGet(
+        employmentPositionId: number,
+    ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/peso_log/{peso_log_id}',
+            url: '/employment/position/{employment_position_id}',
             path: {
-                'peso_log_id': pesoLogId,
+                'employment_position_id': employmentPositionId,
             },
             errors: {
                 422: `Validation Error`,
@@ -66,18 +64,18 @@ export class PesoLogService {
 
     /**
      * Delete
-     * @param pesoLogId
+     * @param employmentPositionId
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static deletePesoLogPesoLogIdDelete(
-        pesoLogId: number,
+    public static deleteEmploymentPositionEmploymentPositionIdDelete(
+        employmentPositionId: number,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/peso_log/{peso_log_id}',
+            url: '/employment/position/{employment_position_id}',
             path: {
-                'peso_log_id': pesoLogId,
+                'employment_position_id': employmentPositionId,
             },
             errors: {
                 422: `Validation Error`,
@@ -87,20 +85,20 @@ export class PesoLogService {
 
     /**
      * Update
-     * @param pesoLogId
+     * @param employmentPositionId
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static updatePesoLogPesoLogIdPatch(
-        pesoLogId: number,
-        requestBody: PesoLogUpdate,
+    public static updateEmploymentPositionEmploymentPositionIdPatch(
+        employmentPositionId: number,
+        requestBody: EmploymentPositionSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/peso_log/{peso_log_id}',
+            url: '/employment/position/{employment_position_id}',
             path: {
-                'peso_log_id': pesoLogId,
+                'employment_position_id': employmentPositionId,
             },
             body: requestBody,
             mediaType: 'application/json',
