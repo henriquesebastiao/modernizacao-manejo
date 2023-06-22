@@ -10,12 +10,12 @@ import { request as __request } from '../core/request';
 export class LoginService {
 
     /**
-     * Login
+     * Email
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static loginLoginPost(
+    public static loginEmail(
         requestBody: LoginSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {

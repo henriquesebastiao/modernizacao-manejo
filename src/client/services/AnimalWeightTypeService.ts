@@ -1,23 +1,23 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { AnimalSchema } from '../models/AnimalSchema';
+import type { AnimalWeightTypeSchema } from '../models/AnimalWeightTypeSchema';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 
-export class AnimalService {
+export class AnimalWeightTypeService {
 
     /**
      * Get All
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static animalGetAll(): CancelablePromise<any> {
+    public static animalWeightTypeGetAll(): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/animal/',
+            url: '/animal/weight/type/',
         });
     }
 
@@ -27,12 +27,12 @@ export class AnimalService {
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static animalCreate(
-        requestBody: AnimalSchema,
+    public static animalWeightTypeCreate(
+        requestBody: AnimalWeightTypeSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/animal/',
+            url: '/animal/weight/type/',
             body: requestBody,
             mediaType: 'application/json',
             errors: {
@@ -43,18 +43,18 @@ export class AnimalService {
 
     /**
      * Get By
-     * @param animalId
+     * @param animalWeightTypeId
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static animalGetBy(
-        animalId: number,
+    public static animalWeightTypeGetBy(
+        animalWeightTypeId: number,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/animal/{animal_id}',
+            url: '/animal/weight/type/{animal_weight_type_id}',
             path: {
-                'animal_id': animalId,
+                'animal_weight_type_id': animalWeightTypeId,
             },
             errors: {
                 422: `Validation Error`,
@@ -64,18 +64,18 @@ export class AnimalService {
 
     /**
      * Delete
-     * @param animalId
+     * @param animalWeightTypeId
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static animalDelete(
-        animalId: number,
+    public static animalWeightTypeDelete(
+        animalWeightTypeId: number,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/animal/{animal_id}',
+            url: '/animal/weight/type/{animal_weight_type_id}',
             path: {
-                'animal_id': animalId,
+                'animal_weight_type_id': animalWeightTypeId,
             },
             errors: {
                 422: `Validation Error`,
@@ -85,20 +85,20 @@ export class AnimalService {
 
     /**
      * Update
-     * @param animalId
+     * @param animalWeightTypeId
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static animalUpdate(
-        animalId: number,
-        requestBody: AnimalSchema,
+    public static animalWeightTypeUpdate(
+        animalWeightTypeId: number,
+        requestBody: AnimalWeightTypeSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/animal/{animal_id}',
+            url: '/animal/weight/type/{animal_weight_type_id}',
             path: {
-                'animal_id': animalId,
+                'animal_weight_type_id': animalWeightTypeId,
             },
             body: requestBody,
             mediaType: 'application/json',

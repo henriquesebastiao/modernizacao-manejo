@@ -1,23 +1,23 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { AnimalSchema } from '../models/AnimalSchema';
+import type { BatchLogSchema } from '../models/BatchLogSchema';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 
-export class AnimalService {
+export class AnimalBatchLogService {
 
     /**
      * Get All
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static animalGetAll(): CancelablePromise<any> {
+    public static animalBatchLogGetAll(): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/animal/',
+            url: '/animal/batch_log/',
         });
     }
 
@@ -27,12 +27,12 @@ export class AnimalService {
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static animalCreate(
-        requestBody: AnimalSchema,
+    public static animalBatchLogCreate(
+        requestBody: BatchLogSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/animal/',
+            url: '/animal/batch_log/',
             body: requestBody,
             mediaType: 'application/json',
             errors: {
@@ -43,18 +43,18 @@ export class AnimalService {
 
     /**
      * Get By
-     * @param animalId
+     * @param batchLogId
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static animalGetBy(
-        animalId: number,
+    public static animalBatchLogGetBy(
+        batchLogId: number,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/animal/{animal_id}',
+            url: '/animal/batch_log/{batch_log_id}',
             path: {
-                'animal_id': animalId,
+                'batch_log_id': batchLogId,
             },
             errors: {
                 422: `Validation Error`,
@@ -64,18 +64,18 @@ export class AnimalService {
 
     /**
      * Delete
-     * @param animalId
+     * @param batchLogId
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static animalDelete(
-        animalId: number,
+    public static animalBatchLogDelete(
+        batchLogId: number,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/animal/{animal_id}',
+            url: '/animal/batch_log/{batch_log_id}',
             path: {
-                'animal_id': animalId,
+                'batch_log_id': batchLogId,
             },
             errors: {
                 422: `Validation Error`,
@@ -85,20 +85,20 @@ export class AnimalService {
 
     /**
      * Update
-     * @param animalId
+     * @param batchLogId
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static animalUpdate(
-        animalId: number,
-        requestBody: AnimalSchema,
+    public static animalBatchLogUpdate(
+        batchLogId: number,
+        requestBody: BatchLogSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/animal/{animal_id}',
+            url: '/animal/batch_log/{batch_log_id}',
             path: {
-                'animal_id': animalId,
+                'batch_log_id': batchLogId,
             },
             body: requestBody,
             mediaType: 'application/json',

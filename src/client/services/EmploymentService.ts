@@ -1,23 +1,23 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { AnimalSchema } from '../models/AnimalSchema';
+import type { EmploymentSchema } from '../models/EmploymentSchema';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 
-export class AnimalService {
+export class EmploymentService {
 
     /**
      * Get All
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static animalGetAll(): CancelablePromise<any> {
+    public static employmentGetAll(): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/animal/',
+            url: '/employment/',
         });
     }
 
@@ -27,12 +27,12 @@ export class AnimalService {
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static animalCreate(
-        requestBody: AnimalSchema,
+    public static employmentCreate(
+        requestBody: EmploymentSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/animal/',
+            url: '/employment/',
             body: requestBody,
             mediaType: 'application/json',
             errors: {
@@ -43,18 +43,18 @@ export class AnimalService {
 
     /**
      * Get By
-     * @param animalId
+     * @param employmentId
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static animalGetBy(
-        animalId: number,
+    public static employmentGetBy(
+        employmentId: number,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/animal/{animal_id}',
+            url: '/employment/{employment_id}',
             path: {
-                'animal_id': animalId,
+                'employment_id': employmentId,
             },
             errors: {
                 422: `Validation Error`,
@@ -64,18 +64,18 @@ export class AnimalService {
 
     /**
      * Delete
-     * @param animalId
+     * @param employmentId
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static animalDelete(
-        animalId: number,
+    public static employmentDelete(
+        employmentId: number,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/animal/{animal_id}',
+            url: '/employment/{employment_id}',
             path: {
-                'animal_id': animalId,
+                'employment_id': employmentId,
             },
             errors: {
                 422: `Validation Error`,
@@ -85,20 +85,20 @@ export class AnimalService {
 
     /**
      * Update
-     * @param animalId
+     * @param employmentId
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static animalUpdate(
-        animalId: number,
-        requestBody: AnimalSchema,
+    public static employmentUpdate(
+        employmentId: number,
+        requestBody: EmploymentSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/animal/{animal_id}',
+            url: '/employment/{employment_id}',
             path: {
-                'animal_id': animalId,
+                'employment_id': employmentId,
             },
             body: requestBody,
             mediaType: 'application/json',

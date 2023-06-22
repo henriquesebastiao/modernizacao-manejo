@@ -1,9 +1,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { UserCreate } from '../models/UserCreate';
 import type { UserSchema } from '../models/UserSchema';
-import type { UserUpdate } from '../models/UserUpdate';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
@@ -13,10 +11,10 @@ export class UserService {
 
     /**
      * Get All
-     * @returns UserSchema Successful Response
+     * @returns any Successful Response
      * @throws ApiError
      */
-    public static getAllUserGet(): CancelablePromise<Array<UserSchema>> {
+    public static userGetAll(): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/user/',
@@ -29,8 +27,8 @@ export class UserService {
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static createUserPost(
-        requestBody: UserCreate,
+    public static userCreate(
+        requestBody: UserSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
@@ -44,14 +42,14 @@ export class UserService {
     }
 
     /**
-     * Get By Id
+     * Get By
      * @param userId
-     * @returns UserSchema Successful Response
+     * @returns any Successful Response
      * @throws ApiError
      */
-    public static getByIdUserUserIdGet(
+    public static userGetBy(
         userId: number,
-    ): CancelablePromise<UserSchema> {
+    ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/user/{user_id}',
@@ -70,7 +68,7 @@ export class UserService {
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static deleteUserUserIdDelete(
+    public static userDelete(
         userId: number,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
@@ -92,9 +90,9 @@ export class UserService {
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static updateUserUserIdPatch(
+    public static userUpdate(
         userId: number,
-        requestBody: UserUpdate,
+        requestBody: UserSchema,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',
