@@ -1,40 +1,40 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { UserCreate } from '../models/UserCreate';
-import type { UserSchema } from '../models/UserSchema';
-import type { UserUpdate } from '../models/UserUpdate';
+import type { PessoaCreate } from '../models/PessoaCreate';
+import type { PessoaSchema } from '../models/PessoaSchema';
+import type { PessoaUpdate } from '../models/PessoaUpdate';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 
-export class UserService {
+export class PessoaService {
 
     /**
      * Get All
-     * @returns UserSchema Successful Response
+     * @returns PessoaSchema Successful Response
      * @throws ApiError
      */
-    public static getAllUserGet(): CancelablePromise<Array<UserSchema>> {
+    public static getAllPessoaGet(): CancelablePromise<Array<PessoaSchema>> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/user/',
+            url: '/pessoa/',
         });
     }
 
     /**
      * Create
      * @param requestBody
-     * @returns any Successful Response
+     * @returns PessoaSchema Successful Response
      * @throws ApiError
      */
-    public static createUserPost(
-        requestBody: UserCreate,
-    ): CancelablePromise<any> {
+    public static createPessoaPost(
+        requestBody: PessoaCreate,
+    ): CancelablePromise<PessoaSchema> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/user/',
+            url: '/pessoa/',
             body: requestBody,
             mediaType: 'application/json',
             errors: {
@@ -45,18 +45,18 @@ export class UserService {
 
     /**
      * Get By Id
-     * @param userId
-     * @returns UserSchema Successful Response
+     * @param pessoaId
+     * @returns PessoaSchema Successful Response
      * @throws ApiError
      */
-    public static getByIdUserUserIdGet(
-        userId: number,
-    ): CancelablePromise<UserSchema> {
+    public static getByIdPessoaPessoaIdGet(
+        pessoaId: number,
+    ): CancelablePromise<PessoaSchema> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/user/{user_id}',
+            url: '/pessoa/{pessoa_id}',
             path: {
-                'user_id': userId,
+                'pessoa_id': pessoaId,
             },
             errors: {
                 422: `Validation Error`,
@@ -66,18 +66,18 @@ export class UserService {
 
     /**
      * Delete
-     * @param userId
+     * @param pessoaId
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static deleteUserUserIdDelete(
-        userId: number,
+    public static deletePessoaPessoaIdDelete(
+        pessoaId: number,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/user/{user_id}',
+            url: '/pessoa/{pessoa_id}',
             path: {
-                'user_id': userId,
+                'pessoa_id': pessoaId,
             },
             errors: {
                 422: `Validation Error`,
@@ -87,20 +87,20 @@ export class UserService {
 
     /**
      * Update
-     * @param userId
+     * @param pessoaId
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static updateUserUserIdPatch(
-        userId: number,
-        requestBody: UserUpdate,
+    public static updatePessoaPessoaIdPatch(
+        pessoaId: number,
+        requestBody: PessoaUpdate,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/user/{user_id}',
+            url: '/pessoa/{pessoa_id}',
             path: {
-                'user_id': userId,
+                'pessoa_id': pessoaId,
             },
             body: requestBody,
             mediaType: 'application/json',

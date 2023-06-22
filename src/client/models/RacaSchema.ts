@@ -2,8 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type FarmerPlanSchema = {
-    id: number;
-    plan: string;
+export type RacaSchema = {
+    nome: string;
 };
 

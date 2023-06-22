@@ -2,9 +2,8 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type FarmerSchema = {
-    id: number;
+export type CargoCreate = {
+    nome: string;
     user_id: number;
-    farmer_plan_id: number;
 };
 

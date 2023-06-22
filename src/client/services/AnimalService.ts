@@ -1,7 +1,8 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { AnimalSchema } from '../models/AnimalSchema';
+import type { AnimalCreate } from '../models/AnimalCreate';
+import type { AnimalUpdate } from '../models/AnimalUpdate';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
@@ -28,7 +29,7 @@ export class AnimalService {
      * @throws ApiError
      */
     public static createAnimalPost(
-        requestBody: AnimalSchema,
+        requestBody: AnimalCreate,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
@@ -42,12 +43,12 @@ export class AnimalService {
     }
 
     /**
-     * Get By
+     * Get By Id
      * @param animalId
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static getByAnimalAnimalIdGet(
+    public static getByIdAnimalAnimalIdGet(
         animalId: number,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
@@ -92,7 +93,7 @@ export class AnimalService {
      */
     public static updateAnimalAnimalIdPatch(
         animalId: number,
-        requestBody: AnimalSchema,
+        requestBody: AnimalUpdate,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',
@@ -102,6 +103,48 @@ export class AnimalService {
             },
             body: requestBody,
             mediaType: 'application/json',
+            errors: {
+                422: `Validation Error`,
+            },
+        });
+    }
+
+    /**
+     * Get By Brinco
+     * @param brinco
+     * @returns any Successful Response
+     * @throws ApiError
+     */
+    public static getByBrincoAnimalBrincoGet(
+        brinco: string,
+    ): CancelablePromise<any> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/animal/{brinco}',
+            path: {
+                'brinco': brinco,
+            },
+            errors: {
+                422: `Validation Error`,
+            },
+        });
+    }
+
+    /**
+     * Get By Chip
+     * @param chip
+     * @returns any Successful Response
+     * @throws ApiError
+     */
+    public static getByChipAnimalChipGet(
+        chip: string,
+    ): CancelablePromise<any> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/animal/{chip}',
+            path: {
+                'chip': chip,
+            },
             errors: {
                 422: `Validation Error`,
             },

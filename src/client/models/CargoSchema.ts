@@ -2,8 +2,7 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type BreedSchema = {
-    id: number;
-    name: string;
+export type CargoSchema = {
+    nome: string;
 };
 

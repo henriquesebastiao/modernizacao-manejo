@@ -1,25 +1,25 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { UserCreate } from '../models/UserCreate';
-import type { UserSchema } from '../models/UserSchema';
-import type { UserUpdate } from '../models/UserUpdate';
+import type { RacaCreate } from '../models/RacaCreate';
+import type { RacaSchema } from '../models/RacaSchema';
+import type { RacaUpdate } from '../models/RacaUpdate';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 
-export class UserService {
+export class RacaService {
 
     /**
      * Get All
-     * @returns UserSchema Successful Response
+     * @returns RacaSchema Successful Response
      * @throws ApiError
      */
-    public static getAllUserGet(): CancelablePromise<Array<UserSchema>> {
+    public static getAllRacaGet(): CancelablePromise<Array<RacaSchema>> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/user/',
+            url: '/raca/',
         });
     }
 
@@ -29,12 +29,12 @@ export class UserService {
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static createUserPost(
-        requestBody: UserCreate,
+    public static createRacaPost(
+        requestBody: RacaCreate,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/user/',
+            url: '/raca/',
             body: requestBody,
             mediaType: 'application/json',
             errors: {
@@ -45,18 +45,18 @@ export class UserService {
 
     /**
      * Get By Id
-     * @param userId
-     * @returns UserSchema Successful Response
+     * @param racaId
+     * @returns RacaSchema Successful Response
      * @throws ApiError
      */
-    public static getByIdUserUserIdGet(
-        userId: number,
-    ): CancelablePromise<UserSchema> {
+    public static getByIdRacaRacaIdGet(
+        racaId: number,
+    ): CancelablePromise<RacaSchema> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/user/{user_id}',
+            url: '/raca/{raca_id}',
             path: {
-                'user_id': userId,
+                'raca_id': racaId,
             },
             errors: {
                 422: `Validation Error`,
@@ -66,18 +66,18 @@ export class UserService {
 
     /**
      * Delete
-     * @param userId
+     * @param racaId
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static deleteUserUserIdDelete(
-        userId: number,
+    public static deleteRacaRacaIdDelete(
+        racaId: number,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/user/{user_id}',
+            url: '/raca/{raca_id}',
             path: {
-                'user_id': userId,
+                'raca_id': racaId,
             },
             errors: {
                 422: `Validation Error`,
@@ -87,20 +87,20 @@ export class UserService {
 
     /**
      * Update
-     * @param userId
+     * @param racaId
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static updateUserUserIdPatch(
-        userId: number,
-        requestBody: UserUpdate,
+    public static updateRacaRacaIdPatch(
+        racaId: number,
+        requestBody: RacaUpdate,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/user/{user_id}',
+            url: '/raca/{raca_id}',
             path: {
-                'user_id': userId,
+                'raca_id': racaId,
             },
             body: requestBody,
             mediaType: 'application/json',

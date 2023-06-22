@@ -1,40 +1,40 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { UserCreate } from '../models/UserCreate';
-import type { UserSchema } from '../models/UserSchema';
-import type { UserUpdate } from '../models/UserUpdate';
+import type { LoteLogCreate } from '../models/LoteLogCreate';
+import type { LoteLogSchema } from '../models/LoteLogSchema';
+import type { LoteLogUpdate } from '../models/LoteLogUpdate';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 
-export class UserService {
+export class LoteLogService {
 
     /**
      * Get All
-     * @returns UserSchema Successful Response
+     * @returns LoteLogSchema Successful Response
      * @throws ApiError
      */
-    public static getAllUserGet(): CancelablePromise<Array<UserSchema>> {
+    public static getAllLoteLogGet(): CancelablePromise<Array<LoteLogSchema>> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/user/',
+            url: '/lote_log/',
         });
     }
 
     /**
      * Create
      * @param requestBody
-     * @returns any Successful Response
+     * @returns LoteLogSchema Successful Response
      * @throws ApiError
      */
-    public static createUserPost(
-        requestBody: UserCreate,
-    ): CancelablePromise<any> {
+    public static createLoteLogPost(
+        requestBody: LoteLogCreate,
+    ): CancelablePromise<LoteLogSchema> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/user/',
+            url: '/lote_log/',
             body: requestBody,
             mediaType: 'application/json',
             errors: {
@@ -45,18 +45,18 @@ export class UserService {
 
     /**
      * Get By Id
-     * @param userId
-     * @returns UserSchema Successful Response
+     * @param loteLogId
+     * @returns LoteLogSchema Successful Response
      * @throws ApiError
      */
-    public static getByIdUserUserIdGet(
-        userId: number,
-    ): CancelablePromise<UserSchema> {
+    public static getByIdLoteLogLoteLogIdGet(
+        loteLogId: number,
+    ): CancelablePromise<LoteLogSchema> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/user/{user_id}',
+            url: '/lote_log/{lote_log_id}',
             path: {
-                'user_id': userId,
+                'lote_log_id': loteLogId,
             },
             errors: {
                 422: `Validation Error`,
@@ -66,18 +66,18 @@ export class UserService {
 
     /**
      * Delete
-     * @param userId
+     * @param loteLogId
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static deleteUserUserIdDelete(
-        userId: number,
+    public static deleteLoteLogLoteLogIdDelete(
+        loteLogId: number,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/user/{user_id}',
+            url: '/lote_log/{lote_log_id}',
             path: {
-                'user_id': userId,
+                'lote_log_id': loteLogId,
             },
             errors: {
                 422: `Validation Error`,
@@ -87,20 +87,20 @@ export class UserService {
 
     /**
      * Update
-     * @param userId
+     * @param loteLogId
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static updateUserUserIdPatch(
-        userId: number,
-        requestBody: UserUpdate,
+    public static updateLoteLogLoteLogIdPatch(
+        loteLogId: number,
+        requestBody: LoteLogUpdate,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/user/{user_id}',
+            url: '/lote_log/{lote_log_id}',
             path: {
-                'user_id': userId,
+                'lote_log_id': loteLogId,
             },
             body: requestBody,
             mediaType: 'application/json',

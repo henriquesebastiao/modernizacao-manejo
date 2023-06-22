@@ -2,10 +2,9 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type UserSchema = {
+export type FazendeiroCreate = {
+    nome: string;
+    password: string;
     email: string;
-    first_name: string;
-    last_name: string;
-    phone: string;
 };
 

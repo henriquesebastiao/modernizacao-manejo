@@ -4,7 +4,7 @@
 
 import type { Sexo } from './Sexo';
 
-export type AnimalSchema = {
+export type AnimalUpdate = {
     chip?: string;
     brinco?: string;
     origem?: string;
@@ -15,6 +15,5 @@ export type AnimalSchema = {
     data_entrada?: string;
     data_nascimento?: string;
     peso?: number;
-    id?: number;
 };
 

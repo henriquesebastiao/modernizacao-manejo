@@ -1,38 +1,40 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { AnimalWeightTypeSchema } from '../models/AnimalWeightTypeSchema';
+import type { FazendaCreate } from '../models/FazendaCreate';
+import type { FazendaSchema } from '../models/FazendaSchema';
+import type { FazendaUpdate } from '../models/FazendaUpdate';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 
-export class AnimalWeightTypeService {
+export class FazendaService {
 
     /**
      * Get All
-     * @returns any Successful Response
+     * @returns FazendaSchema Successful Response
      * @throws ApiError
      */
-    public static getAllAnimalWeightTypeGet(): CancelablePromise<any> {
+    public static getAllFazendaGet(): CancelablePromise<Array<FazendaSchema>> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/animal/weight/type/',
+            url: '/fazenda/',
         });
     }
 
     /**
      * Create
      * @param requestBody
-     * @returns any Successful Response
+     * @returns FazendaSchema Successful Response
      * @throws ApiError
      */
-    public static createAnimalWeightTypePost(
-        requestBody: AnimalWeightTypeSchema,
-    ): CancelablePromise<any> {
+    public static createFazendaPost(
+        requestBody: FazendaCreate,
+    ): CancelablePromise<FazendaSchema> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/animal/weight/type/',
+            url: '/fazenda/',
             body: requestBody,
             mediaType: 'application/json',
             errors: {
@@ -42,19 +44,19 @@ export class AnimalWeightTypeService {
     }
 
     /**
-     * Get By
-     * @param animalWeightTypeId
-     * @returns any Successful Response
+     * Get By Id
+     * @param fazendaId
+     * @returns FazendaSchema Successful Response
      * @throws ApiError
      */
-    public static getByAnimalWeightTypeAnimalWeightTypeIdGet(
-        animalWeightTypeId: number,
-    ): CancelablePromise<any> {
+    public static getByIdFazendaFazendaIdGet(
+        fazendaId: number,
+    ): CancelablePromise<FazendaSchema> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/animal/weight/type/{animal_weight_type_id}',
+            url: '/fazenda/{fazenda_id}',
             path: {
-                'animal_weight_type_id': animalWeightTypeId,
+                'fazenda_id': fazendaId,
             },
             errors: {
                 422: `Validation Error`,
@@ -64,18 +66,18 @@ export class AnimalWeightTypeService {
 
     /**
      * Delete
-     * @param animalWeightTypeId
+     * @param fazendaId
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static deleteAnimalWeightTypeAnimalWeightTypeIdDelete(
-        animalWeightTypeId: number,
+    public static deleteFazendaFazendaIdDelete(
+        fazendaId: number,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/animal/weight/type/{animal_weight_type_id}',
+            url: '/fazenda/{fazenda_id}',
             path: {
-                'animal_weight_type_id': animalWeightTypeId,
+                'fazenda_id': fazendaId,
             },
             errors: {
                 422: `Validation Error`,
@@ -85,20 +87,20 @@ export class AnimalWeightTypeService {
 
     /**
      * Update
-     * @param animalWeightTypeId
+     * @param fazendaId
      * @param requestBody
      * @returns any Successful Response
      * @throws ApiError
      */
-    public static updateAnimalWeightTypeAnimalWeightTypeIdPatch(
-        animalWeightTypeId: number,
-        requestBody: AnimalWeightTypeSchema,
+    public static updateFazendaFazendaIdPatch(
+        fazendaId: number,
+        requestBody: FazendaUpdate,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'PATCH',
-            url: '/animal/weight/type/{animal_weight_type_id}',
+            url: '/fazenda/{fazenda_id}',
             path: {
-                'animal_weight_type_id': animalWeightTypeId,
+                'fazenda_id': fazendaId,
             },
             body: requestBody,
             mediaType: 'application/json',

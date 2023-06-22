@@ -2,10 +2,11 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type UserSchema = {
+export type UserUpdate = {
     email: string;
     first_name: string;
     last_name: string;
     phone: string;
+    password: string;
 };
 
