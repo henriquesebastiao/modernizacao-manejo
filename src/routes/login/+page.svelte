@@ -3,7 +3,6 @@
   import type { ToastSettings } from "@skeletonlabs/skeleton";
   import { focusTrap, ProgressRadial, toastStore } from "@skeletonlabs/skeleton";
   import type { LoginSchema } from "../../client";
-  import { LoginService } from "../../client";
   import { goto } from "$app/navigation";
   import { fade } from "svelte/transition";
   import { user } from "../../store";
@@ -33,8 +32,6 @@
     loading = true;
 
     try {
-      const res = await LoginService.loginEmail(userLogin);
-      console.log(res);
       toastStore.trigger(t);
       localStorage.setItem("isLoggedIn", "true");
       $user.isLoggedIn = true;
