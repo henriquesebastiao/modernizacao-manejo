@@ -2,11 +2,13 @@
 /* tslint:disable */
 /* eslint-disable */
 
+import type { Sexo } from './Sexo';
+
 export type AnimalSchema = {
     id?: number;
     tag?: number;
     sisbov?: number;
-    gender?: string;
+    gender?: Sexo;
     breed_id?: number;
     father_id?: number;
     mother_id?: number;

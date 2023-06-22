@@ -20,6 +20,7 @@ export type { FarmSchema } from './models/FarmSchema';
 export type { HTTPValidationError } from './models/HTTPValidationError';
 export type { LoginSchema } from './models/LoginSchema';
 export type { Message } from './models/Message';
+export { Sexo } from './models/Sexo';
 export type { UserSchema } from './models/UserSchema';
 export type { UserTypeSchema } from './models/UserTypeSchema';
 export type { ValidationError } from './models/ValidationError';
