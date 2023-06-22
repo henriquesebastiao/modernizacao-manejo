@@ -12,37 +12,39 @@
 	</div>
 </div>
 
-<table class="card table-auto shadow-2xl mt-10">
-	<thead>
-		<tr>
-			<th class="px-4 py-2 border-gray-400 border">Name</th>
-			<th class="px-4 py-2 border-gray-400 border">Age</th>
-			<th class="px-4 py-2 border-gray-400 border">Email</th>
-			<th class="px-4 py-2 border-gray-400 border">Email</th>
-			<th class="px-4 py-2 border-gray-400 border">Email</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td class="border-gray-400 border px-4 py-2">John Doe</td>
-			<td class="border-gray-400 border px-4 py-2">32</td>
-			<td class="border-gray-400 border px-4 py-2">johndoe@example.com</td>
-			<td class="border-gray-400 border px-4 py-2">johndoe@example.com</td>
-			<td class="border-gray-400 border px-4 py-2">johndoe@example.com</td>
-		</tr>
-		<tr>
-			<td class="border-gray-400 border px-4 py-2">Jane Smith</td>
-			<td class="border-gray-400 border px-4 py-2">28</td>
-			<td class="border-gray-400 border px-4 py-2">janesmith@example.com</td>
-			<td class="border-gray-400 border px-4 py-2">janesmith@example.com</td>
-			<td class="border-gray-400 border px-4 py-2">janesmith@example.com</td>
-		</tr>
-		<tr>
-			<td class="border-gray-400 border px-4 py-2">Bob Johnson</td>
-			<td class="border-gray-400 border px-4 py-2">45</td>
-			<td class="border-gray-400 border px-4 py-2">bobjohnson@example.com</td>
-			<td class="border-gray-400 border px-4 py-2">bobjohnson@example.com</td>
-			<td class="border-gray-400 border px-4 py-2">bobjohnson@example.com</td>
-		</tr>
-	</tbody>
-</table>
+<div class="overflow-x-auto">
+	<table class="card table-auto shadow-2xl mt-10">
+		<thead>
+			<tr>
+				<th class="px-4 py-2 border-gray-400 border">Name</th>
+				<th class="px-4 py-2 border-gray-400 border">Age</th>
+				<th class="px-4 py-2 border-gray-400 border">Email</th>
+				<th class="px-4 py-2 border-gray-400 border">Email</th>
+				<th class="px-4 py-2 border-gray-400 border">Email</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="border-gray-400 border px-4 py-2 max-w-xs">John Doe</td>
+				<td class="border-gray-400 border px-4 py-2 max-w-xs">32</td>
+				<td class="border-gray-400 border px-4 py-2 max-w-xs">johndoe@example.com</td>
+				<td class="border-gray-400 border px-4 py-2 max-w-xs">johndoe@example.com</td>
+				<td class="border-gray-400 border px-4 py-2 max-w-xs">johndoe@example.com</td>
+			</tr>
+			<tr>
+				<td class="border-gray-400 border px-4 py-2 max-w-xs">Jane Smith</td>
+				<td class="border-gray-400 border px-4 py-2 max-w-xs">28</td>
+				<td class="border-gray-400 border px-4 py-2 max-w-xs">janesmith@example.com</td>
+				<td class="border-gray-400 border px-4 py-2 max-w-xs">janesmith@example.com</td>
+				<td class="border-gray-400 border px-4 py-2 max-w-xs">janesmith@example.com</td>
+			</tr>
+			<tr>
+				<td class="border-gray-400 border px-4 py-2 max-w-xs">Bob Johnson</td>
+				<td class="border-gray-400 border px-4 py-2 max-w-xs">45</td>
+				<td class="border-gray-400 border px-4 py-2 max-w-xs">bobjohnson@example.com</td>
+				<td class="border-gray-400 border px-4 py-2 max-w-xs">bobjohnson@example.com</td>
+				<td class="border-gray-400 border px-4 py-2 max-w-xs">bobjohnson@example.com</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

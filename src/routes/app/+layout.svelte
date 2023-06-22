@@ -5,11 +5,11 @@
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 
-	// onMount(() => {
-	// 	if (!localStorage.getItem('isLoggedIn') || $user.isLoggedIn === false) {
-	// 		goto('/login');
-	// 	}
-	// });
+	onMount(() => {
+		if (!localStorage.getItem('isLoggedIn') || $user.isLoggedIn === false) {
+			goto('/login');
+		}
+	});
 </script>
 
 <div class="w-full h-full flex relative">

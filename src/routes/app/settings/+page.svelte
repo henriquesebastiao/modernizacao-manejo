@@ -68,7 +68,7 @@
 			</ListBox>
 		</Drawer>
 		<button
-			class="w-[45px] m-5 md:hidden absolute bottom-0 left-0 bg-white rounded-full text-black p-1"
+			class="w-[45px] m-5 md:hidden absolute bottom-0 left-0 bg-white rounded-full text-black p-1 z-50"
 			on:click={() => drawerStore.open(drawerSettings)}
 		>
 			<IoMdMenu />

@@ -1,6 +1,8 @@
 <script>
-	// @ts-ignore
+	// @ts-nocheck
+
 	import Chart from 'svelte-frappe-charts';
+	import Button from '$lib/components/system/Button.svelte';
 
 	let data = {
 		labels: ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'],
@@ -10,6 +12,17 @@
 			}
 		]
 	};
+
+	let chartRef;
+
+	const onExport = () => {
+		chartRef.exportChart();
+	};
 </script>
 
-<Chart {data} type="pie" />
+<div>
+	<Chart {data} colors={['#ffffff', '#013b20']} type="pie" bind:this={chartRef} />
+	<div class="flex items-end justify-end m-3">
+		<Button on:click={onExport}>Baixar gráfico</Button>
+	</div>
+</div>

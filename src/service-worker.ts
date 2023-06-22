@@ -2,36 +2,64 @@
 // @ts-nocheck
 
 import { build, files, version } from '$service-worker';
-import { precacheAndRoute } from 'workbox-precaching';
+import { precacheAndRoute, precache } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
 import { StaleWhileRevalidate } from 'workbox-strategies';
 
-declare const self: any;
+declare let self: ServiceWorkerGlobalScope;
 
-if (typeof self !== 'undefined') {
-  self.addEventListener('message', (event) => {
-    if (event.data && event.data.type === 'SKIP_WAITING') {
-      self.skipWaiting();
-    }
-  });
-}
+self.addEventListener('message', (event) => {
+	if (event.data && event.data.type === 'SKIP_WAITING') {
+		self.skipWaiting();
+	}
+});
 
 precacheAndRoute([
-  ...build.map(f => {
-    return {
-      url: f,
-      revision: null
-    }
-  }),
-  ...files.map(f => {
-    return {
-      url: f,
-      revision: `${version}`
-    }
-  })
+	...build.map((f) => {
+		return {
+			url: f,
+			revision: null
+		};
+	}),
+	...files.map((f) => {
+		return {
+			url: f,
+			revision: `${version}`
+		};
+	})
 ]);
 
-registerRoute(
-  ({ url }) => url.origin === self.location.origin,
-  new StaleWhileRevalidate()
+// Edit the list of routes so they get cached and routed correctly, allowing
+// cold start or hot reload to work offline.
+const skRoutes = [
+	'/',
+	'/about',
+	'/blog',
+	'/pricing',
+	'/login',
+	'/register',
+	'/suporte',
+	'/app',
+	'/app/cria',
+	'/app/financeiro',
+	'/app/lotes',
+	'/app/manejo',
+	'/app/relatorios',
+	'/app/sanitario',
+	'/app/settings'
+];
+
+precache(
+	skRoutes.map((f) => {
+		('');
+		return {
+			url: f,
+			revision: `${version}`
+		};
+	})
 );
+
+const matchCb = ({ url, request, event }) => {
+	return skRoutes.some((path) => url.pathname === path);
+};
+registerRoute(matchCb, new StaleWhileRevalidate({}));

@@ -54,7 +54,7 @@
     });
 </script>
 
-<div class="flex justify-center items-center">
+<div class="flex justify-center items-center h-full">
     <div class="card w-[600px] shadow-2xl p-4">
         <Stepper
                 stepTerm="Passo"

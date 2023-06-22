@@ -52,7 +52,7 @@
 			{/each}
 		</ListBox>
 	</div>
-	<div class="w-full overflow-scroll overflow-x-hidden px-4 py-4">
+	<div class="w-full overflow-scroll overflow-x-hidden">
 		<Drawer>
 			<div class="flex w-full h-full flex-col">
 				<div class="w-full flex justify-end items-end pr-3 my-2">
@@ -78,24 +78,26 @@
 				</ListBox>
 			</div>
 		</Drawer>
-		<button
-			class="w-[45px] m-5 md:hidden absolute bottom-0 left-0 bg-white rounded-full text-black p-1"
-			on:click={() => drawerStore.open(drawerSettings)}
-		>
-			<IoMdMenu />
-		</button>
-		{#if valueSingle === 'adicionar_animal'}
-			<div class="w-full" in:fade>
-				<AdicionarAnimal />
-			</div>
-		{:else if valueSingle === 'remover_animal'}
-			<div class="w-full" in:fade>
-				<RemoverAnimal />
-			</div>
-		{:else if valueSingle === 'pesagem'}
-			<div class="w-full" in:fade>
-				<Pesagem />
-			</div>
-		{/if}
+		<div class="w-full h-full px-4 py-4">
+			<button
+				class="w-[45px] m-5 md:hidden absolute bottom-0 left-0 bg-white rounded-full text-black p-1 z-50"
+				on:click={() => drawerStore.open(drawerSettings)}
+			>
+				<IoMdMenu />
+			</button>
+			{#if valueSingle === 'adicionar_animal'}
+				<div class="w-full h-full" in:fade>
+					<AdicionarAnimal />
+				</div>
+			{:else if valueSingle === 'remover_animal'}
+				<div class="w-full h-full" in:fade>
+					<RemoverAnimal />
+				</div>
+			{:else if valueSingle === 'pesagem'}
+				<div class="w-full h-full" in:fade>
+					<Pesagem />
+				</div>
+			{/if}
+		</div>
 	</div>
 </div>

@@ -59,7 +59,7 @@
 			{/each}
 		</ListBox>
 	</div>
-	<div class="w-full overflow-scroll overflow-x-hidden px-4 py-4">
+	<div class="w-full overflow-scroll overflow-x-hidden">
 		<Drawer>
 			<div class="w-full flex justify-end items-end pr-3 my-2">
 				<button on:click={() => drawerStore.close()}>
@@ -83,28 +83,30 @@
 				{/each}
 			</ListBox>
 		</Drawer>
-		<button
-			class="w-[45px] m-5 md:hidden absolute bottom-0 left-0 bg-white rounded-full text-black p-1"
-			on:click={() => drawerStore.open(drawerSettings)}
-		>
-			<IoMdMenu />
-		</button>
-		{#if valueSingle === 'vacinacao'}
-			<div class="w-full" in:fade>
-				<Vacinacao />
-			</div>
-		{:else if valueSingle === 'procedimento'}
-			<div class="w-full" in:fade>
-				<Procedimento />
-			</div>
-		{:else if valueSingle === 'exame'}
-			<div class="w-full" in:fade>
-				<Exame />
-			</div>
-		{:else if valueSingle === 'outro'}
-			<div class="w-full" in:fade>
-				<Outro />
-			</div>
-		{/if}
+		<div class="w-full h-full px-4 py-4">
+			<button
+				class="w-[45px] m-5 md:hidden absolute bottom-0 left-0 bg-white rounded-full text-black p-1 z-50"
+				on:click={() => drawerStore.open(drawerSettings)}
+			>
+				<IoMdMenu />
+			</button>
+			{#if valueSingle === 'vacinacao'}
+				<div class="w-full h-full" in:fade>
+					<Vacinacao />
+				</div>
+			{:else if valueSingle === 'procedimento'}
+				<div class="w-full h-full" in:fade>
+					<Procedimento />
+				</div>
+			{:else if valueSingle === 'exame'}
+				<div class="w-full h-full" in:fade>
+					<Exame />
+				</div>
+			{:else if valueSingle === 'outro'}
+				<div class="w-full h-full" in:fade>
+					<Outro />
+				</div>
+			{/if}
+		</div>
 	</div>
 </div>
