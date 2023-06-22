@@ -24,19 +24,21 @@ export class AnimalService {
     /**
      * Create
      * @param requestBody
-     * @returns any Successful Response
+     * @returns AnimalSchema Successful Response
      * @throws ApiError
      */
     public static animalCreate(
         requestBody: AnimalSchema,
-    ): CancelablePromise<any> {
+    ): CancelablePromise<AnimalSchema> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/animal/',
             body: requestBody,
             mediaType: 'application/json',
             errors: {
+                404: `Animal already exists`,
                 422: `Validation Error`,
+                500: `Internal Server Error`,
             },
         });
     }
