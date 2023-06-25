@@ -1,13 +1,12 @@
 <script lang="ts">
-	import '../theme.postcss';
-	import '@skeletonlabs/skeleton/styles/skeleton.css';
-	import '../app.postcss';
-	import { autoModeWatcher, Toast } from '@skeletonlabs/skeleton';
-	import { OpenAPI } from '../client';
-	import Header from '$lib/components/Header/Header.svelte';
-	import Footer from '$lib/components/Footer/Footer.svelte';
-	import { user } from '../store';
-	import { onMount } from 'svelte';
+	import "../theme.postcss";
+	import "@skeletonlabs/skeleton/styles/skeleton.css";
+	import "../app.postcss";
+	import { autoModeWatcher, Toast } from "@skeletonlabs/skeleton";
+	import { OpenAPI } from "../client";
+	import Header from "$lib/components/Header/Header.svelte";
+	import { user } from "../store";
+	import { onMount } from "svelte";
 
 	OpenAPI.BASE = 'https://api.henriquesebastiao.com';
 
@@ -26,7 +25,7 @@
 
 <svelte:head
 	>{@html `<script>${autoModeWatcher.toString()} autoModeWatcher();</script>`}
-	<link rel="manifest" href="/manifest.webmanifest" />
+	<link href="/manifest.webmanifest" rel="manifest" />
 	<title>Modernização manejo</title></svelte:head
 >
 
@@ -34,13 +33,13 @@
 	<div class="w-full h-[75px]">
 		<Header />
 	</div>
-	<div class="w-full dinamic-height">
+	<div class="w-full dynamic-width">
 		<slot />
 	</div>
 </div>
 
 <style>
-	.dinamic-height {
+	.dynamic-width {
 		height: calc(100% - 75px);
 	}
 </style>
