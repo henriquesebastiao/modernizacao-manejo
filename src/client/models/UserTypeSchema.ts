@@ -3,6 +3,6 @@
 /* eslint-disable */
 
 export type UserTypeSchema = {
+	type: string;
 	id?: number;
-	type?: string;
 };

@@ -1,6 +1,7 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
+import type { FarmerCreate } from '../models/FarmerCreate';
 import type { FarmerSchema } from '../models/FarmerSchema';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
@@ -10,10 +11,10 @@ import { request as __request } from '../core/request';
 export class FarmerService {
 	/**
 	 * Get All
-	 * @returns any Successful Response
+	 * @returns FarmerSchema Successful Response
 	 * @throws ApiError
 	 */
-	public static farmerGetAll(): CancelablePromise<any> {
+	public static farmerGetAll(): CancelablePromise<Array<FarmerSchema>> {
 		return __request(OpenAPI, {
 			method: 'GET',
 			url: '/farmer/'
@@ -23,10 +24,10 @@ export class FarmerService {
 	/**
 	 * Create
 	 * @param requestBody
-	 * @returns any Successful Response
+	 * @returns FarmerSchema Successful Response
 	 * @throws ApiError
 	 */
-	public static farmerCreate(requestBody: FarmerSchema): CancelablePromise<any> {
+	public static farmerCreate(requestBody: FarmerCreate): CancelablePromise<FarmerSchema> {
 		return __request(OpenAPI, {
 			method: 'POST',
 			url: '/farmer/',
@@ -41,10 +42,10 @@ export class FarmerService {
 	/**
 	 * Get By
 	 * @param farmerId
-	 * @returns any Successful Response
+	 * @returns FarmerSchema Successful Response
 	 * @throws ApiError
 	 */
-	public static farmerGetBy(farmerId: number): CancelablePromise<any> {
+	public static farmerGetBy(farmerId: number): CancelablePromise<FarmerSchema> {
 		return __request(OpenAPI, {
 			method: 'GET',
 			url: '/farmer/{farmer_id}',
@@ -60,10 +61,10 @@ export class FarmerService {
 	/**
 	 * Delete
 	 * @param farmerId
-	 * @returns any Successful Response
+	 * @returns FarmerSchema Successful Response
 	 * @throws ApiError
 	 */
-	public static farmerDelete(farmerId: number): CancelablePromise<any> {
+	public static farmerDelete(farmerId: number): CancelablePromise<FarmerSchema> {
 		return __request(OpenAPI, {
 			method: 'DELETE',
 			url: '/farmer/{farmer_id}',
@@ -80,13 +81,13 @@ export class FarmerService {
 	 * Update
 	 * @param farmerPlanId
 	 * @param requestBody
-	 * @returns any Successful Response
+	 * @returns FarmerSchema Successful Response
 	 * @throws ApiError
 	 */
 	public static farmerUpdate(
 		farmerPlanId: number,
 		requestBody: FarmerSchema
-	): CancelablePromise<any> {
+	): CancelablePromise<FarmerSchema> {
 		return __request(OpenAPI, {
 			method: 'PATCH',
 			url: '/farmer/{farmer_plan_id}',
