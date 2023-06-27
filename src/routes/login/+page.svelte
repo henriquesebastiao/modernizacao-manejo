@@ -40,7 +40,6 @@
 			localStorage.setItem('isLoggedIn', 'true');
 			localStorage.setItem('token', token.access_token);
 			$user.isLoggedIn = true;
-			$user.token = token.access_token;
 			await goto('/app/relatorios');
 		} catch (err) {
 			console.log(err);
