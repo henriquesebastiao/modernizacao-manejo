@@ -38,7 +38,7 @@
 			token = await TokenService.tokenLoginForAccessToken(userLogin);
 			toastStore.trigger(t);
 			localStorage.setItem('isLoggedIn', 'true');
-			OpenAPI.TOKEN = token.access_token;
+			localStorage.setItem('token', token.access_token);
 			$user.isLoggedIn = true;
 			await goto('/app/relatorios');
 		} catch (err) {
