@@ -7,5 +7,5 @@ interface User {
 
 export const user = writable(<User>{
 	isLoggedIn: false,
-	currentTitle: 0,
+	currentTitle: 0
 });

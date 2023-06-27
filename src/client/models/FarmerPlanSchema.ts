@@ -3,7 +3,6 @@
 /* eslint-disable */
 
 export type FarmerPlanSchema = {
-    id?: number;
-    plan?: string;
+	id?: number;
+	plan?: string;
 };
-

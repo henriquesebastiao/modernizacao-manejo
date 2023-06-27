@@ -1,102 +1,102 @@
 <script lang="ts">
-  import Button from "$lib/components/system/Button.svelte";
-  import type { ToastSettings } from "@skeletonlabs/skeleton";
-  import { focusTrap, ProgressRadial, toastStore } from "@skeletonlabs/skeleton";
-  import type { LoginSchema } from "../../client";
-  import { goto } from "$app/navigation";
-  import { fade } from "svelte/transition";
-  import { user } from "../../store";
-  import { onMount } from "svelte";
+	import Button from '$lib/components/system/Button.svelte';
+	import type { ToastSettings } from '@skeletonlabs/skeleton';
+	import { focusTrap, ProgressRadial, toastStore } from '@skeletonlabs/skeleton';
+	import type { LoginSchema } from '../../client';
+	import { goto } from '$app/navigation';
+	import { fade } from 'svelte/transition';
+	import { user } from '../../store';
+	import { onMount } from 'svelte';
 
-  let isFocused = true;
-  let loading = false;
+	let isFocused = true;
+	let loading = false;
 
-  let userLogin: LoginSchema = {
-    email: "",
-    password: ""
-  };
+	let userLogin: LoginSchema = {
+		email: '',
+		password: ''
+	};
 
-  $: disabled = !userLogin.email || !userLogin.password;
+	$: disabled = !userLogin.email || !userLogin.password;
 
-  const t: ToastSettings = {
-    message: "Login efetuado com sucesso!"
-  };
+	const t: ToastSettings = {
+		message: 'Login efetuado com sucesso!'
+	};
 
-  const e: ToastSettings = {
-    message: "Erro ao efetuar login!",
-    background: "bg-warning-600"
-  };
+	const e: ToastSettings = {
+		message: 'Erro ao efetuar login!',
+		background: 'bg-warning-600'
+	};
 
-  const handleSubmit = async (event: Event) => {
-    event.preventDefault();
-    loading = true;
+	const handleSubmit = async (event: Event) => {
+		event.preventDefault();
+		loading = true;
 
-    try {
-      toastStore.trigger(t);
-      localStorage.setItem("isLoggedIn", "true");
-      $user.isLoggedIn = true;
-      await goto("/app/relatorios");
-    } catch (err) {
-      console.log(err);
-      toastStore.trigger(e);
-    } finally {
-      loading = false;
-    }
-  };
+		try {
+			toastStore.trigger(t);
+			localStorage.setItem('isLoggedIn', 'true');
+			$user.isLoggedIn = true;
+			await goto('/app/relatorios');
+		} catch (err) {
+			console.log(err);
+			toastStore.trigger(e);
+		} finally {
+			loading = false;
+		}
+	};
 
-  onMount(() => {
-    if ($user.isLoggedIn || localStorage.getItem("isLoggedIn")) {
-      goto("/app/relatorios");
-    }
-  });
+	onMount(() => {
+		if ($user.isLoggedIn || localStorage.getItem('isLoggedIn')) {
+			goto('/app/relatorios');
+		}
+	});
 </script>
 
 <main class="container h-full mx-auto flex justify-center items-center" in:fade>
-  {#if loading}
-    <div class="flex items-center justify-center flex-col space-y-6">
-      <h1 class="font-bold text-2xl">Carregando...</h1>
-      <ProgressRadial width="w-24" value={undefined} />
-    </div>
-  {:else}
-    <div class="card rounded-lg p-8">
-      <form on:submit={handleSubmit} use:focusTrap={isFocused}>
-        <div class="mb-4">
-          <label for="email" class="label block mb-2">
-            <i class="pr-0.5 fa-regular fa-envelope" />
-            <span>Email:</span>
-          </label>
-          <input
-            type="email"
-            bind:value={userLogin.email}
-            id="email"
-            name="email"
-            class="input w-full px-4 py-2 border rounded"
-          />
-        </div>
-        <div class="mb-4">
-          <label for="password" class="label block mb-2">
-            <i class="pr-0.5 fa-solid fa-lock" />
-            <span>Senha:</span>
-          </label>
-          <input
-            type="password"
-            bind:value={userLogin.password}
-            id="password"
-            name="password"
-            class="input w-full px-4 py-2 border rounded"
-          />
-        </div>
-        <div class="flex items-center justify-center mt-9">
-          <Button type="submit" {disabled}>Entrar</Button>
-        </div>
-      </form>
-      <div class="w-full flex items-center justify-center mt-7">
-        <button on:click={() => goto('/register')}>
-          <p class="text-xs underline opacity-50 hover:opacity-100 transition-all">
-            Não possui uma conta? clique aqui para registrar.
-          </p>
-        </button>
-      </div>
-    </div>
-  {/if}
+	{#if loading}
+		<div class="flex items-center justify-center flex-col space-y-6">
+			<h1 class="font-bold text-2xl">Carregando...</h1>
+			<ProgressRadial width="w-24" value={undefined} />
+		</div>
+	{:else}
+		<div class="card rounded-lg p-8">
+			<form on:submit={handleSubmit} use:focusTrap={isFocused}>
+				<div class="mb-4">
+					<label for="email" class="label block mb-2">
+						<i class="pr-0.5 fa-regular fa-envelope" />
+						<span>Email:</span>
+					</label>
+					<input
+						type="email"
+						bind:value={userLogin.email}
+						id="email"
+						name="email"
+						class="input w-full px-4 py-2 border rounded"
+					/>
+				</div>
+				<div class="mb-4">
+					<label for="password" class="label block mb-2">
+						<i class="pr-0.5 fa-solid fa-lock" />
+						<span>Senha:</span>
+					</label>
+					<input
+						type="password"
+						bind:value={userLogin.password}
+						id="password"
+						name="password"
+						class="input w-full px-4 py-2 border rounded"
+					/>
+				</div>
+				<div class="flex items-center justify-center mt-9">
+					<Button type="submit" {disabled}>Entrar</Button>
+				</div>
+			</form>
+			<div class="w-full flex items-center justify-center mt-7">
+				<button on:click={() => goto('/register')}>
+					<p class="text-xs underline opacity-50 hover:opacity-100 transition-all">
+						Não possui uma conta? clique aqui para registrar.
+					</p>
+				</button>
+			</div>
+		</div>
+	{/if}
 </main>

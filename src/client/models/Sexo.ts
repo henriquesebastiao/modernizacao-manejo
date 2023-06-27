@@ -6,6 +6,6 @@
  * An enumeration.
  */
 export enum Sexo {
-    M = 'M',
-    F = 'F',
+	M = 'M',
+	F = 'F'
 }

@@ -13,12 +13,7 @@
 			<div class="flex w-full flex-col space-y-4 mt-7">
 				<label class="label">
 					<span>Farmaco</span>
-					<input
-						class="input rounded"
-						type="text"
-						placeholder="Ex: farmaco"
-						bind:value={farmaco}
-					/>
+					<input class="input rounded" type="text" placeholder="Ex: farmaco" bind:value={farmaco} />
 				</label>
 				<label class="label">
 					<span>Data</span>
@@ -43,7 +38,8 @@
 						class="textarea rounded min-h-[100px] max-h-[150px]"
 						rows="4"
 						placeholder="..."
-						bind:value={observation}></textarea>
+						bind:value={observation}
+					/>
 				</label>
 			</div>
 		</div>

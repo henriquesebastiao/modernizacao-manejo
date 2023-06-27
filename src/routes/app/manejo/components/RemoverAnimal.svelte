@@ -14,7 +14,7 @@
 			<div class="flex w-full flex-col space-y-4 mt-7">
 				<div class="flex flex-col justify-center items-center">
 					<div class="mb-2">
-						<i class="fa-solid fa-arrow-right-from-bracket mr-1"></i>
+						<i class="fa-solid fa-arrow-right-from-bracket mr-1" />
 						<span>Condição de saída:</span>
 					</div>
 					<RadioGroup active="variant-filled-primary" hover="hover:variant-soft-primary">
@@ -31,7 +31,7 @@
 				</div>
 				<label>
 					<div class="mb-1 flex items-center space-x-1">
-						<i class="fa-solid fa-tag mr-1"></i>
+						<i class="fa-solid fa-tag mr-1" />
 						<span>Brinco do animal</span>
 					</div>
 					<input type="number" class="input rounded" bind:value={brinco_do_animal} />
@@ -39,7 +39,7 @@
 
 				<label>
 					<div class="mb-1 flex items-center space-x-1">
-						<i class="fa-solid fa-calendar-days mr-1"></i>
+						<i class="fa-solid fa-calendar-days mr-1" />
 						<span>Data da saída:</span>
 					</div>
 					<input type="date" class="input rounded" bind:value={data_da_saida} />
@@ -47,7 +47,7 @@
 
 				<label>
 					<div class="mb-1 flex items-center space-x-1">
-						<i class="fa-solid fa-weight-hanging mr-1"></i>
+						<i class="fa-solid fa-weight-hanging mr-1" />
 						<span>Peso de saída:</span>
 					</div>
 					<input type="number" class="input rounded" bind:value={peso_de_saida} />

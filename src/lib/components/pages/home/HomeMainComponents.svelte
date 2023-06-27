@@ -1,9 +1,5 @@
 <script lang="ts">
-  import {
-    Avatar,
-    RadioGroup,
-    RadioItem,
-  } from "@skeletonlabs/skeleton";
+	import { Avatar, RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
 
 	// Local
 	let value = 0;
@@ -13,7 +9,7 @@
 	<!-- Avatar -->
 	<div class="anim-float-avatar absolute z-[1] top-[32%] left-[40%]">
 		<svg
-		    class="fill-token "
+			class="fill-token"
 			xmlns="http://www.w3.org/2000/svg"
 			width="128"
 			viewBox="0 0 375 374.999991"
@@ -47,12 +43,7 @@
 	</div>
 	<!-- Card -->
 	<div class="anim-float-card absolute z-[1] top-[78%] left-[40%]">
-		<a
-			class="block card card-hover p-4 space-y-2"
-			href=" "
-			target="_blank"
-			rel="noreferrer"
-		>
+		<a class="block card card-hover p-4 space-y-2" href=" " target="_blank" rel="noreferrer">
 			<div class="flex items-center gap-4">
 				<Avatar
 					src="https://cdn.discordapp.com/attachments/1117829631257620501/1117830132426608650/logo2.png"
@@ -74,20 +65,20 @@
 	<div class="anim-float-button absolute z-[1] top-[78%] left-[15%]">
 		<button class="btn variant-glass-secondary">
 			<span>Vacinar</span>
-			<i class="fa-solid fa-syringe"></i>
+			<i class="fa-solid fa-syringe" />
 		</button>
 	</div>
 	<!-- Slide Toggle -->
 	<div class="anim-float-button absolute z-[1] top-[18%] left-[5%]">
 		<button class="btn variant-glass-secondary">
 			<span>Pesar</span>
-			<i class="fa-solid fa-weight-scale"></i>
+			<i class="fa-solid fa-weight-scale" />
 		</button>
 	</div>
 	<!-- Icon Badge -->
 	<div class="anim-float-badge absolute z-[1] top-[45%] left-[25%]">
 		<span class="badge-icon variant-glass-secondary">
-			<i class="fa-solid fa-tag"></i>
+			<i class="fa-solid fa-tag" />
 		</span>
 	</div>
 	<!-- BG Circles -->
@@ -96,7 +87,8 @@
 			class="w-96 aspect-square border-2 border-black/5 dark:border-white/5 rounded-full flex justify-center items-center"
 		>
 			<div
-				class="w-[240px] aspect-square border-2 border-black/5 dark:border-white/5 rounded-full flex justify-center items-center"></div>
+				class="w-[240px] aspect-square border-2 border-black/5 dark:border-white/5 rounded-full flex justify-center items-center"
+			/>
 		</div>
 	</div>
 </div>

@@ -3,6 +3,5 @@
 /* eslint-disable */
 
 export type Message = {
-    detail: string;
+	detail: string;
 };
-

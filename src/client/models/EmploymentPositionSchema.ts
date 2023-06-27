@@ -3,7 +3,6 @@
 /* eslint-disable */
 
 export type EmploymentPositionSchema = {
-    id?: number;
-    name?: number;
+	id?: number;
+	name?: number;
 };
-

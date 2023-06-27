@@ -3,10 +3,9 @@
 /* eslint-disable */
 
 export type AnimalWeightSchema = {
-    id?: number;
-    weight_type_id?: number;
-    animal_id?: number;
-    weight?: number;
-    weight_date?: string;
+	id?: number;
+	weight_type_id?: number;
+	animal_id?: number;
+	weight?: number;
+	weight_date?: string;
 };
-

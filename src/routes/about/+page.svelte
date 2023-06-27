@@ -8,7 +8,7 @@
 		<Accordion>
 			<AccordionItem open>
 				<svelte:fragment slot="lead">
-					<i class="fa-regular fa-user-group"></i>
+					<i class="fa-regular fa-user-group" />
 				</svelte:fragment>
 				<svelte:fragment slot="summary">
 					<span>Quem somos?</span>

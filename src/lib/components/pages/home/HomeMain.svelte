@@ -14,7 +14,7 @@
 		<div class="flex gap-4">
 			<a href="/register" class="btn variant-filled">
 				<span>Cadastrar</span>
-				<i class="fa-solid fa-arrow-right-long"></i>
+				<i class="fa-solid fa-arrow-right-long" />
 			</a>
 			<a href="/static" class="btn variant-soft">Saiba Mais</a>
 		</div>

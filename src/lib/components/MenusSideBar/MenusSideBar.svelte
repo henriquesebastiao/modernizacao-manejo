@@ -57,7 +57,7 @@
 			class={`${item.href === currentPage ? 'bg-primary-active-token' : ''}`}
 			on:click={() => goto(item.href)}
 		>
-			<svelte:fragment slot="lead"><i class={`fa-solid ${item.icon} text-2xl`}></i></svelte:fragment>
+			<svelte:fragment slot="lead"><i class={`fa-solid ${item.icon} text-2xl`} /></svelte:fragment>
 			<span>{item.title}</span>
 		</AppRailTile>
 	{/each}
@@ -69,7 +69,7 @@
 		class={`${currentPage === 'app/settings' ? 'bg-primary-active-token' : ''}`}
 		on:click={() => goto('/app/settings')}
 	>
-		<svelte:fragment slot="lead"><i class="fa-solid fa-gear text-2xl"></i></svelte:fragment>
+		<svelte:fragment slot="lead"><i class="fa-solid fa-gear text-2xl" /></svelte:fragment>
 		<span>Ajustes</span>
 	</AppRailTile>
 </AppRail>

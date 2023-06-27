@@ -3,8 +3,7 @@
 /* eslint-disable */
 
 export type BatchSchema = {
-    id?: number;
-    reg?: string;
-    farm_id?: number;
+	id?: number;
+	reg?: string;
+	farm_id?: number;
 };
-
