@@ -102,39 +102,25 @@ export class UserService {
 
 	/**
 	 * Read Users Me
-	 * @param token
 	 * @returns UserSchema Successful Response
 	 * @throws ApiError
 	 */
-	public static userReadUsersMe(token?: string): CancelablePromise<UserSchema> {
+	public static userReadUsersMe(): CancelablePromise<UserSchema> {
 		return __request(OpenAPI, {
 			method: 'GET',
-			url: '/user/me',
-			query: {
-				token: token
-			},
-			errors: {
-				422: `Validation Error`
-			}
+			url: '/user/me'
 		});
 	}
 
 	/**
 	 * Read Own Items
-	 * @param token
 	 * @returns any Successful Response
 	 * @throws ApiError
 	 */
-	public static userReadOwnItems(token?: string): CancelablePromise<any> {
+	public static userReadOwnItems(): CancelablePromise<any> {
 		return __request(OpenAPI, {
 			method: 'GET',
-			url: '/user/me/items/',
-			query: {
-				token: token
-			},
-			errors: {
-				422: `Validation Error`
-			}
+			url: '/user/me/items/'
 		});
 	}
 

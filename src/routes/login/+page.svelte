@@ -2,7 +2,8 @@
 	import Button from '$lib/components/system/Button.svelte';
 	import type { ToastSettings } from '@skeletonlabs/skeleton';
 	import { focusTrap, ProgressRadial, toastStore } from '@skeletonlabs/skeleton';
-	import type { LoginSchema } from '../../client';
+	import type { Body_Token_login_for_access_token, Token } from '../../client';
+	import { OpenAPI, TokenService } from '../../client';
 	import { goto } from '$app/navigation';
 	import { fade } from 'svelte/transition';
 	import { user } from '../../store';
@@ -11,12 +12,12 @@
 	let isFocused = true;
 	let loading = false;
 
-	let userLogin: LoginSchema = {
-		email: '',
+	let userLogin: Body_Token_login_for_access_token = {
+		username: '',
 		password: ''
 	};
 
-	$: disabled = !userLogin.email || !userLogin.password;
+	$: disabled = !userLogin.username || !userLogin.password;
 
 	const t: ToastSettings = {
 		message: 'Login efetuado com sucesso!'
@@ -27,13 +28,17 @@
 		background: 'bg-warning-600'
 	};
 
+	let token: Token;
+
 	const handleSubmit = async (event: Event) => {
 		event.preventDefault();
 		loading = true;
 
 		try {
+			token = await TokenService.tokenLoginForAccessToken(userLogin);
 			toastStore.trigger(t);
 			localStorage.setItem('isLoggedIn', 'true');
+			OpenAPI.TOKEN = token.access_token;
 			$user.isLoggedIn = true;
 			await goto('/app/relatorios');
 		} catch (err) {
@@ -67,7 +72,7 @@
 					</label>
 					<input
 						type="email"
-						bind:value={userLogin.email}
+						bind:value={userLogin.username}
 						id="email"
 						name="email"
 						class="input w-full px-4 py-2 border rounded"
