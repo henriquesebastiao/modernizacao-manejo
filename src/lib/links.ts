@@ -137,18 +137,18 @@ export const menuNavLinks: Record<
 			]
 		}
 	],
-	'/app/settings': [
+	'/app/ajustes': [
 		{
 			slot: 'trail',
 			title: 'Ajustes',
 			badge: 'fa-gear',
-			href: 'app/settings/',
+			href: 'app/ajustes/',
 			list: [
 				{
-					href: 'app/financeiro/financeiro',
-					label: 'Financeiro',
-					keywords: 'financeiro',
-					badge: 'fa-calculator'
+					href: 'app/ajustes/user',
+					label: 'Usuário',
+					keywords: 'usuario',
+					badge: 'fa-user'
 				}
 			]
 		}

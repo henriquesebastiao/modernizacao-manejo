@@ -2,11 +2,7 @@
 	import { AppRail, AppRailTile, drawerStore } from '@skeletonlabs/skeleton';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
-	import { user } from '../../../store';
 	import { menuNavLinks } from '$lib/links';
-
-	$: currentPage = $page.route.id;
-	$: currentTile = $user.currentTitle;
 
 	// Local
 	let currentRailCategory: keyof typeof menuNavLinks | undefined = undefined;
@@ -23,10 +19,12 @@
 		if (['cria'].includes(basePath)) currentRailCategory = '/app/cria';
 		if (['lotes'].includes(basePath)) currentRailCategory = '/app/lotes';
 		if (['financeiro'].includes(basePath)) currentRailCategory = '/app/financeiro';
-		if (['ajuste'].includes(basePath)) currentRailCategory = '/app/ajuste';
+		if (['ajustes'].includes(basePath)) currentRailCategory = '/app/ajustes';
 	});
 
 	$: submenu = menuNavLinks[currentRailCategory ?? '/app/manejo'];
+	$: listboxActive = (href: string) =>
+		$page.url.pathname?.includes(href) ? 'bg-primary-active-token' : '';
 	$: listboxItemActive = (href: string) =>
 		$page.url.pathname?.includes(href) ? 'bg-primary-active-token' : '';
 </script>
@@ -40,11 +38,10 @@
 			{#each menuNavLinks[section] as item}
 				<AppRailTile
 					slot={item.slot}
-					bind:group={currentTile}
 					name={section}
 					value={item.title}
 					title={item.title}
-					class={`{section === currentPage ? 'bg-primary-active-token' : ''}`}
+					class={listboxActive(section)}
 					on:click={() => goto(section)}
 				>
 					<svelte:fragment slot="lead"
@@ -64,7 +61,7 @@
 			<!-- Nav List -->
 			<nav class="list-nav">
 				<ul>
-					{#each segment.list as { href, label, badge, default_path }}
+					{#each segment.list as { href, label, badge }}
 						<li on:keypress on:click={drawerStore.close}>
 							<a href="/{href}" class={listboxItemActive(href)} data-sveltekit-preload-data="hover">
 								{#if badge}<i class="fa-solid {badge}" />{/if}
