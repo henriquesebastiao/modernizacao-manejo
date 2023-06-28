@@ -23,8 +23,6 @@
 	});
 
 	$: submenu = menuNavLinks[currentRailCategory ?? '/app/manejo'];
-	$: listboxActive = (href: string) =>
-		$page.url.pathname?.includes(href) ? 'bg-primary-active-token' : '';
 	$: listboxItemActive = (href: string) =>
 		$page.url.pathname?.includes(href) ? 'bg-primary-active-token' : '';
 </script>
@@ -41,7 +39,6 @@
 					name={section}
 					value={item.title}
 					title={item.title}
-					class={listboxActive(section)}
 					on:click={() => goto(section)}
 				>
 					<svelte:fragment slot="lead"
