@@ -11,6 +11,7 @@
 	import { page } from '$app/stores';
 	import MenusSideBar from '$lib/components/MenusSideBar/MenusSideBar.svelte';
 	import SpeedDial from '$lib/components/SpeedDial.svelte';
+	import MenusDrawer from '$lib/components/MenusDrawer/MenusDrawer.svelte';
 
 	OpenAPI.BASE = 'https://api.henriquesebastiao.com';
 
@@ -40,6 +41,8 @@
 <div class="parent-toast">
 	<Toast position="tr" />
 </div>
+
+<MenusDrawer />
 
 <!-- App Shell -->
 <AppShell {slotSidebarLeft} regionPage="overflow-y-scroll" slotFooter="bg-black p-4">

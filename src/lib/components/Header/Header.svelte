@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { AppBar, Drawer, drawerStore, LightSwitch } from '@skeletonlabs/skeleton';
+	import type { DrawerSettings } from '@skeletonlabs/skeleton';
+	import { AppBar, drawerStore, LightSwitch } from '@skeletonlabs/skeleton';
 	import Navigation from '$lib/Navigation/Navigation.svelte';
 	import { user } from '../../../store';
 	import { Modal, modalStore } from '@skeletonlabs/skeleton';
@@ -9,14 +10,10 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 
-	function drawerClose(): void {
-		drawerStore.close();
-	}
-
+	// Drawer Handler
 	function drawerOpen(): void {
-		drawerStore.open({
-			width: 'w-[200px] md:w-[300px]'
-		});
+		const s: DrawerSettings = { id: 'doc-sidenav', width: 'w-[300px]' };
+		drawerStore.open(s);
 	}
 
 	const t: ToastSettings = {
@@ -44,15 +41,6 @@
 	};
 </script>
 
-<Drawer>
-	<div class="variant-filled">
-		<div class="p-2 flex justify-end">
-			<button on:click={drawerClose} class="btn btn-icon btn-sm variant-ringed fa fa-close" />
-		</div>
-	</div>
-	<Navigation />
-</Drawer>
-
 <AppBar
 	gridColumns="grid grid-cols-3 gap-4"
 	slotDefault="col-span-2"
@@ -61,6 +49,7 @@
 	<svelte:fragment slot="lead">
 		<div class="flex items-center space-x-4">
 			{#if !$user.isLoggedIn}
+				<!-- Hamburger Menu -->
 				<button on:click={drawerOpen} class="btn-icon btn-icon-sm lg:!hidden">
 					<i class="fa-solid fa-bars text-xl" />
 				</button>
