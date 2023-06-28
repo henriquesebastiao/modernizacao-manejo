@@ -33,19 +33,19 @@ export const menuNavLinks: Record<
 			href: '/app/relatorios/relatorio_geral',
 			list: [
 				{
-					href: 'app/manejo/adicionar_animal',
+					href: '/app/manejo/adicionar_animal',
 					label: 'Adicionar animal',
 					keywords: 'adicionar_animal',
 					badge: 'fa-cow'
 				},
 				{
-					href: 'app/manejo/vacinacao',
+					href: '/app/manejo/vacinacao',
 					label: 'Vacinação',
 					keywords: 'vacinacao',
 					badge: 'fa-syringe'
 				},
 				{
-					href: 'app/manejo/pesagem',
+					href: '/app/manejo/pesagem',
 					label: 'Pesagem',
 					keywords: 'pesagem',
 					badge: 'fa-weight-scale'
@@ -114,7 +114,7 @@ export const menuNavLinks: Record<
 			href: '/app/lotes/',
 			list: [
 				{
-					href: 'app/lotes/troca_de_lote',
+					href: '/app/lotes/troca_de_lote',
 					label: 'Troca de Lote',
 					keywords: 'troca_de_lote',
 					badge: 'fa-rotate'
@@ -129,7 +129,7 @@ export const menuNavLinks: Record<
 			href: '/app/Financeiro/',
 			list: [
 				{
-					href: 'app/financeiro/financeiro',
+					href: '/app/financeiro/financeiro',
 					label: 'Financeiro',
 					keywords: 'financeiro',
 					badge: 'fa-calculator'
