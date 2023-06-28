@@ -3,13 +3,13 @@
 	"name": "Modernização Manejo",
 	"icons": [
 		{
-			"src": "./images/logo2.png",
+			"src": "./images/logo.png",
 			"sizes": "192x192",
 			"type": "image/png",
 			"purpose": "any"
 		},
 		{
-			"src": "./images/logo2.png",
+			"src": "./images/logo.png",
 			"sizes": "512x512",
 			"type": "image/png",
 			"purpose": "maskable"
