@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AppRail, AppRailTile, ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
+	import { AppRail, AppRailTile, drawerStore } from '@skeletonlabs/skeleton';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { user } from '../../../store';
@@ -8,7 +8,21 @@
 	$: currentPage = $page.route.id;
 	$: currentTile = $user.currentTitle;
 
+	// Local
 	let currentRailCategory: keyof typeof menuNavLinks | undefined = undefined;
+
+	// Lifecycle
+	page.subscribe((page) => {
+		// ex: /basePath/...
+		let basePath: string = page.url.pathname.split('/')[1];
+		if (!basePath) return;
+		// Translate base path to link section
+		if (['docs', 'essentials', 'resources'].includes(basePath)) currentRailCategory = '/relatorios';
+		if (['tokens', 'base', 'elements', 'blocks'].includes(basePath))
+			currentRailCategory = '/elements';
+		if (['components', 'actions'].includes(basePath)) currentRailCategory = '/svelte';
+		if (['utilities'].includes(basePath)) currentRailCategory = '/utilities';
+	});
 
 	let appRailMenuItems = [
 		{
@@ -49,24 +63,23 @@
 		}
 	];
 
-	let subMenuItems = [
-		{
-			title: 'Relatório geral',
-			icon: 'fa-chart-line',
-			name: 'geral',
-			value: 'geral'
-		},
-		{
-			title: 'Relatório lote',
-			icon: 'fa-tree',
-			name: 'geral',
-			value: 'lote'
-		}
-	];
+	// Lifecycle
+	page.subscribe((page) => {
+		// ex: /basePath/...
+		let basePath: string = page.url.pathname.split('/')[2];
+		console.log(basePath);
+		if (!basePath) return;
+		// Translate base path to link section
+		if (['manejo'].includes(basePath)) currentRailCategory = '/manejo';
+		if (['relatorios'].includes(basePath)) currentRailCategory = '/relatorios';
+		if (['sanitario'].includes(basePath)) currentRailCategory = '/sanitario';
+		if (['cria'].includes(basePath)) currentRailCategory = '/cria';
+		if (['lote'].includes(basePath)) currentRailCategory = '/lote';
+		if (['finaceiro'].includes(basePath)) currentRailCategory = '/finaceiro';
+		if (['ajuste'].includes(basePath)) currentRailCategory = '/ajuste';
+	});
 
-	let valueSingle = 'geral';
-
-	$: submenu = menuNavLinks[currentRailCategory ?? '/app/relatorios'];
+	$: submenu = menuNavLinks[currentRailCategory ?? '/manejo'];
 	$: listboxItemActive = (href: string) =>
 		$page.url.pathname?.includes(href) ? 'bg-primary-active-token' : '';
 </script>
@@ -103,17 +116,23 @@
 		</AppRailTile>
 	</AppRail>
 
-	<div class="w-[250px] h-full shadow-2xl px-4 pt-4 flex justify-start flex-col max-md:hidden">
-		<h1 class="font-bold text-2xl mb-3">Relatórios</h1>
-		<ListBox class="w-full">
-			{#each subMenuItems as item}
-				<ListBoxItem bind:group={valueSingle} name={item.name} value={item.value}>
-					<div class="flex items-center space-x-2">
-						<i class={`fa-solid ${item.icon} text-xl`} />
-						<span>{item.title}</span>
-					</div>
-				</ListBoxItem>
-			{/each}
-		</ListBox>
-	</div>
+	<section class="p-4 pb-20 space-y-4 overflow-y-auto">
+		{#each submenu as segment}
+			<!-- Title -->
+			<p class="font-bold pl-4 text-2xl">{segment.title}</p>
+			<!-- Nav List -->
+			<nav class="list-nav">
+				<ul>
+					{#each segment.list as { href, label, badge }}
+						<li on:keypress on:click={drawerStore.close}>
+							<a {href} class={listboxItemActive(href)} data-sveltekit-preload-data="hover">
+								{#if badge}<i class="fa-solid {badge}" />{/if}
+								<span class="flex-auto">{@html label}</span>
+							</a>
+						</li>
+					{/each}
+				</ul>
+			</nav>
+		{/each}
+	</section>
 </div>

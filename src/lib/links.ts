@@ -1,11 +1,23 @@
+// Navigation Sitemap
+
 export type List = Array<{ href: string; label: string; keywords: string; badge?: string }>;
 export const menuNavLinks: Record<string, Array<{ title: string; list: List }>> = {
 	'/relatorios': [
 		{
 			title: 'Relatórios',
 			list: [
-				{ href: 'app/relatorios/relatorio_geral', label: 'Relatório Geral', keywords: 'relatorio' },
-				{ href: 'app/relatorios/relatorio_lote', label: 'Relatório Lote', keywords: 'relatorio' }
+				{
+					href: 'app/relatorios/relatorio_geral',
+					label: 'Relatório Geral',
+					keywords: 'relatorio',
+					badge: 'fa-chart-line'
+				},
+				{
+					href: 'app/relatorios/relatorio_lote',
+					label: 'Relatório Lote',
+					keywords: 'relatorio',
+					badge: 'fa-tree'
+				}
 			]
 		}
 	],
