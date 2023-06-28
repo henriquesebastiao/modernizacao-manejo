@@ -16,7 +16,7 @@
 			const s: DrawerSettings = { id: 'doc-sidenav', width: 'w-[300px]' };
 			drawerStore.open(s);
 		} else {
-			const s: DrawerSettings = { id: 'home', width: 'w-[150px]' };
+			const s: DrawerSettings = { width: 'w-[150px]' };
 			drawerStore.open(s);
 		}
 	}

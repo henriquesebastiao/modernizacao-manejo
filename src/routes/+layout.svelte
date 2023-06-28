@@ -10,7 +10,6 @@
 	import Footer from '$lib/components/Footer/Footer.svelte';
 	import { page } from '$app/stores';
 	import MenusSideBar from '$lib/components/MenusSideBar/MenusSideBar.svelte';
-	import SpeedDial from '$lib/components/SpeedDial.svelte';
 	import MenusDrawer from '$lib/components/MenusDrawer/MenusDrawer.svelte';
 
 	OpenAPI.BASE = 'https://api.henriquesebastiao.com';
