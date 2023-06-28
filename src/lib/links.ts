@@ -9,16 +9,16 @@ export const menuNavLinks: Record<
 		{
 			title: 'Relatórios',
 			badge: 'fa-chart-line',
-			href: '/app/relatorios/relatorio_geral',
+			href: 'app/relatorios/relatorio_geral',
 			list: [
 				{
-					href: '/app/relatorios/relatorio_geral',
+					href: 'app/relatorios/relatorio_geral',
 					label: 'Relatório Geral',
 					keywords: 'relatorio',
 					badge: 'fa-chart-line'
 				},
 				{
-					href: '/app/relatorios/relatorio_lote',
+					href: 'app/relatorios/relatorio_lote',
 					label: 'Relatório Lote',
 					keywords: 'relatorio',
 					badge: 'fa-tree'
@@ -30,22 +30,22 @@ export const menuNavLinks: Record<
 		{
 			title: 'Manejo',
 			badge: 'fa-syringe',
-			href: '/app/relatorios/relatorio_geral',
+			href: 'app/relatorios/relatorio_geral',
 			list: [
 				{
-					href: '/app/manejo/adicionar_animal',
+					href: 'app/manejo/adicionar_animal',
 					label: 'Adicionar animal',
 					keywords: 'adicionar_animal',
 					badge: 'fa-cow'
 				},
 				{
-					href: '/app/manejo/vacinacao',
+					href: 'app/manejo/vacinacao',
 					label: 'Vacinação',
 					keywords: 'vacinacao',
 					badge: 'fa-syringe'
 				},
 				{
-					href: '/app/manejo/pesagem',
+					href: 'app/manejo/pesagem',
 					label: 'Pesagem',
 					keywords: 'pesagem',
 					badge: 'fa-weight-scale'
@@ -57,28 +57,28 @@ export const menuNavLinks: Record<
 		{
 			title: 'Sanitário',
 			badge: 'fa-vial-circle-check',
-			href: '/app/sanitario/relatorio_geral',
+			href: 'app/sanitario/relatorio_geral',
 			list: [
 				{
-					href: '/app/sanitario/vacinacao',
+					href: 'app/sanitario/vacinacao',
 					label: 'Vacinação',
 					keywords: 'vacinacao',
 					badge: 'fa-syringe'
 				},
 				{
-					href: '/app/sanitario/procedimento',
+					href: 'app/sanitario/procedimento',
 					label: 'Procedimento',
 					keywords: 'procedimento',
 					badge: 'fa-user-doctor'
 				},
 				{
-					href: '/app/sanitario/exame',
+					href: 'app/sanitario/exame',
 					label: 'Exame',
 					keywords: 'exame',
 					badge: 'fa-stethoscope'
 				},
 				{
-					href: '/app/sanitario/outro',
+					href: 'app/sanitario/outro',
 					label: 'Outro',
 					keywords: 'outro',
 					badge: 'fa-circle-plus'
@@ -90,16 +90,16 @@ export const menuNavLinks: Record<
 		{
 			title: 'Cria',
 			badge: 'fa-cow',
-			href: '/app/relatorios/relatorio_geral',
+			href: 'app/relatorios/relatorio_geral',
 			list: [
 				{
-					href: '/app/cria/desmama',
+					href: 'app/cria/desmama',
 					label: 'Desmama',
 					keywords: 'desmama',
 					badge: 'fa-circle-xmark'
 				},
 				{
-					href: '/app/cria/parto',
+					href: 'app/cria/parto',
 					label: 'Parto',
 					keywords: 'parto',
 					badge: 'fa-heart-pulse'
@@ -111,10 +111,10 @@ export const menuNavLinks: Record<
 		{
 			title: 'Lotes',
 			badge: 'fa-tree',
-			href: '/app/lotes/',
+			href: 'app/lotes/',
 			list: [
 				{
-					href: '/app/lotes/troca_de_lote',
+					href: 'app/lotes/troca_de_lote',
 					label: 'Troca de Lote',
 					keywords: 'troca_de_lote',
 					badge: 'fa-rotate'
@@ -126,10 +126,10 @@ export const menuNavLinks: Record<
 		{
 			title: 'Financeiro',
 			badge: 'fa-cash-register',
-			href: '/app/Financeiro/',
+			href: 'app/Financeiro/',
 			list: [
 				{
-					href: '/app/financeiro/financeiro',
+					href: 'app/financeiro/financeiro',
 					label: 'Financeiro',
 					keywords: 'financeiro',
 					badge: 'fa-calculator'
