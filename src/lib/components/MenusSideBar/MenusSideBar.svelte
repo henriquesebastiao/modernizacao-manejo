@@ -50,21 +50,6 @@
 		}
 	];
 
-	let subMenuItems = [
-		{
-			title: 'Relatório geral',
-			icon: 'fa-chart-line',
-			name: 'geral',
-			value: 'geral'
-		},
-		{
-			title: 'Relatório lote',
-			icon: 'fa-tree',
-			name: 'geral',
-			value: 'lote'
-		}
-	];
-
 	// Lifecycle
 	page.subscribe((page) => {
 		// ex: /basePath/...
@@ -76,7 +61,7 @@
 		if (['sanitario'].includes(basePath)) currentRailCategory = '/sanitario';
 		if (['cria'].includes(basePath)) currentRailCategory = '/cria';
 		if (['lote'].includes(basePath)) currentRailCategory = '/lote';
-		if (['finaceiro'].includes(basePath)) currentRailCategory = '/finaceiro';
+		if (['financeiro'].includes(basePath)) currentRailCategory = '/financeiro';
 		if (['ajuste'].includes(basePath)) currentRailCategory = '/ajuste';
 	});
 
