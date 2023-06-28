@@ -25,11 +25,12 @@
 	<title>Modernização manejo</title>
 </svelte:head>
 
+<div class="parent-toast">
+	<Toast position="tr" />
+</div>
+
 <AppShell>
 	<svete:fragment slot="header">
-		<div class="parent-toast">
-			<Toast position="tr" />
-		</div>
 		<Header />
 	</svete:fragment>
 	<div class="flex items-center justify-center dynamic-width">
