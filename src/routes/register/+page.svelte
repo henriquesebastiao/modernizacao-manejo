@@ -98,7 +98,7 @@
 				</div>
 			</div>
 			<div class="py-2 text-center font-semibold">
-				<button class="btn variant-filled-primary" type="submit">Cadastrar</button>
+				<button class="btn variant-filled" type="submit">Cadastrar</button>
 			</div>
 		</form>
 	</div>
