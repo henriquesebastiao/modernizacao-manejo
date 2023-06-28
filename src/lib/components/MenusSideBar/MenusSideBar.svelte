@@ -45,7 +45,7 @@
 		{
 			title: 'Financeiro',
 			icon: 'fa-cash-register',
-			href: '/app/financeiro',
+			href: '/app/financeiro/financeiro',
 			value: 6
 		}
 	];

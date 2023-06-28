@@ -109,15 +109,15 @@ export const menuNavLinks: Record<string, Array<{ title: string; badge: string; 
 			]
 		}
 	],
-	'/Financeiro': [
+	'/financeiro': [
 		{
 			title: 'Financeiro',
 			badge: 'fa-cash-register',
 			list: [
 				{
-					href: 'app/financeiro/contas_a_pagar',
-					label: 'Contas a Pagar',
-					keywords: 'contas_a_pagar',
+					href: 'app/financeiro/financeiro',
+					label: 'Financeiro',
+					keywords: 'financeiro',
 					badge: 'fa-tree'
 				}
 			]
