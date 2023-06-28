@@ -3,13 +3,23 @@
 export type List = Array<{ href: string; label: string; keywords: string; badge?: string }>;
 export const menuNavLinks: Record<
 	string,
-	Array<{ title: string; slot?: string; badge: string; href: string; list: List }>
+	Array<{
+		title: string;
+		slot?: string;
+		badge: string;
+		href: string;
+		list: List;
+		value: number;
+		name: string;
+	}>
 > = {
 	'/app/relatorios': [
 		{
 			title: 'Relatórios',
+			name: 'relatorios',
 			badge: 'fa-chart-line',
-			href: 'app/relatorios/relatorio_geral',
+			href: 'relatorio_geral',
+			value: 0,
 			list: [
 				{
 					href: 'app/relatorios/relatorio_geral',
@@ -29,8 +39,10 @@ export const menuNavLinks: Record<
 	'/app/manejo': [
 		{
 			title: 'Manejo',
+			name: 'manejo',
 			badge: 'fa-syringe',
-			href: 'app/relatorios/relatorio_geral',
+			href: 'adicionar_animal',
+			value: 1,
 			list: [
 				{
 					href: 'app/manejo/adicionar_animal',
@@ -56,8 +68,10 @@ export const menuNavLinks: Record<
 	'/app/sanitario': [
 		{
 			title: 'Sanitário',
+			name: 'sanitario',
 			badge: 'fa-vial-circle-check',
-			href: 'app/sanitario/relatorio_geral',
+			href: 'vacinacao',
+			value: 2,
 			list: [
 				{
 					href: 'app/sanitario/vacinacao',
@@ -89,8 +103,10 @@ export const menuNavLinks: Record<
 	'/app/cria': [
 		{
 			title: 'Cria',
+			name: 'cria',
 			badge: 'fa-cow',
-			href: 'app/relatorios/relatorio_geral',
+			href: 'desmama',
+			value: 3,
 			list: [
 				{
 					href: 'app/cria/desmama',
@@ -110,8 +126,10 @@ export const menuNavLinks: Record<
 	'/app/lotes': [
 		{
 			title: 'Lotes',
+			name: 'lotes',
 			badge: 'fa-tree',
-			href: 'app/lotes/',
+			href: 'troca_de_lote',
+			value: 4,
 			list: [
 				{
 					href: 'app/lotes/troca_de_lote',
@@ -125,8 +143,10 @@ export const menuNavLinks: Record<
 	'/app/financeiro': [
 		{
 			title: 'Financeiro',
+			name: 'financeiro',
 			badge: 'fa-cash-register',
-			href: 'app/Financeiro/',
+			href: 'financeiro',
+			value: 5,
 			list: [
 				{
 					href: 'app/financeiro/financeiro',
@@ -140,9 +160,11 @@ export const menuNavLinks: Record<
 	'/app/ajustes': [
 		{
 			slot: 'trail',
+			name: 'ajustes',
 			title: 'Ajustes',
 			badge: 'fa-gear',
-			href: 'app/ajustes/',
+			href: 'user',
+			value: 6,
 			list: [
 				{
 					href: 'app/ajustes/user',

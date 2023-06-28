@@ -7,6 +7,7 @@
 	// Local
 	let currentRailCategory: keyof typeof menuNavLinks | undefined = undefined;
 
+
 	// Lifecycle
 	page.subscribe((page) => {
 		// ex: /basePath/...
@@ -25,6 +26,9 @@
 	$: submenu = menuNavLinks[currentRailCategory ?? '/app/manejo'];
 	$: listboxItemActive = (href: string) =>
 		$page.url.pathname?.includes(href) ? 'bg-primary-active-token' : '';
+
+
+	let currentTile: number = 0;
 </script>
 
 <div
@@ -32,22 +36,25 @@
 		''}"
 >
 	<AppRail background="bg-transparent" border="border-r border-surface-500/30">
-		{#each Object.keys(menuNavLinks) as section}
-			{#each menuNavLinks[section] as item}
-				<AppRailTile
-					slot={item.slot}
-					name={section}
-					value={item.title}
-					title={item.title}
-					on:click={() => goto(section)}
-				>
-					<svelte:fragment slot="lead"
-						><i class={`fa-solid ${item.badge} text-2xl`} /></svelte:fragment
+		<svelte:fragment slot="lead">
+			{#each Object.keys(menuNavLinks) as section}
+				{#each menuNavLinks[section] as item}
+					<AppRailTile
+							slot={item.slot}
+							name={section.name}
+							value={item.title}
+							title={item.title}
+							on:click={() => goto(section + '/' + item.href)}
+							bind:group={currentTile}
 					>
-					<span>{item.title}</span>
-				</AppRailTile>
+						<svelte:fragment slot="lead"
+						><i class={`fa-solid ${item.badge} text-2xl`} /></svelte:fragment
+						>
+						<span>{item.title}</span>
+					</AppRailTile>
+				{/each}
 			{/each}
-		{/each}
+		</svelte:fragment>
 	</AppRail>
 
 	<!-- Submenu Lateral -->

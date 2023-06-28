@@ -57,9 +57,8 @@
 			<button on:click={drawerOpen} class="btn-icon btn-icon-sm lg:!hidden">
 				<i class="fa-solid fa-bars text-xl" />
 			</button>
-			<a
+			<div
 				class="flex items-center space-x-4"
-				href={!$user.isLoggedIn ? '/' : '/app/relatorios'}
 				title="Início"
 			>
 				<svg
@@ -81,8 +80,8 @@
 						fill-rule="nonzero"
 					/>
 				</svg>
-				<strong class="text-xl max-small:hidden">Manejo</strong>
-			</a>
+				<strong class="text-xl max-small:hidden select-none">Manejo</strong>
+			</div>
 		</div>
 	</svelte:fragment>
 	<div class="relative hidden lg:block">
