@@ -7,6 +7,7 @@
 	import Header from '$lib/components/Header/Header.svelte';
 	import { user } from '../store';
 	import { onMount } from 'svelte';
+	import Footer from '$lib/components/Footer/Footer.svelte';
 	import { page } from '$app/stores';
 	import MenusSideBar from '$lib/components/MenusSideBar/MenusSideBar.svelte';
 	import SpeedDial from '$lib/components/SpeedDial.svelte';
@@ -55,4 +56,9 @@
 
 	<!-- Page Content -->
 	<slot />
+
+	<!-- Page Footer -->
+	<svelte:fragment slot="pageFooter">
+		<Footer />
+	</svelte:fragment>
 </AppShell>
