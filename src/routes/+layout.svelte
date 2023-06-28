@@ -7,6 +7,7 @@
 	import Header from '$lib/components/Header/Header.svelte';
 	import { user } from '../store';
 	import { onMount } from 'svelte';
+	import Footer from '$lib/components/Footer/Footer.svelte';
 
 	OpenAPI.BASE = 'https://api.henriquesebastiao.com';
 
@@ -42,8 +43,9 @@ ${autoModeWatcher.toString()} autoModeWatcher();</script>`}
 	<div class="flex items-center justify-center dynamic-width">
 		<slot />
 	</div>
-
-	<!-- Footer -->
+	<svelte:fragment slot="pageFooter">
+		<Footer />
+	</svelte:fragment>
 </AppShell>
 
 <style>
