@@ -1,20 +1,24 @@
 // Navigation Sitemap
 
 export type List = Array<{ href: string; label: string; keywords: string; badge?: string }>;
-export const menuNavLinks: Record<string, Array<{ title: string; badge: string; list: List }>> = {
+export const menuNavLinks: Record<
+	string,
+	Array<{ title: string; badge: string; href: string; list: List }>
+> = {
 	'/relatorios': [
 		{
 			title: 'Relatórios',
 			badge: 'fa-chart-line',
+			href: '/app/relatorios/relatorio_geral',
 			list: [
 				{
-					href: 'app/relatorios/relatorio_geral',
+					href: '/app/relatorios/relatorio_geral',
 					label: 'Relatório Geral',
 					keywords: 'relatorio',
 					badge: 'fa-chart-line'
 				},
 				{
-					href: 'app/relatorios/relatorio_lote',
+					href: '/app/relatorios/relatorio_lote',
 					label: 'Relatório Lote',
 					keywords: 'relatorio',
 					badge: 'fa-tree'
@@ -26,6 +30,7 @@ export const menuNavLinks: Record<string, Array<{ title: string; badge: string; 
 		{
 			title: 'Manejo',
 			badge: 'fa-syringe',
+			href: '/app/relatorios/relatorio_geral',
 			list: [
 				{
 					href: 'app/manejo/adicionar_animal',
@@ -52,27 +57,28 @@ export const menuNavLinks: Record<string, Array<{ title: string; badge: string; 
 		{
 			title: 'Sanitário',
 			badge: 'fa-vial-circle-check',
+			href: '/app/sanitario/relatorio_geral',
 			list: [
 				{
-					href: 'app/sanitario/vacinacao',
+					href: '/app/sanitario/vacinacao',
 					label: 'Vacinação',
 					keywords: 'vacinacao',
 					badge: 'fa-syringe'
 				},
 				{
-					href: 'app/sanitario/procedimento',
+					href: '/app/sanitario/procedimento',
 					label: 'Procedimento',
 					keywords: 'procedimento',
 					badge: 'fa-user-doctor'
 				},
 				{
-					href: 'app/sanitario/exame',
+					href: '/app/sanitario/exame',
 					label: 'Exame',
 					keywords: 'exame',
 					badge: 'fa-stethoscope'
 				},
 				{
-					href: 'app/sanitario/outro',
+					href: '/app/sanitario/outro',
 					label: 'Outro',
 					keywords: 'outro',
 					badge: 'fa-circle-plus'
@@ -84,15 +90,16 @@ export const menuNavLinks: Record<string, Array<{ title: string; badge: string; 
 		{
 			title: 'Cria',
 			badge: 'fa-cow',
+			href: '/app/relatorios/relatorio_geral',
 			list: [
 				{
-					href: 'app/cria/desmama',
+					href: '/app/cria/desmama',
 					label: 'Desmama',
 					keywords: 'desmama',
 					badge: 'fa-circle-xmark'
 				},
 				{
-					href: 'app/cria/parto',
+					href: '/app/cria/parto',
 					label: 'Parto',
 					keywords: 'parto',
 					badge: 'fa-heart-pulse'
@@ -104,6 +111,7 @@ export const menuNavLinks: Record<string, Array<{ title: string; badge: string; 
 		{
 			title: 'Lotes',
 			badge: 'fa-tree',
+			href: '/app/lotes/',
 			list: [
 				{
 					href: 'app/lotes/troca_de_lote',
@@ -118,6 +126,7 @@ export const menuNavLinks: Record<string, Array<{ title: string; badge: string; 
 		{
 			title: 'Financeiro',
 			badge: 'fa-cash-register',
+			href: '/app/Financeiro/',
 			list: [
 				{
 					href: 'app/financeiro/financeiro',
