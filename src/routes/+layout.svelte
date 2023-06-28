@@ -33,12 +33,7 @@
 	<svete:fragment slot="header">
 		<Header />
 	</svete:fragment>
-	<div class="flex items-center justify-center dynamic-width">
-		<slot />
-	</div>
-	<svelte:fragment slot="pageFooter">
-		<Footer />
-	</svelte:fragment>
+	<slot />
 </AppShell>
 
 <style>
