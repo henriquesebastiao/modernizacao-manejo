@@ -1,10 +1,11 @@
 // Navigation Sitemap
 
 export type List = Array<{ href: string; label: string; keywords: string; badge?: string }>;
-export const menuNavLinks: Record<string, Array<{ title: string; list: List }>> = {
+export const menuNavLinks: Record<string, Array<{ title: string; badge: string; list: List }>> = {
 	'/relatorios': [
 		{
 			title: 'Relatórios',
+			badge: 'fa-chart-line',
 			list: [
 				{
 					href: 'app/relatorios/relatorio_geral',
@@ -24,40 +25,52 @@ export const menuNavLinks: Record<string, Array<{ title: string; list: List }>> 
 	'/manejo': [
 		{
 			title: 'Manejo',
+			badge: 'fa-syringe',
 			list: [
 				{
 					href: 'app/manejo/adicionar_animal',
 					label: 'Adicionar animal',
-					keywords: 'adicionar_animal'
+					keywords: 'adicionar_animal',
+					badge: 'fa-syringe'
 				},
-				{ href: 'app/manejo/vacinacao', label: 'Vacinação', keywords: 'vacinacao' },
-				{ href: 'app/manejo/pesagem', label: 'Pesagem', keywords: 'pesagem' }
+				{
+					href: 'app/manejo/vacinacao',
+					label: 'Vacinação',
+					keywords: 'vacinacao',
+					badge: 'fa-tree'
+				},
+				{ href: 'app/manejo/pesagem', label: 'Pesagem', keywords: 'pesagem', badge: 'fa-tree' }
 			]
 		}
 	],
 	'/sanitario': [
 		{
 			title: 'Sanitário',
+			badge: 'fa-vial-circle-check',
 			list: [
 				{
 					href: 'app/sanitario/vacinacao',
 					label: 'Vacinação',
-					keywords: 'vacinacao'
+					keywords: 'vacinacao',
+					badge: 'fa-tree'
 				},
 				{
 					href: 'app/sanitario/procedimento',
 					label: 'Procedimento',
-					keywords: 'procedimento'
+					keywords: 'procedimento',
+					badge: 'fa-tree'
 				},
 				{
 					href: 'app/sanitario/exame',
 					label: 'Exame',
-					keywords: 'exame'
+					keywords: 'exame',
+					badge: 'fa-tree'
 				},
 				{
 					href: 'app/sanitario/outro',
 					label: 'Outro',
-					keywords: 'outro'
+					keywords: 'outro',
+					badge: 'fa-tree'
 				}
 			]
 		}
@@ -65,16 +78,19 @@ export const menuNavLinks: Record<string, Array<{ title: string; list: List }>> 
 	'/cria': [
 		{
 			title: 'Cria',
+			badge: 'fa-cow',
 			list: [
 				{
 					href: 'app/cria/desmama',
 					label: 'Desmama',
-					keywords: 'desmama'
+					keywords: 'desmama',
+					badge: 'fa-tree'
 				},
 				{
 					href: 'app/cria/parto',
 					label: 'Parto',
-					keywords: 'parto'
+					keywords: 'parto',
+					badge: 'fa-tree'
 				}
 			]
 		}
@@ -82,11 +98,27 @@ export const menuNavLinks: Record<string, Array<{ title: string; list: List }>> 
 	'/lotes': [
 		{
 			title: 'Lotes',
+			badge: 'fa-tree',
 			list: [
 				{
 					href: 'app/lotes/troca_de_lote',
 					label: 'Troca de Lote',
-					keywords: 'troca_de_lote'
+					keywords: 'troca_de_lote',
+					badge: 'fa-tree'
+				}
+			]
+		}
+	],
+	'/Financeiro': [
+		{
+			title: 'Financeiro',
+			badge: 'fa-cash-register',
+			list: [
+				{
+					href: 'app/financeiro/contas_a_pagar',
+					label: 'Contas a Pagar',
+					keywords: 'contas_a_pagar',
+					badge: 'fa-tree'
 				}
 			]
 		}
