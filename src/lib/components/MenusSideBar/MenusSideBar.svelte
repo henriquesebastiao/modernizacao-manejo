@@ -63,13 +63,12 @@
 			name: 'geral',
 			value: 'lote'
 		}
-	]
+	];
 
 	// Lifecycle
 	page.subscribe((page) => {
 		// ex: /basePath/...
 		let basePath: string = page.url.pathname.split('/')[2];
-		console.log(basePath);
 		if (!basePath) return;
 		// Translate base path to link section
 		if (['manejo'].includes(basePath)) currentRailCategory = '/manejo';
