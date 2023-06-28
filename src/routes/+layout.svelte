@@ -2,7 +2,7 @@
 	import '../theme.postcss';
 	import '@skeletonlabs/skeleton/styles/skeleton.css';
 	import '../app.postcss';
-	import { AppShell, autoModeWatcher, Toast } from '@skeletonlabs/skeleton';
+	import { AppShell, Toast } from '@skeletonlabs/skeleton';
 	import { OpenAPI } from '../client';
 	import Header from '$lib/components/Header/Header.svelte';
 	import { user } from '../store';
@@ -20,26 +20,18 @@
 	});
 </script>
 
-<div class="parent-toast">
-	<Toast position="tr" />
-</div>
-
 <svelte:head>
-	{@html `<script>
-import {autoModeWatcher} from "@skeletonlabs/skeleton";
-${autoModeWatcher.toString()} autoModeWatcher();</script>`}
 	<link href="/manifest.webmanifest" rel="manifest" />
 	<title>Modernização manejo</title>
 </svelte:head>
 
-<!-- AppShell -->
 <AppShell>
-	<!-- Header -->
 	<svete:fragment slot="header">
+		<div class="parent-toast">
+			<Toast position="tr" />
+		</div>
 		<Header />
 	</svete:fragment>
-
-	<!-- Page Content -->
 	<div class="flex items-center justify-center dynamic-width">
 		<slot />
 	</div>
