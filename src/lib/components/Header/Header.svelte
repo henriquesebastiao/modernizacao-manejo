@@ -12,8 +12,13 @@
 
 	// Drawer Handler
 	function drawerOpen(): void {
-		const s: DrawerSettings = { id: 'doc-sidenav', width: 'w-[300px]' };
-		drawerStore.open(s);
+		if ($user.isLoggedIn) {
+			const s: DrawerSettings = { id: 'doc-sidenav', width: 'w-[300px]' };
+			drawerStore.open(s);
+		} else {
+			const s: DrawerSettings = { id: 'home', width: 'w-[150px]' };
+			drawerStore.open(s);
+		}
 	}
 
 	const t: ToastSettings = {
@@ -48,12 +53,10 @@
 >
 	<svelte:fragment slot="lead">
 		<div class="flex items-center space-x-4">
-			{#if !$user.isLoggedIn}
-				<!-- Hamburger Menu -->
-				<button on:click={drawerOpen} class="btn-icon btn-icon-sm lg:!hidden">
-					<i class="fa-solid fa-bars text-xl" />
-				</button>
-			{/if}
+			<!-- Hamburger Menu -->
+			<button on:click={drawerOpen} class="btn-icon btn-icon-sm lg:!hidden">
+				<i class="fa-solid fa-bars text-xl" />
+			</button>
 			<a
 				class="flex items-center space-x-4"
 				href={!$user.isLoggedIn ? '/' : '/app/relatorios'}
