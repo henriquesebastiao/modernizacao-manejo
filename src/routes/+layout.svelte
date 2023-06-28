@@ -50,7 +50,7 @@
 
 	<!-- Sidebar (Left) -->
 	<svelte:fragment slot="sidebarLeft">
-		<MenusSideBar class="hidden lg:grid w-[360px] overflow-hidden" />
+		<MenusSideBar class="hidden lg:grid w-[300px] overflow-hidden" />
 		<SpeedDial class="lg:hidden fixed bottom-4 right-4" />
 	</svelte:fragment>
 
