@@ -39,7 +39,7 @@
 			localStorage.setItem('isLoggedIn', 'true');
 			localStorage.setItem('token', token.access_token);
 			$user.isLoggedIn = true;
-			await goto('/app/relatorios');
+			await goto('/app/relatorios/relatorio_geral');
 		} catch (err) {
 			console.log(err);
 			toastStore.trigger(e);
@@ -50,7 +50,7 @@
 
 	onMount(() => {
 		if ($user.isLoggedIn || localStorage.getItem('isLoggedIn')) {
-			goto('/app/relatorios');
+			goto('/app/relatorios/relatorio_geral');
 		}
 	});
 </script>
