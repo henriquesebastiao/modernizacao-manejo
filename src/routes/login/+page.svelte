@@ -3,7 +3,7 @@
 	import type { ToastSettings } from '@skeletonlabs/skeleton';
 	import { focusTrap, ProgressRadial, toastStore } from '@skeletonlabs/skeleton';
 	import type { Body_Token_login_for_access_token, Token } from '../../client';
-	import { OpenAPI, TokenService } from '../../client';
+	import { TokenService } from '../../client';
 	import { goto } from '$app/navigation';
 	import { fade } from 'svelte/transition';
 	import { user } from '../../store';
