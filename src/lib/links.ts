@@ -38,19 +38,57 @@ export const menuNavLinks: Record<string, Array<{ title: string; list: List }>> 
 	'/sanitario': [
 		{
 			title: 'Sanitário',
-			list: [{ href: 'app/sanitario', label: 'Sanitário', keywords: 'sanitario' }]
+			list: [
+				{
+					href: 'app/sanitario/vacinacao',
+					label: 'Vacinação',
+					keywords: 'vacinacao'
+				},
+				{
+					href: 'app/sanitario/procedimento',
+					label: 'Procedimento',
+					keywords: 'procedimento'
+				},
+				{
+					href: 'app/sanitario/exame',
+					label: 'Exame',
+					keywords: 'exame'
+				},
+				{
+					href: 'app/sanitario/outro',
+					label: 'Outro',
+					keywords: 'outro'
+				}
+			]
 		}
 	],
 	'/cria': [
 		{
 			title: 'Cria',
-			list: [{ href: 'app/cria', label: 'Cria', keywords: 'cria' }]
+			list: [
+				{
+					href: 'app/cria/desmama',
+					label: 'Desmama',
+					keywords: 'desmama'
+				},
+				{
+					href: 'app/cria/parto',
+					label: 'Parto',
+					keywords: 'parto'
+				}
+			]
 		}
 	],
 	'/lotes': [
 		{
 			title: 'Lotes',
-			list: [{ href: 'app/lotes', label: 'Lotes', keywords: 'lotes' }]
+			list: [
+				{
+					href: 'app/lotes/troca_de_lote',
+					label: 'Troca de Lote',
+					keywords: 'troca_de_lote'
+				}
+			]
 		}
 	]
 };

@@ -11,48 +11,35 @@
 	// Local
 	let currentRailCategory: keyof typeof menuNavLinks | undefined = undefined;
 
-	// Lifecycle
-	page.subscribe((page) => {
-		// ex: /basePath/...
-		let basePath: string = page.url.pathname.split('/')[1];
-		if (!basePath) return;
-		// Translate base path to link section
-		if (['docs', 'essentials', 'resources'].includes(basePath)) currentRailCategory = '/relatorios';
-		if (['tokens', 'base', 'elements', 'blocks'].includes(basePath))
-			currentRailCategory = '/elements';
-		if (['components', 'actions'].includes(basePath)) currentRailCategory = '/svelte';
-		if (['utilities'].includes(basePath)) currentRailCategory = '/utilities';
-	});
-
 	let appRailMenuItems = [
 		{
 			title: 'Relatórios',
 			icon: 'fa-chart-line',
-			href: '/app/relatorios',
+			href: '/app/relatorios/relatorio_geral',
 			value: 1
 		},
 		{
 			title: 'Manejo',
 			icon: 'fa-syringe',
-			href: '/app/manejo',
+			href: '/app/manejo/adicionar_animal',
 			value: 2
 		},
 		{
 			title: 'Sanitário',
 			icon: 'fa-vial-circle-check',
-			href: '/app/sanitario',
+			href: '/app/sanitario/vacinacao',
 			value: 3
 		},
 		{
 			title: 'Cria',
 			icon: 'fa-cow',
-			href: '/app/cria',
+			href: '/app/cria/desmama',
 			value: 4
 		},
 		{
 			title: 'Lotes',
 			icon: 'fa-tree',
-			href: '/app/lotes',
+			href: '/app/lotes/troca_de_lote',
 			value: 5
 		},
 		{
@@ -62,6 +49,21 @@
 			value: 6
 		}
 	];
+
+	let subMenuItems = [
+		{
+			title: 'Relatório geral',
+			icon: 'fa-chart-line',
+			name: 'geral',
+			value: 'geral'
+		},
+		{
+			title: 'Relatório lote',
+			icon: 'fa-tree',
+			name: 'geral',
+			value: 'lote'
+		}
+	]
 
 	// Lifecycle
 	page.subscribe((page) => {
@@ -103,6 +105,8 @@
 				<span>{item.title}</span>
 			</AppRailTile>
 		{/each}
+
+		<!-- Configurações -->
 		<AppRailTile
 			slot="trail"
 			bind:group={currentTile}
@@ -116,16 +120,17 @@
 		</AppRailTile>
 	</AppRail>
 
+	<!-- Submenu Lateral -->
 	<section class="p-4 pb-20 space-y-4 overflow-y-auto">
-		{#each submenu as segment}
+		{#each submenu as segment, i}
 			<!-- Title -->
 			<p class="font-bold pl-4 text-2xl">{segment.title}</p>
 			<!-- Nav List -->
 			<nav class="list-nav">
 				<ul>
-					{#each segment.list as { href, label, badge }}
+					{#each segment.list as { href, label, badge, default_path }}
 						<li on:keypress on:click={drawerStore.close}>
-							<a {href} class={listboxItemActive(href)} data-sveltekit-preload-data="hover">
+							<a href="/{href}" class={listboxItemActive(href)} data-sveltekit-preload-data="hover">
 								{#if badge}<i class="fa-solid {badge}" />{/if}
 								<span class="flex-auto">{@html label}</span>
 							</a>
