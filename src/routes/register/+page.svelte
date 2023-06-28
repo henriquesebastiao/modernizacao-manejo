@@ -4,6 +4,7 @@
 	import { UserService } from '../../client';
 	import type { UserCreate } from '../../client';
 	import { fade } from 'svelte/transition';
+	import { goto } from '$app/navigation';
 
 	let isFocused = true;
 
@@ -30,6 +31,7 @@
 			.then((response) => {
 				console.log(response);
 				toastStore.trigger(t);
+				goto('/login');
 			})
 			.catch((error) => {
 				console.log(error);
