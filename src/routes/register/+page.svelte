@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { focusTrap, toastStore, RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
+	import { focusTrap, toastStore } from '@skeletonlabs/skeleton';
 	import type { ToastSettings } from '@skeletonlabs/skeleton';
 	import { UserService } from '../../client';
 	import type { UserCreate } from '../../client';
@@ -70,7 +70,6 @@
 				</div>
 			</div>
 			<div class="flex flex-row justify-center gap-6">
-				<!-- Email -->
 				<div class="mx-4 mb-4 w-full">
 					<label class="label block mb-2">
 						<i class="fa-solid fa-at" />
