@@ -3,9 +3,9 @@
 export type List = Array<{ href: string; label: string; keywords: string; badge?: string }>;
 export const menuNavLinks: Record<
 	string,
-	Array<{ title: string; badge: string; href: string; list: List }>
+	Array<{ title: string; slot?: string; badge: string; href: string; list: List }>
 > = {
-	'/relatorios': [
+	'/app/relatorios': [
 		{
 			title: 'Relatórios',
 			badge: 'fa-chart-line',
@@ -26,7 +26,7 @@ export const menuNavLinks: Record<
 			]
 		}
 	],
-	'/manejo': [
+	'/app/manejo': [
 		{
 			title: 'Manejo',
 			badge: 'fa-syringe',
@@ -53,7 +53,7 @@ export const menuNavLinks: Record<
 			]
 		}
 	],
-	'/sanitario': [
+	'/app/sanitario': [
 		{
 			title: 'Sanitário',
 			badge: 'fa-vial-circle-check',
@@ -86,7 +86,7 @@ export const menuNavLinks: Record<
 			]
 		}
 	],
-	'/cria': [
+	'/app/cria': [
 		{
 			title: 'Cria',
 			badge: 'fa-cow',
@@ -107,7 +107,7 @@ export const menuNavLinks: Record<
 			]
 		}
 	],
-	'/lotes': [
+	'/app/lotes': [
 		{
 			title: 'Lotes',
 			badge: 'fa-tree',
@@ -122,11 +122,27 @@ export const menuNavLinks: Record<
 			]
 		}
 	],
-	'/financeiro': [
+	'/app/financeiro': [
 		{
 			title: 'Financeiro',
 			badge: 'fa-cash-register',
 			href: 'app/Financeiro/',
+			list: [
+				{
+					href: 'app/financeiro/financeiro',
+					label: 'Financeiro',
+					keywords: 'financeiro',
+					badge: 'fa-calculator'
+				}
+			]
+		}
+	],
+	'/app/settings': [
+		{
+			slot: 'trail',
+			title: 'Ajustes',
+			badge: 'fa-gear',
+			href: 'app/settings/',
 			list: [
 				{
 					href: 'app/financeiro/financeiro',

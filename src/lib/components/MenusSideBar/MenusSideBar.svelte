@@ -11,61 +11,22 @@
 	// Local
 	let currentRailCategory: keyof typeof menuNavLinks | undefined = undefined;
 
-	let appRailMenuItems = [
-		{
-			title: 'Relatórios',
-			icon: 'fa-chart-line',
-			href: '/app/relatorios/relatorio_geral',
-			value: 1
-		},
-		{
-			title: 'Manejo',
-			icon: 'fa-syringe',
-			href: '/app/manejo/adicionar_animal',
-			value: 2
-		},
-		{
-			title: 'Sanitário',
-			icon: 'fa-vial-circle-check',
-			href: '/app/sanitario/vacinacao',
-			value: 3
-		},
-		{
-			title: 'Cria',
-			icon: 'fa-cow',
-			href: '/app/cria/desmama',
-			value: 4
-		},
-		{
-			title: 'Lotes',
-			icon: 'fa-tree',
-			href: '/app/lotes/troca_de_lote',
-			value: 5
-		},
-		{
-			title: 'Financeiro',
-			icon: 'fa-cash-register',
-			href: '/app/financeiro/financeiro',
-			value: 6
-		}
-	];
-
 	// Lifecycle
 	page.subscribe((page) => {
 		// ex: /basePath/...
 		let basePath: string = page.url.pathname.split('/')[2];
 		if (!basePath) return;
 		// Translate base path to link section
-		if (['manejo'].includes(basePath)) currentRailCategory = '/manejo';
-		if (['relatorios'].includes(basePath)) currentRailCategory = '/relatorios';
-		if (['sanitario'].includes(basePath)) currentRailCategory = '/sanitario';
-		if (['cria'].includes(basePath)) currentRailCategory = '/cria';
-		if (['lotes'].includes(basePath)) currentRailCategory = '/lotes';
-		if (['financeiro'].includes(basePath)) currentRailCategory = '/financeiro';
-		if (['ajuste'].includes(basePath)) currentRailCategory = '/ajuste';
+		if (['manejo'].includes(basePath)) currentRailCategory = '/app/manejo';
+		if (['relatorios'].includes(basePath)) currentRailCategory = '/app/relatorios';
+		if (['sanitario'].includes(basePath)) currentRailCategory = '/app/sanitario';
+		if (['cria'].includes(basePath)) currentRailCategory = '/app/cria';
+		if (['lotes'].includes(basePath)) currentRailCategory = '/app/lotes';
+		if (['financeiro'].includes(basePath)) currentRailCategory = '/app/financeiro';
+		if (['ajuste'].includes(basePath)) currentRailCategory = '/app/ajuste';
 	});
 
-	$: submenu = menuNavLinks[currentRailCategory ?? '/manejo'];
+	$: submenu = menuNavLinks[currentRailCategory ?? '/app/manejo'];
 	$: listboxItemActive = (href: string) =>
 		$page.url.pathname?.includes(href) ? 'bg-primary-active-token' : '';
 </script>
@@ -75,33 +36,24 @@
 		''}"
 >
 	<AppRail background="bg-transparent" border="border-r border-surface-500/30">
-		{#each appRailMenuItems as item}
-			<AppRailTile
-				bind:group={currentTile}
-				name="tile-2"
-				value={item.value}
-				title="tile-2"
-				class={`${item.href === currentPage ? 'bg-primary-active-token' : ''}`}
-				on:click={() => goto(item.href)}
-			>
-				<svelte:fragment slot="lead"><i class={`fa-solid ${item.icon} text-2xl`} /></svelte:fragment
+		{#each Object.keys(menuNavLinks) as section}
+			{#each menuNavLinks[section] as item}
+				<AppRailTile
+					slot={item.slot}
+					bind:group={currentTile}
+					name={section}
+					value={item.title}
+					title={item.title}
+					class={`{section === currentPage ? 'bg-primary-active-token' : ''}`}
+					on:click={() => goto(section)}
 				>
-				<span>{item.title}</span>
-			</AppRailTile>
+					<svelte:fragment slot="lead"
+						><i class={`fa-solid ${item.badge} text-2xl`} /></svelte:fragment
+					>
+					<span>{item.title}</span>
+				</AppRailTile>
+			{/each}
 		{/each}
-
-		<!-- Configurações -->
-		<AppRailTile
-			slot="trail"
-			bind:group={currentTile}
-			name="utilities"
-			value={5}
-			class={`${currentPage === 'app/settings' ? 'bg-primary-active-token' : ''}`}
-			on:click={() => goto('/app/settings')}
-		>
-			<svelte:fragment slot="lead"><i class="fa-solid fa-gear text-2xl" /></svelte:fragment>
-			<span>Ajustes</span>
-		</AppRailTile>
 	</AppRail>
 
 	<!-- Submenu Lateral -->
