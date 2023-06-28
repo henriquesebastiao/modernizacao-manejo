@@ -60,7 +60,7 @@
 		if (['relatorios'].includes(basePath)) currentRailCategory = '/relatorios';
 		if (['sanitario'].includes(basePath)) currentRailCategory = '/sanitario';
 		if (['cria'].includes(basePath)) currentRailCategory = '/cria';
-		if (['lote'].includes(basePath)) currentRailCategory = '/lote';
+		if (['lotes'].includes(basePath)) currentRailCategory = '/lotes';
 		if (['financeiro'].includes(basePath)) currentRailCategory = '/financeiro';
 		if (['ajuste'].includes(basePath)) currentRailCategory = '/ajuste';
 	});

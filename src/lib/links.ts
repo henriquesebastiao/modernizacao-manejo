@@ -31,15 +31,20 @@ export const menuNavLinks: Record<string, Array<{ title: string; badge: string; 
 					href: 'app/manejo/adicionar_animal',
 					label: 'Adicionar animal',
 					keywords: 'adicionar_animal',
-					badge: 'fa-syringe'
+					badge: 'fa-cow'
 				},
 				{
 					href: 'app/manejo/vacinacao',
 					label: 'Vacinação',
 					keywords: 'vacinacao',
-					badge: 'fa-tree'
+					badge: 'fa-syringe'
 				},
-				{ href: 'app/manejo/pesagem', label: 'Pesagem', keywords: 'pesagem', badge: 'fa-tree' }
+				{
+					href: 'app/manejo/pesagem',
+					label: 'Pesagem',
+					keywords: 'pesagem',
+					badge: 'fa-weight-scale'
+				}
 			]
 		}
 	],
@@ -52,25 +57,25 @@ export const menuNavLinks: Record<string, Array<{ title: string; badge: string; 
 					href: 'app/sanitario/vacinacao',
 					label: 'Vacinação',
 					keywords: 'vacinacao',
-					badge: 'fa-tree'
+					badge: 'fa-syringe'
 				},
 				{
 					href: 'app/sanitario/procedimento',
 					label: 'Procedimento',
 					keywords: 'procedimento',
-					badge: 'fa-tree'
+					badge: 'fa-user-doctor'
 				},
 				{
 					href: 'app/sanitario/exame',
 					label: 'Exame',
 					keywords: 'exame',
-					badge: 'fa-tree'
+					badge: 'fa-stethoscope'
 				},
 				{
 					href: 'app/sanitario/outro',
 					label: 'Outro',
 					keywords: 'outro',
-					badge: 'fa-tree'
+					badge: 'fa-circle-plus'
 				}
 			]
 		}
@@ -84,13 +89,13 @@ export const menuNavLinks: Record<string, Array<{ title: string; badge: string; 
 					href: 'app/cria/desmama',
 					label: 'Desmama',
 					keywords: 'desmama',
-					badge: 'fa-tree'
+					badge: 'fa-circle-xmark'
 				},
 				{
 					href: 'app/cria/parto',
 					label: 'Parto',
 					keywords: 'parto',
-					badge: 'fa-tree'
+					badge: 'fa-heart-pulse'
 				}
 			]
 		}
@@ -104,7 +109,7 @@ export const menuNavLinks: Record<string, Array<{ title: string; badge: string; 
 					href: 'app/lotes/troca_de_lote',
 					label: 'Troca de Lote',
 					keywords: 'troca_de_lote',
-					badge: 'fa-tree'
+					badge: 'fa-rotate'
 				}
 			]
 		}
@@ -118,7 +123,7 @@ export const menuNavLinks: Record<string, Array<{ title: string; badge: string; 
 					href: 'app/financeiro/financeiro',
 					label: 'Financeiro',
 					keywords: 'financeiro',
-					badge: 'fa-tree'
+					badge: 'fa-calculator'
 				}
 			]
 		}
