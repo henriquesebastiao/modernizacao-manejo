@@ -63,7 +63,7 @@
 		</div>
 	{:else}
 		<div
-			class="card variant-glass-tertiary rounded-3xl flex mt-16 min-h-full mx-6 min-w-[35%] flex-col justify-center px-6 py-12 lg:px-8 shadow-xl"
+			class="card variant-glass-tertiary rounded-3xl flex my-16 mx-6 min-w-[35%] flex-col justify-center px-6 py-12 lg:px-8 shadow-xl"
 		>
 			<div class="sm:mx-auto sm:w-full sm:max-w-sm">
 				<svg
@@ -142,14 +142,14 @@
 					</div>
 				</form>
 
-				<p class="select-none mt-10 text-center text-sm text-gray-500">
-					Não é membro?
+				<div class="flex flex-col">
+					<p class="select-none mt-10 text-center text-sm text-gray-500">Não é membro?</p>
 					<button
-						on:click={() => goto('/register')}
-						class="font-semibold leading-6 text-success-500 hover:text-success-400"
-						>Teste por 14 dias gratuitamente</button
+							on:click={() => goto('/register')}
+							class="font-semibold leading-6 text-success-500 text-sm hover:text-success-400"
+					>Teste por 14 dias gratuitamente</button
 					>
-				</p>
+				</div>
 			</div>
 		</div>
 	{/if}
