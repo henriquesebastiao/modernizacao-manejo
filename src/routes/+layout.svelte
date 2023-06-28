@@ -8,6 +8,9 @@
 	import { user } from '../store';
 	import { onMount } from 'svelte';
 	import Footer from '$lib/components/Footer/Footer.svelte';
+	import { page } from '$app/stores';
+	import MenusSideBar from '$lib/components/MenusSideBar/MenusSideBar.svelte';
+	import SpeedDial from '$lib/components/SpeedDial.svelte';
 
 	OpenAPI.BASE = 'https://api.henriquesebastiao.com';
 
@@ -18,6 +21,12 @@
 			$user.isLoggedIn = true;
 		}
 	});
+
+	function matchPathWhitelist(pageUrlPath: string): boolean {
+		return !pageUrlPath.includes('/app');
+	}
+
+	$: slotSidebarLeft = matchPathWhitelist($page.url.pathname) ? 'w-0' : 'lg:w-auto';
 </script>
 
 <svelte:head>
@@ -29,19 +38,16 @@
 	<Toast position="tr" />
 </div>
 
-<AppShell>
+<AppShell {slotSidebarLeft}>
 	<svete:fragment slot="header">
 		<Header />
 	</svete:fragment>
+	<svelte:fragment slot="sidebarLeft">
+		<MenusSideBar class="hidden lg:grid w-[360px] overflow-hidden" />
+		<SpeedDial />
+	</svelte:fragment>
 	<slot />
+	<svelte:fragment slot="pageFooter">
+		<Footer />
+	</svelte:fragment>
 </AppShell>
-
-<style>
-	.dynamic-width {
-		height: calc(100% - 75px);
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
-</style>
