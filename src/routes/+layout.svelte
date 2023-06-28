@@ -23,9 +23,11 @@
 	});
 
 	function matchPathWhitelist(pageUrlPath: string): boolean {
+		// If homepage app shell is not rendered
 		return !pageUrlPath.includes('/app');
 	}
 
+	// Disable left sidebar on homepage
 	$: slotSidebarLeft = matchPathWhitelist($page.url.pathname) ? 'w-0' : 'lg:w-auto';
 </script>
 
@@ -34,19 +36,28 @@
 	<title>Modernização manejo</title>
 </svelte:head>
 
+<!-- Overlays -->
 <div class="parent-toast">
 	<Toast position="tr" />
 </div>
 
-<AppShell {slotSidebarLeft}>
-	<svete:fragment slot="header">
+<!-- App Shell -->
+<AppShell {slotSidebarLeft} regionPage="overflow-y-scroll" slotFooter="bg-black p-4">
+	<!-- Header -->
+	<svelte:fragment slot="header">
 		<Header />
-	</svete:fragment>
+	</svelte:fragment>
+
+	<!-- Sidebar (Left) -->
 	<svelte:fragment slot="sidebarLeft">
 		<MenusSideBar class="hidden lg:grid w-[360px] overflow-hidden" />
-		<SpeedDial />
+		<SpeedDial class="lg:hidden fixed bottom-4 right-4" />
 	</svelte:fragment>
+
+	<!-- Page Content -->
 	<slot />
+
+	<!-- Page Footer -->
 	<svelte:fragment slot="pageFooter">
 		<Footer />
 	</svelte:fragment>
