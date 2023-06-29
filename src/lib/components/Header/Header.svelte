@@ -34,6 +34,8 @@
 
 	const modal: ModalSettings = {
 		type: 'confirm',
+		buttonTextConfirm: 'Confirmar',
+		buttonTextCancel: 'Cancelar',
 		title: 'Confirmar ação',
 		body: 'Deseja realmente sair?',
 		response: (r: boolean) => {

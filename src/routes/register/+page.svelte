@@ -42,7 +42,7 @@
 
 <main class="container h-full mx-auto flex justify-center items-center" in:fade>
 	<div
-		class="card variant-glass-tertiary rounded-3xl flex my-16 mx-6 min-w-[35%] flex-col justify-center px-6 py-12 lg:px-8 shadow-xl"
+		class="card variant-glass-tertiary rounded-3xl flex my-16 mx-6 min-w-[45%] flex-col justify-center px-6 py-12 lg:px-8 shadow-xl"
 	>
 		<div class="sm:mx-auto sm:w-full sm:max-w-sm">
 			<svg
@@ -69,7 +69,7 @@
 			</h2>
 		</div>
 
-		<div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+		<div class="flex flex-col items-center min-w-full mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
 			<form on:submit={userRegister} use:focusTrap={isFocused} class="space-y-6">
 				<div class="flex flex-row space-x-4">
 					<div>
@@ -142,7 +142,7 @@
 				<div>
 					<button
 						type="submit"
-						class="flex w-full justify-center rounded-md variant-filled-primary px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-xl hover:variant-soft-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+						class="w-[50%] rounded-md variant-filled-primary px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-xl hover:variant-soft-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
 						>Registrar</button
 					>
 				</div>
