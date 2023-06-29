@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Button from '$lib/components/system/Button.svelte';
+
 	let examDate = new Date().toISOString().substr(0, 10);
 	let exame: string = '';
 	let resultado: string = '';
@@ -6,6 +8,8 @@
 	let carencePeriod: number = 0;
 	let descricao = '';
 	let observation: string = '';
+
+	$: canSubmit = exame && resultado && farmaco && carencePeriod && descricao && observation;
 </script>
 
 <div class="w-full h-full flex items-center justify-center max-lg:items-start">
@@ -64,7 +68,7 @@
 			</div>
 		</div>
 		<div class="mt-3 flex items-center justify-center">
-			<button class="btn variant-filled font-bold">Registrar</button>
+			<Button type="submit" disabled={!canSubmit}>Registrar</Button>
 		</div>
 	</div>
 </div>
