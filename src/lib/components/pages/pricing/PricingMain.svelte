@@ -1,7 +1,9 @@
 <div class="py-16 sm:py-24">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl sm:text-center">
-			<h2 class="text-3xl font-bold tracking-tight sm:text-4xl select-none">Simple no-tricks pricing</h2>
+			<h2 class="text-3xl font-bold tracking-tight sm:text-4xl select-none">
+				Simple no-tricks pricing
+			</h2>
 			<p class="mt-6 text-lg leading-8 select-none">
 				Distinctio et nulla eum soluta et neque labore quibusdam. Saepe et quasi iusto modi velit ut
 				non voluptas in. Explicabo id ut laborum.

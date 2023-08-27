@@ -59,10 +59,7 @@
 			<button on:click={drawerOpen} class="btn-icon btn-icon-sm lg:!hidden">
 				<i class="fa-solid fa-bars text-xl" />
 			</button>
-			<div
-				class="flex items-center space-x-4"
-				title="Início"
-			>
+			<div class="flex items-center space-x-4" title="Início">
 				<svg
 					class="fill-token w-10 h-10"
 					xmlns="http://www.w3.org/2000/svg"

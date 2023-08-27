@@ -1,10 +1,10 @@
 <script lang="ts">
-    import { fade } from 'svelte/transition';
-    import RelatorioGeral from "../components/RelatorioGeral.svelte";
+	import { fade } from 'svelte/transition';
+	import RelatorioGeral from '../components/RelatorioGeral.svelte';
 </script>
-<div in:fade class="w-full h-full flex">
-    <div class="w-full overflow-scroll overflow-x-hidden px-4 py-4">
-        <RelatorioGeral />
-    </div>
-</div>
 
+<div in:fade class="w-full h-full flex">
+	<div class="w-full overflow-scroll overflow-x-hidden px-4 py-4">
+		<RelatorioGeral />
+	</div>
+</div>

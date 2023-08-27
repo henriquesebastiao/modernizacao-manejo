@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Button from "$lib/components/system/Button.svelte";
+	import Button from '$lib/components/system/Button.svelte';
 
 	let procedureDate = new Date().toISOString().substr(0, 10);
 	let procedimento: string = '';

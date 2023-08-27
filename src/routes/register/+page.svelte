@@ -73,15 +73,14 @@
 			<form on:submit={userRegister} use:focusTrap={isFocused} class="space-y-6">
 				<div class="flex flex-row space-x-4">
 					<div>
-						<label for="email" class="select-none block text-sm font-medium leading-6">Nome:</label
-						>
+						<label for="email" class="select-none block text-sm font-medium leading-6">Nome:</label>
 						<div class="mt-2">
 							<input
-									name="name"
-									type="text"
-									bind:value={user.first_name}
-									required
-									class="input variant-filled-primary block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+								name="name"
+								type="text"
+								bind:value={user.first_name}
+								required
+								class="input variant-filled-primary block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 							/>
 						</div>
 					</div>
@@ -89,16 +88,17 @@
 					<div>
 						<div class="flex items-center justify-between">
 							<label for="password" class="select-none block text-sm font-medium leading-6"
-							>Sobrenome:</label
+								>Sobrenome:</label
 							>
 						</div>
 						<div class="mt-2">
 							<input
-									name="name"
-									type="text"
-									bind:value={user.last_name}
-									required
-									class="input variant-filled-primary block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+								name="name"
+								type="text"
+								bind:value={user.last_name}
+								required
+								class="input variant-filled-primary block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+							/>
 						</div>
 					</div>
 				</div>

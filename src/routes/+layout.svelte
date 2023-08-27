@@ -15,7 +15,7 @@
 	OpenAPI.BASE = 'https://api.henriquesebastiao.com';
 
 	onMount(() => {
-		const logStore: any = localStorage.getItem('isLoggedIn');
+		const logStore = localStorage.getItem('isLoggedIn');
 
 		if (logStore) {
 			$user.isLoggedIn = true;

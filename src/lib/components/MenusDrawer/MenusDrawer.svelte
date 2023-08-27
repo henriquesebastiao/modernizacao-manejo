@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { drawerStore, Drawer } from '@skeletonlabs/skeleton';
 	import MenusSideBar from '$lib/components/MenusSideBar/MenusSideBar.svelte';
-	import MenusSibarBarHome from "$lib/components/MenusSideBarHome/MenusSibarBarHome.svelte";
+	import MenusSibarBarHome from '$lib/components/MenusSideBarHome/MenusSibarBarHome.svelte';
 	import Navigation from '$lib/Navigation/Navigation.svelte';
 
 	$: classesDrawer = $drawerStore.id === 'doc-sidenav' ? 'lg:hidden' : '';
@@ -9,7 +9,7 @@
 	// Verifica a largura da tela para saber se é mobile
 	let isMobile = () => {
 		return screen.width <= 1023;
-	}
+	};
 </script>
 
 <Drawer class={classesDrawer}>

@@ -1,3 +1,1 @@
-<div>
-    FINANCEIRO
-</div>
+<div>FINANCEIRO</div>

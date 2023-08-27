@@ -2,7 +2,7 @@
 	import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
 
 	let condicao_saida = 'venda';
-	let brinco_do_animal: string = '';
+	let brinco_do_animal = '';
 	let peso_de_saida: string | null = null;
 	let data_da_saida: string | null = null;
 </script>

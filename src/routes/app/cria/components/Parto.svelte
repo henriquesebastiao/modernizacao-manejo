@@ -3,7 +3,7 @@
 
 	let data_parto: string | null = null;
 	let quantidade_bezerros: string | null = null;
-	let iseminacao_cobertura: string | null = null;
+	let inseminacao_cobertura: string | null = null;
 	let brinco_animal: string | null = null;
 	let retencao_placenta: string | null = null;
 	let necessidade_auxilio_parto: string | null = null;
@@ -28,7 +28,7 @@
 				<label class="label">
 					<i class="fa-solid fa-calendar-days mr-1" />
 					<span>Inseminação / Cobertura:</span>
-					<select class="select rounded" bind:value={iseminacao_cobertura}>
+					<select class="select rounded" bind:value={inseminacao_cobertura}>
 						<option value="inseminacao">Inseminação</option>
 						<option value="cobertura">Cobertura</option>
 					</select>
