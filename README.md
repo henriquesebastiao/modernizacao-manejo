@@ -5,7 +5,7 @@
 
 <p align="center">
     <img src="https://img.shields.io/badge/Status-development-red" alt="Development status" /><br>
-    <a href="https://site.henriquesebastiao.com">Deploy to Vercel</a>
+    <a href="https://manejo.henriquesebastiao.com">Deploy to Vercel</a>
 </p>
 
 <p align="center">
@@ -18,7 +18,7 @@
     o frontend proporciona uma navegação suave e uma apresentação visualmente atraente dos dados relacionados ao gado.
 </p>
 
-<h1 align="center">Principais Recursos</h1>
+<h2 align="center">Principais Recursos</h2>
 
 <p align="center">
     <strong>Interface Intuitiva:</strong> Uma interface de usuário amigável e intuitiva, projetada para facilitar a interação do usuário com as informações sobre o gado e suas análises de desempenho.<br>
