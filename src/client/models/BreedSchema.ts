@@ -3,6 +3,6 @@
 /* eslint-disable */
 
 export type BreedSchema = {
-	id?: number;
-	name?: string;
+	id: number | null;
+	name: string | null;
 };

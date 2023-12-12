@@ -12,6 +12,7 @@ import { request as __request } from '../core/request';
 export class UserTypeService {
 	/**
 	 * Get All
+	 * Retorna todos os tipos de usuário.
 	 * @returns UserTypeSchema Successful Response
 	 * @throws ApiError
 	 */
@@ -24,6 +25,9 @@ export class UserTypeService {
 
 	/**
 	 * Create
+	 * Adiciona um novo tipo de usuário.
+	 *
+	 * - **type (str)**: Nome do tipo de usuário.
 	 * @param requestBody
 	 * @returns UserTypeSchema Successful Response
 	 * @throws ApiError
@@ -42,6 +46,7 @@ export class UserTypeService {
 
 	/**
 	 * Get By
+	 * Retorna um tipo de usuário pelo seu ID.
 	 * @param userTypeId
 	 * @returns UserTypeSchema Successful Response
 	 * @throws ApiError
@@ -60,26 +65,10 @@ export class UserTypeService {
 	}
 
 	/**
-	 * Delete
-	 * @param userTypeId
-	 * @returns UserTypeSchema Successful Response
-	 * @throws ApiError
-	 */
-	public static userTypeDelete(userTypeId: number): CancelablePromise<UserTypeSchema> {
-		return __request(OpenAPI, {
-			method: 'DELETE',
-			url: '/user/type/{user_type_id}',
-			path: {
-				user_type_id: userTypeId
-			},
-			errors: {
-				422: `Validation Error`
-			}
-		});
-	}
-
-	/**
 	 * Update
+	 * Atualiza um tipo de usuário.
+	 *
+	 * - **type (str)**: Nome do tipo de usuário.
 	 * @param userTypeId
 	 * @param requestBody
 	 * @returns UserTypeSchema Successful Response
@@ -97,6 +86,26 @@ export class UserTypeService {
 			},
 			body: requestBody,
 			mediaType: 'application/json',
+			errors: {
+				422: `Validation Error`
+			}
+		});
+	}
+
+	/**
+	 * Delete
+	 * Deleta um tipo de usuário.
+	 * @param userTypeId
+	 * @returns UserTypeSchema Successful Response
+	 * @throws ApiError
+	 */
+	public static userTypeDelete(userTypeId: number): CancelablePromise<UserTypeSchema> {
+		return __request(OpenAPI, {
+			method: 'DELETE',
+			url: '/user/type/{user_type_id}',
+			path: {
+				user_type_id: userTypeId
+			},
 			errors: {
 				422: `Validation Error`
 			}

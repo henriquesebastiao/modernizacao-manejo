@@ -5,14 +5,14 @@
 import type { Sexo } from './Sexo';
 
 export type AnimalCreate = {
-	tag?: number;
-	sisbov?: number;
-	gender?: Sexo;
-	birth_date?: string;
-	buy_date?: string;
-	sell_date?: string;
-	breed?: string;
-	father_tag?: number;
-	mother_tag?: number;
-	origin?: string;
+	tag: number | null;
+	sisbov: number | null;
+	gender: Sexo | null;
+	birth_date: string | null;
+	buy_date: string | null;
+	sell_date: string | null;
+	breed: string | null;
+	father_tag: number | null;
+	mother_tag: number | null;
+	origin: string | null;
 };

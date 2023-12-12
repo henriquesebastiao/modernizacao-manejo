@@ -3,6 +3,6 @@
 /* eslint-disable */
 
 export type AnimalWeightTypeSchema = {
-	id?: number;
-	type?: string;
+	id: number | null;
+	type: string | null;
 };

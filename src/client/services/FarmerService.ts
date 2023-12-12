@@ -11,6 +11,7 @@ import { request as __request } from '../core/request';
 export class FarmerService {
 	/**
 	 * Get All
+	 * Retorna todos os proprietários rurais.
 	 * @returns FarmerSchema Successful Response
 	 * @throws ApiError
 	 */
@@ -23,6 +24,10 @@ export class FarmerService {
 
 	/**
 	 * Create
+	 * Adiciona um novo proprietário rural
+	 *
+	 * - **user_id (int)**: ID do usuário
+	 * - **farmer_plan_id (int)**: ID do plano do proprietário rural
 	 * @param requestBody
 	 * @returns FarmerSchema Successful Response
 	 * @throws ApiError
@@ -41,6 +46,7 @@ export class FarmerService {
 
 	/**
 	 * Get By
+	 * Retorna um proprietário rural pelo ID.
 	 * @param farmerId
 	 * @returns FarmerSchema Successful Response
 	 * @throws ApiError
@@ -60,6 +66,7 @@ export class FarmerService {
 
 	/**
 	 * Delete
+	 * Deleta um proprietário rural pelo ID.
 	 * @param farmerId
 	 * @returns FarmerSchema Successful Response
 	 * @throws ApiError
@@ -79,6 +86,10 @@ export class FarmerService {
 
 	/**
 	 * Update
+	 * Atualiza um proprietário rural pelo ID.
+	 *
+	 * - **user_id (int)**: ID do usuário
+	 * - **farmer_plan_id (int)**: ID do plano do proprietário rural
 	 * @param farmerPlanId
 	 * @param requestBody
 	 * @returns FarmerSchema Successful Response

@@ -3,9 +3,9 @@
 /* eslint-disable */
 
 export type EmploymentSchema = {
-	id?: number;
-	user_id?: number;
-	farmer_id?: number;
-	farm_id?: number;
-	employment_position_id?: number;
+	id: number | null;
+	user_id: number | null;
+	farmer_id: number | null;
+	farm_id: number | null;
+	employment_position_id: number | null;
 };

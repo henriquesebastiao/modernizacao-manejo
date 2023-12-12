@@ -3,5 +3,5 @@
 /* eslint-disable */
 
 export type FarmerCreate = {
-	user_id?: number;
+	user_id: number | null;
 };

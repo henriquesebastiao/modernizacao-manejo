@@ -10,6 +10,7 @@ import { request as __request } from '../core/request';
 export class AnimalWeightTypeService {
 	/**
 	 * Get All
+	 * Retorna todos os tipos de peso de animal.
 	 * @returns any Successful Response
 	 * @throws ApiError
 	 */
@@ -22,6 +23,9 @@ export class AnimalWeightTypeService {
 
 	/**
 	 * Create
+	 * Adiciona um novo tipo de peso de animal.
+	 *
+	 * - **name (str)**: Nome do tipo de peso de animal.
 	 * @param requestBody
 	 * @returns any Successful Response
 	 * @throws ApiError
@@ -42,6 +46,7 @@ export class AnimalWeightTypeService {
 
 	/**
 	 * Get By
+	 * Retorna um tipo de peso de animal pelo seu ID.
 	 * @param animalWeightTypeId
 	 * @returns any Successful Response
 	 * @throws ApiError
@@ -60,26 +65,10 @@ export class AnimalWeightTypeService {
 	}
 
 	/**
-	 * Delete
-	 * @param animalWeightTypeId
-	 * @returns any Successful Response
-	 * @throws ApiError
-	 */
-	public static animalWeightTypeDelete(animalWeightTypeId: number): CancelablePromise<any> {
-		return __request(OpenAPI, {
-			method: 'DELETE',
-			url: '/animal/weight/type/{animal_weight_type_id}',
-			path: {
-				animal_weight_type_id: animalWeightTypeId
-			},
-			errors: {
-				422: `Validation Error`
-			}
-		});
-	}
-
-	/**
 	 * Update
+	 * Atualiza um tipo de peso de animal com base no seu ID.
+	 *
+	 * - **name (str)**: Nome do tipo de peso de animal.
 	 * @param animalWeightTypeId
 	 * @param requestBody
 	 * @returns any Successful Response
@@ -97,6 +86,26 @@ export class AnimalWeightTypeService {
 			},
 			body: requestBody,
 			mediaType: 'application/json',
+			errors: {
+				422: `Validation Error`
+			}
+		});
+	}
+
+	/**
+	 * Delete
+	 * Deleta um tipo de peso de animal com base no seu ID.
+	 * @param animalWeightTypeId
+	 * @returns any Successful Response
+	 * @throws ApiError
+	 */
+	public static animalWeightTypeDelete(animalWeightTypeId: number): CancelablePromise<any> {
+		return __request(OpenAPI, {
+			method: 'DELETE',
+			url: '/animal/weight/type/{animal_weight_type_id}',
+			path: {
+				animal_weight_type_id: animalWeightTypeId
+			},
 			errors: {
 				422: `Validation Error`
 			}

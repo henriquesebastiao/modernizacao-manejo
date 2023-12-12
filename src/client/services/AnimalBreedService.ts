@@ -10,6 +10,7 @@ import { request as __request } from '../core/request';
 export class AnimalBreedService {
 	/**
 	 * Get All
+	 * Retorna todas as raças de animais.
 	 * @returns any Successful Response
 	 * @throws ApiError
 	 */
@@ -22,6 +23,9 @@ export class AnimalBreedService {
 
 	/**
 	 * Create
+	 * Adiciona uma nova raça de animal
+	 *
+	 * - **name (str)**: Nome da raça
 	 * @param requestBody
 	 * @returns any Successful Response
 	 * @throws ApiError
@@ -40,6 +44,7 @@ export class AnimalBreedService {
 
 	/**
 	 * Get By
+	 * Retorna uma raça de animal pelo seu ID.
 	 * @param breedId
 	 * @returns any Successful Response
 	 * @throws ApiError
@@ -58,26 +63,10 @@ export class AnimalBreedService {
 	}
 
 	/**
-	 * Delete
-	 * @param breedId
-	 * @returns any Successful Response
-	 * @throws ApiError
-	 */
-	public static animalBreedDelete(breedId: number): CancelablePromise<any> {
-		return __request(OpenAPI, {
-			method: 'DELETE',
-			url: '/animal/breed/{breed_id}',
-			path: {
-				breed_id: breedId
-			},
-			errors: {
-				422: `Validation Error`
-			}
-		});
-	}
-
-	/**
 	 * Update
+	 * Atualiza uma raça de animal pelo seu ID.
+	 *
+	 * - **name (str)**: Nome da raça
 	 * @param breedId
 	 * @param requestBody
 	 * @returns any Successful Response
@@ -95,6 +84,26 @@ export class AnimalBreedService {
 			},
 			body: requestBody,
 			mediaType: 'application/json',
+			errors: {
+				422: `Validation Error`
+			}
+		});
+	}
+
+	/**
+	 * Delete
+	 * Deleta uma raça de animal pelo seu ID.
+	 * @param breedId
+	 * @returns any Successful Response
+	 * @throws ApiError
+	 */
+	public static animalBreedDelete(breedId: number): CancelablePromise<any> {
+		return __request(OpenAPI, {
+			method: 'DELETE',
+			url: '/animal/breed/{breed_id}',
+			path: {
+				breed_id: breedId
+			},
 			errors: {
 				422: `Validation Error`
 			}

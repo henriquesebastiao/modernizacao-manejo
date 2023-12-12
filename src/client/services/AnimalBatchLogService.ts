@@ -10,6 +10,7 @@ import { request as __request } from '../core/request';
 export class AnimalBatchLogService {
 	/**
 	 * Get All
+	 * Retorna todos os registros do log de lotes de animais.
 	 * @returns any Successful Response
 	 * @throws ApiError
 	 */
@@ -22,6 +23,12 @@ export class AnimalBatchLogService {
 
 	/**
 	 * Create
+	 * Adiciona um novo registro ao log de lotes de animais.
+	 *
+	 * - **batch_id (int)**: ID do lote.
+	 * - **animal_id (int)**: ID do animal.
+	 * - **entry_date (datetime)**: Data de entrada do animal no lote.
+	 * - **departure_date (datetime)**: Data de saída do animal do lote.
 	 * @param requestBody
 	 * @returns any Successful Response
 	 * @throws ApiError
@@ -40,6 +47,7 @@ export class AnimalBatchLogService {
 
 	/**
 	 * Get By
+	 * Retorna um registro do log de lotes de animais com base no ID.
 	 * @param batchLogId
 	 * @returns any Successful Response
 	 * @throws ApiError
@@ -58,26 +66,13 @@ export class AnimalBatchLogService {
 	}
 
 	/**
-	 * Delete
-	 * @param batchLogId
-	 * @returns any Successful Response
-	 * @throws ApiError
-	 */
-	public static animalBatchLogDelete(batchLogId: number): CancelablePromise<any> {
-		return __request(OpenAPI, {
-			method: 'DELETE',
-			url: '/animal/batch_log/{batch_log_id}',
-			path: {
-				batch_log_id: batchLogId
-			},
-			errors: {
-				422: `Validation Error`
-			}
-		});
-	}
-
-	/**
 	 * Update
+	 * Atualiza um registro do log de lotes de animais com base no ID.
+	 *
+	 * - **batch_id (int)**: ID do lote.
+	 * - **animal_id (int)**: ID do animal.
+	 * - **entry_date (datetime)**: Data de entrada do animal no lote.
+	 * - **departure_date (datetime)**: Data de saída do animal do lote.
 	 * @param batchLogId
 	 * @param requestBody
 	 * @returns any Successful Response
@@ -95,6 +90,26 @@ export class AnimalBatchLogService {
 			},
 			body: requestBody,
 			mediaType: 'application/json',
+			errors: {
+				422: `Validation Error`
+			}
+		});
+	}
+
+	/**
+	 * Delete
+	 * Remove um registro do log de lotes de animais com base no ID.
+	 * @param batchLogId
+	 * @returns any Successful Response
+	 * @throws ApiError
+	 */
+	public static animalBatchLogDelete(batchLogId: number): CancelablePromise<any> {
+		return __request(OpenAPI, {
+			method: 'DELETE',
+			url: '/animal/batch_log/{batch_log_id}',
+			path: {
+				batch_log_id: batchLogId
+			},
 			errors: {
 				422: `Validation Error`
 			}

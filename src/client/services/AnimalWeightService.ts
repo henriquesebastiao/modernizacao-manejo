@@ -10,6 +10,7 @@ import { request as __request } from '../core/request';
 export class AnimalWeightService {
 	/**
 	 * Get All
+	 * Retorna todos os pesos de todos os animais
 	 * @returns any Successful Response
 	 * @throws ApiError
 	 */
@@ -22,6 +23,13 @@ export class AnimalWeightService {
 
 	/**
 	 * Create
+	 * Registra um novo peso para um animal
+	 *
+	 * - **id (int)**: Identificador do peso do animal
+	 * - **weight_type_id (int)**: Identificador do tipo de peso
+	 * - **animal_id (int)**: Identificador do animal
+	 * - **weight (float)**: Peso do animal
+	 * - **weight_date (datetime)**: Data da pesagem do animal
 	 * @param requestBody
 	 * @returns any Successful Response
 	 * @throws ApiError
@@ -40,6 +48,7 @@ export class AnimalWeightService {
 
 	/**
 	 * Get By
+	 * Retorna um peso de um animal com base no seu identificador
 	 * @param animalWeightId
 	 * @returns any Successful Response
 	 * @throws ApiError
@@ -58,26 +67,14 @@ export class AnimalWeightService {
 	}
 
 	/**
-	 * Delete
-	 * @param animalWeightId
-	 * @returns any Successful Response
-	 * @throws ApiError
-	 */
-	public static animalWeightDelete(animalWeightId: number): CancelablePromise<any> {
-		return __request(OpenAPI, {
-			method: 'DELETE',
-			url: '/animal/weight/{animal_weight_id}',
-			path: {
-				animal_weight_id: animalWeightId
-			},
-			errors: {
-				422: `Validation Error`
-			}
-		});
-	}
-
-	/**
 	 * Update
+	 * Atualiza um peso de um animal com base no seu identificador
+	 *
+	 * - **id (int)**: Identificador do peso do animal
+	 * - **weight_type_id (int)**: Identificador do tipo de peso
+	 * - **animal_id (int)**: Identificador do animal
+	 * - **weight (float)**: Peso do animal
+	 * - **weight_date (datetime)**: Data da pesagem do animal
 	 * @param animalWeightId
 	 * @param requestBody
 	 * @returns any Successful Response
@@ -95,6 +92,26 @@ export class AnimalWeightService {
 			},
 			body: requestBody,
 			mediaType: 'application/json',
+			errors: {
+				422: `Validation Error`
+			}
+		});
+	}
+
+	/**
+	 * Delete
+	 * Deleta um peso de um animal com base no seu identificador
+	 * @param animalWeightId
+	 * @returns any Successful Response
+	 * @throws ApiError
+	 */
+	public static animalWeightDelete(animalWeightId: number): CancelablePromise<any> {
+		return __request(OpenAPI, {
+			method: 'DELETE',
+			url: '/animal/weight/{animal_weight_id}',
+			path: {
+				animal_weight_id: animalWeightId
+			},
 			errors: {
 				422: `Validation Error`
 			}

@@ -3,6 +3,6 @@
 /* eslint-disable */
 
 export type FarmerSchema = {
-	id?: number;
-	farmer_plan_id?: number;
+	id: number | null;
+	farmer_plan_id: number | null;
 };

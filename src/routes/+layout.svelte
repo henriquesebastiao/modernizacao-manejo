@@ -12,7 +12,7 @@
 	import MenusSideBar from '$lib/components/MenusSideBar/MenusSideBar.svelte';
 	import MenusDrawer from '$lib/components/MenusDrawer/MenusDrawer.svelte';
 
-	OpenAPI.BASE = 'https://api.henriquesebastiao.com';
+	OpenAPI.BASE = 'https://manejo-api.onrender.com';
 
 	onMount(() => {
 		const logStore = localStorage.getItem('isLoggedIn');

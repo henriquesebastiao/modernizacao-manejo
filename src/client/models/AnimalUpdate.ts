@@ -5,10 +5,10 @@
 import type { Sexo } from './Sexo';
 
 export type AnimalUpdate = {
-	tag?: number;
-	sisbov?: number;
-	gender?: Sexo;
-	birth_date?: string;
-	buy_date?: string;
-	sell_date?: string;
+	tag: number | null;
+	sisbov: number | null;
+	gender: Sexo | null;
+	birth_date: string | null;
+	buy_date: string | null;
+	sell_date: string | null;
 };

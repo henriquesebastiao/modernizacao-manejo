@@ -3,9 +3,9 @@
 /* eslint-disable */
 
 export type BatchLogSchema = {
-	id?: number;
-	batch_id?: number;
-	animal_id?: number;
-	entry_date?: string;
-	departure_date?: string;
+	id: number | null;
+	batch_id: number | null;
+	animal_id: number | null;
+	entry_date: string | null;
+	departure_date: string | null;
 };

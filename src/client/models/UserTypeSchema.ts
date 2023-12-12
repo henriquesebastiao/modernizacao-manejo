@@ -4,5 +4,5 @@
 
 export type UserTypeSchema = {
 	type: string;
-	id?: number;
+	id: number | null;
 };

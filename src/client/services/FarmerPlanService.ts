@@ -10,6 +10,7 @@ import { request as __request } from '../core/request';
 export class FarmerPlanService {
 	/**
 	 * Get All
+	 * Retorna todos os planos de assinatura.
 	 * @returns any Successful Response
 	 * @throws ApiError
 	 */
@@ -22,6 +23,9 @@ export class FarmerPlanService {
 
 	/**
 	 * Create
+	 * Adiciona um plano de assinatura para o agricultor
+	 *
+	 * - **plan (str)**: Nome do plano de assinatura
 	 * @param requestBody
 	 * @returns any Successful Response
 	 * @throws ApiError
@@ -40,6 +44,7 @@ export class FarmerPlanService {
 
 	/**
 	 * Get By
+	 * Retorna um plano de assinatura pelo ID.
 	 * @param farmerPlanId
 	 * @returns any Successful Response
 	 * @throws ApiError
@@ -58,26 +63,10 @@ export class FarmerPlanService {
 	}
 
 	/**
-	 * Delete
-	 * @param farmerPlanId
-	 * @returns any Successful Response
-	 * @throws ApiError
-	 */
-	public static farmerPlanDelete(farmerPlanId: number): CancelablePromise<any> {
-		return __request(OpenAPI, {
-			method: 'DELETE',
-			url: '/farmer/plan/{farmer_plan_id}',
-			path: {
-				farmer_plan_id: farmerPlanId
-			},
-			errors: {
-				422: `Validation Error`
-			}
-		});
-	}
-
-	/**
 	 * Update
+	 * Atualiza um plano de assinatura pelo ID.
+	 *
+	 * - **plan (str)**: Nome do plano de assinatura
 	 * @param farmerPlanId
 	 * @param requestBody
 	 * @returns any Successful Response
@@ -95,6 +84,26 @@ export class FarmerPlanService {
 			},
 			body: requestBody,
 			mediaType: 'application/json',
+			errors: {
+				422: `Validation Error`
+			}
+		});
+	}
+
+	/**
+	 * Delete
+	 * Deleta um plano de assinatura pelo ID.
+	 * @param farmerPlanId
+	 * @returns any Successful Response
+	 * @throws ApiError
+	 */
+	public static farmerPlanDelete(farmerPlanId: number): CancelablePromise<any> {
+		return __request(OpenAPI, {
+			method: 'DELETE',
+			url: '/farmer/plan/{farmer_plan_id}',
+			path: {
+				farmer_plan_id: farmerPlanId
+			},
 			errors: {
 				422: `Validation Error`
 			}

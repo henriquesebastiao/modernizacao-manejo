@@ -10,6 +10,7 @@ import { request as __request } from '../core/request';
 export class EmploymentPositionService {
 	/**
 	 * Get All
+	 * Retorna todos os cargos.
 	 * @returns any Successful Response
 	 * @throws ApiError
 	 */
@@ -22,6 +23,9 @@ export class EmploymentPositionService {
 
 	/**
 	 * Create
+	 * Adiciona um novo cargo
+	 *
+	 * - **name (str)**: Nome do cargo
 	 * @param requestBody
 	 * @returns any Successful Response
 	 * @throws ApiError
@@ -42,6 +46,7 @@ export class EmploymentPositionService {
 
 	/**
 	 * Get By
+	 * Retorna um cargo pelo seu ID.
 	 * @param employmentPositionId
 	 * @returns any Successful Response
 	 * @throws ApiError
@@ -60,26 +65,10 @@ export class EmploymentPositionService {
 	}
 
 	/**
-	 * Delete
-	 * @param employmentPositionId
-	 * @returns any Successful Response
-	 * @throws ApiError
-	 */
-	public static employmentPositionDelete(employmentPositionId: number): CancelablePromise<any> {
-		return __request(OpenAPI, {
-			method: 'DELETE',
-			url: '/employment/position/{employment_position_id}',
-			path: {
-				employment_position_id: employmentPositionId
-			},
-			errors: {
-				422: `Validation Error`
-			}
-		});
-	}
-
-	/**
 	 * Update
+	 * Atualiza um cargo
+	 *
+	 * - **name (str)**: Nome do cargo
 	 * @param employmentPositionId
 	 * @param requestBody
 	 * @returns any Successful Response
@@ -97,6 +86,26 @@ export class EmploymentPositionService {
 			},
 			body: requestBody,
 			mediaType: 'application/json',
+			errors: {
+				422: `Validation Error`
+			}
+		});
+	}
+
+	/**
+	 * Delete
+	 * Deleta um cargo pelo seu ID.
+	 * @param employmentPositionId
+	 * @returns any Successful Response
+	 * @throws ApiError
+	 */
+	public static employmentPositionDelete(employmentPositionId: number): CancelablePromise<any> {
+		return __request(OpenAPI, {
+			method: 'DELETE',
+			url: '/employment/position/{employment_position_id}',
+			path: {
+				employment_position_id: employmentPositionId
+			},
 			errors: {
 				422: `Validation Error`
 			}
